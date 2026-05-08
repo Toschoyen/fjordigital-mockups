@@ -1,3 +1,7 @@
+# Internal reference — never push
+_internal-index.md
+PRIVATE-*.md
+
 # OS
 .DS_Store
 Thumbs.db
