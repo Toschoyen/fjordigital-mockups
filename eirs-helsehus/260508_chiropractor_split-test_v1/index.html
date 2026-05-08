@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<title>Eirs Helsehus — M1 Split Test Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f0f2f5;
+    color: #050505;
+    padding: 40px 20px;
+    line-height: 1.4;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 28px;
+    color: #1c1e21;
+  }
+  .subtitle {
+    text-align: center;
+    color: #65676b;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(380px, 500px));
+    gap: 32px;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .ad-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ad-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1877f2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-left: 4px;
+  }
+  .ad-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .ad-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    gap: 10px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2c5f5d 0%, #1a8a82 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .page-info { flex: 1; min-width: 0; }
+  .page-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #050505;
+  }
+  .sponsored {
+    font-size: 12px;
+    color: #65676b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .ad-body {
+    padding: 0 12px 12px;
+    font-size: 15px;
+    color: #050505;
+    white-space: pre-wrap;
+  }
+  .ad-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    background: #ddd;
+    display: block;
+  }
+  .ad-cta-bar {
+    background: #f0f2f5;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .ad-cta-text { flex: 1; min-width: 0; }
+  .ad-link-domain {
+    font-size: 12px;
+    color: #65676b;
+    text-transform: uppercase;
+  }
+  .ad-headline {
+    font-size: 16px;
+    font-weight: 600;
+    color: #050505;
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+  .ad-cta-button {
+    background: #e4e6eb;
+    color: #050505;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .ad-actions {
+    display: flex;
+    border-top: 1px solid #e4e6eb;
+    padding: 4px 0;
+  }
+  .ad-action {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    color: #65676b;
+    font-weight: 600;
+  }
+  .legend {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e4e6eb;
+  }
+  .legend h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #1c1e21;
+  }
+  .legend table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .legend th, .legend td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid #e4e6eb;
+  }
+  .legend th {
+    background: #f0f2f5;
+    font-weight: 600;
+  }
+  .note {
+    max-width: 1100px;
+    margin: 16px auto 0;
+    padding: 16px;
+    background: #fff8e1;
+    border-left: 4px solid #f9a825;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #5d4e1a;
+  }
+</style>
+</head>
+<body>
+
+<h1>Eirs Helsehus — M1 Split Test</h1>
+<p class="subtitle">2x2 split: 2 titler × 2 kreativer · felles hovedtekst · kiropraktikk-funnel</p>
+
+<div class="grid">
+
+<!-- Annonse 1: Tittel 1 + Kreativ A -->
+<div class="ad-wrapper">
+  <div class="ad-label">Annonse 1 · Tittel 1 + Kreativ A</div>
+  <div class="ad-card">
+    <div class="ad-header">
+      <div class="avatar">E</div>
+      <div class="page-info">
+        <div class="page-name">Eirs Helsehus</div>
+        <div class="sponsored">Sponset · 🌐</div>
+      </div>
+    </div>
+    <div class="ad-body">Hei Arendal! 👋🏼
+
+Stivhet, smerter eller hodepine som ikke vil slippe taket?
+
+Mange opplever at:
+• Morgener starter med stiv nakke og verkende skuldre
+• Hodepinen kommer tilbake selv etter god søvn
+• Trening gjør vondt verre i stedet for bedre
+
+Vi tar imot et begrenset antall nye pasienter til en grundig førstegangskonsultasjon — der du i tillegg får en gratis holdningsanalyse (verdi 500 kr) som kan avdekke ubalanser, forebygge skader og danne grunnlag for skreddersydd behandling.
+
+Du får:
+✅ Pre-konsultasjons helsekartlegging
+✅ Grundig 60-min konsultasjon med pre-analyse
+✅ Holdningsanalyse (verdi 500 kr) — inkludert
+✅ Påbegynnende behandling i samme time
+✅ Verktøy for selvhjelp
+
+Trykk på «Finn ut mer» for å sikre deg en time. 👇</div>
+    <img class="ad-image" src="assets/creative-a-leg-knee.png" alt="Kreativ A — leg/knee">
+    <div class="ad-cta-bar">
+      <div class="ad-cta-text">
+        <div class="ad-link-domain">eirshelsehus.no</div>
+        <div class="ad-headline">Gratis holdningsanalyse — begrenset antall plasser</div>
+      </div>
+      <button class="ad-cta-button">Finn ut mer</button>
+    </div>
+    <div class="ad-actions">
+      <div class="ad-action">👍 Liker</div>
+      <div class="ad-action">💬 Kommenter</div>
+      <div class="ad-action">↗️ Del</div>
+    </div>
+  </div>
+</div>
+
+<!-- Annonse 2: Tittel 1 + Kreativ B -->
+<div class="ad-wrapper">
+  <div class="ad-label">Annonse 2 · Tittel 1 + Kreativ B</div>
+  <div class="ad-card">
+    <div class="ad-header">
+      <div class="avatar">E</div>
+      <div class="page-info">
+        <div class="page-name">Eirs Helsehus</div>
+        <div class="sponsored">Sponset · 🌐</div>
+      </div>
+    </div>
+    <div class="ad-body">Hei Arendal! 👋🏼
+
+Stivhet, smerter eller hodepine som ikke vil slippe taket?
+
+Mange opplever at:
+• Morgener starter med stiv nakke og verkende skuldre
+• Hodepinen kommer tilbake selv etter god søvn
+• Trening gjør vondt verre i stedet for bedre
+
+Vi tar imot et begrenset antall nye pasienter til en grundig førstegangskonsultasjon — der du i tillegg får en gratis holdningsanalyse (verdi 500 kr) som kan avdekke ubalanser, forebygge skader og danne grunnlag for skreddersydd behandling.
+
+Du får:
+✅ Pre-konsultasjons helsekartlegging
+✅ Grundig 60-min konsultasjon med pre-analyse
+✅ Holdningsanalyse (verdi 500 kr) — inkludert
+✅ Påbegynnende behandling i samme time
+✅ Verktøy for selvhjelp
+
+Trykk på «Finn ut mer» for å sikre deg en time. 👇</div>
+    <img class="ad-image" src="assets/creative-b-lower-back.png" alt="Kreativ B — korsrygg">
+    <div class="ad-cta-bar">
+      <div class="ad-cta-text">
+        <div class="ad-link-domain">eirshelsehus.no</div>
+        <div class="ad-headline">Gratis holdningsanalyse — begrenset antall plasser</div>
+      </div>
+      <button class="ad-cta-button">Finn ut mer</button>
+    </div>
+    <div class="ad-actions">
+      <div class="ad-action">👍 Liker</div>
+      <div class="ad-action">💬 Kommenter</div>
+      <div class="ad-action">↗️ Del</div>
+    </div>
+  </div>
+</div>
+
+<!-- Annonse 3: Tittel 2 + Kreativ A -->
+<div class="ad-wrapper">
+  <div class="ad-label">Annonse 3 · Tittel 2 + Kreativ A</div>
+  <div class="ad-card">
+    <div class="ad-header">
+      <div class="avatar">E</div>
+      <div class="page-info">
+        <div class="page-name">Eirs Helsehus</div>
+        <div class="sponsored">Sponset · 🌐</div>
+      </div>
+    </div>
+    <div class="ad-body">Hei Arendal! 👋🏼
+
+Stivhet, smerter eller hodepine som ikke vil slippe taket?
+
+Mange opplever at:
+• Morgener starter med stiv nakke og verkende skuldre
+• Hodepinen kommer tilbake selv etter god søvn
+• Trening gjør vondt verre i stedet for bedre
+
+Vi tar imot et begrenset antall nye pasienter til en grundig førstegangskonsultasjon — der du i tillegg får en gratis holdningsanalyse (verdi 500 kr) som kan avdekke ubalanser, forebygge skader og danne grunnlag for skreddersydd behandling.
+
+Du får:
+✅ Pre-konsultasjons helsekartlegging
+✅ Grundig 60-min konsultasjon med pre-analyse
+✅ Holdningsanalyse (verdi 500 kr) — inkludert
+✅ Påbegynnende behandling i samme time
+✅ Verktøy for selvhjelp
+
+Trykk på «Finn ut mer» for å sikre deg en time. 👇</div>
+    <img class="ad-image" src="assets/creative-a-leg-knee.png" alt="Kreativ A — leg/knee">
+    <div class="ad-cta-bar">
+      <div class="ad-cta-text">
+        <div class="ad-link-domain">eirshelsehus.no</div>
+        <div class="ad-headline">Smerter, stivhet eller hodepine?</div>
+      </div>
+      <button class="ad-cta-button">Finn ut mer</button>
+    </div>
+    <div class="ad-actions">
+      <div class="ad-action">👍 Liker</div>
+      <div class="ad-action">💬 Kommenter</div>
+      <div class="ad-action">↗️ Del</div>
+    </div>
+  </div>
+</div>
+
+<!-- Annonse 4: Tittel 2 + Kreativ B -->
+<div class="ad-wrapper">
+  <div class="ad-label">Annonse 4 · Tittel 2 + Kreativ B</div>
+  <div class="ad-card">
+    <div class="ad-header">
+      <div class="avatar">E</div>
+      <div class="page-info">
+        <div class="page-name">Eirs Helsehus</div>
+        <div class="sponsored">Sponset · 🌐</div>
+      </div>
+    </div>
+    <div class="ad-body">Hei Arendal! 👋🏼
+
+Stivhet, smerter eller hodepine som ikke vil slippe taket?
+
+Mange opplever at:
+• Morgener starter med stiv nakke og verkende skuldre
+• Hodepinen kommer tilbake selv etter god søvn
+• Trening gjør vondt verre i stedet for bedre
+
+Vi tar imot et begrenset antall nye pasienter til en grundig førstegangskonsultasjon — der du i tillegg får en gratis holdningsanalyse (verdi 500 kr) som kan avdekke ubalanser, forebygge skader og danne grunnlag for skreddersydd behandling.
+
+Du får:
+✅ Pre-konsultasjons helsekartlegging
+✅ Grundig 60-min konsultasjon med pre-analyse
+✅ Holdningsanalyse (verdi 500 kr) — inkludert
+✅ Påbegynnende behandling i samme time
+✅ Verktøy for selvhjelp
+
+Trykk på «Finn ut mer» for å sikre deg en time. 👇</div>
+    <img class="ad-image" src="assets/creative-b-lower-back.png" alt="Kreativ B — korsrygg">
+    <div class="ad-cta-bar">
+      <div class="ad-cta-text">
+        <div class="ad-link-domain">eirshelsehus.no</div>
+        <div class="ad-headline">Smerter, stivhet eller hodepine?</div>
+      </div>
+      <button class="ad-cta-button">Finn ut mer</button>
+    </div>
+    <div class="ad-actions">
+      <div class="ad-action">👍 Liker</div>
+      <div class="ad-action">💬 Kommenter</div>
+      <div class="ad-action">↗️ Del</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="legend">
+  <h2>Test-matrise</h2>
+  <table>
+    <tr><th>Annonse</th><th>Tittel</th><th>Kreativ</th><th>Hypotese</th></tr>
+    <tr><td>1</td><td>Verdi + knapphet</td><td>Leg/knee</td><td>Tilbud-led + ekstremitet-pain</td></tr>
+    <tr><td>2</td><td>Verdi + knapphet</td><td>Korsrygg</td><td>Tilbud-led + back-pain</td></tr>
+    <tr><td>3</td><td>Symptom-spørsmål</td><td>Leg/knee</td><td>Pain-led + ekstremitet-pain</td></tr>
+    <tr><td>4</td><td>Symptom-spørsmål</td><td>Korsrygg</td><td>Pain-led + back-pain</td></tr>
+  </table>
+</div>
+
+<div class="note">
+  <strong>Merknad:</strong> Hovedteksten er en draft basert på HGEB2×HVEB1-hybriden — venter på Alfs bekreftelse av lead magnet og hans OK på AI-genererte bilder med ikke-Alf-behandler før den låses. Ingen pris vises i tekst eller titler. Ingen måned/dato-anker.
+</div>
+
+</body>
+</html>
