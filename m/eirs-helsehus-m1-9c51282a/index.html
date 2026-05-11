@@ -2,6 +2,7 @@
 <html lang="no">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <title>Eirs Helsehus — M1 Split Test Preview</title>
@@ -33,6 +34,23 @@
     justify-content: center;
     max-width: 1100px;
     margin: 0 auto;
+  }
+  @media (max-width: 820px) {
+    body { padding: 20px 12px; }
+    h1 { font-size: 22px; }
+    .subtitle { font-size: 14px; margin-bottom: 24px; }
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 100%;
+    }
+    .ad-body { font-size: 14px; }
+    .ad-headline { font-size: 15px; }
+    .ad-cta-button { padding: 6px 12px; font-size: 13px; }
+    .legend { padding: 16px; margin-top: 24px; }
+    .legend table { font-size: 13px; }
+    .legend th, .legend td { padding: 6px 8px; }
+    .note { font-size: 13px; padding: 12px; }
   }
   .ad-wrapper {
     display: flex;
