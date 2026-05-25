@@ -111,42 +111,17 @@
   }
   .ad-image {
     width: 100%;
-    aspect-ratio: 9/16;
+    aspect-ratio: 1/1;
     object-fit: cover;
     background: #ddd;
     display: block;
-    position: relative;
   }
-  .ad-image-wrapper {
-    position: relative;
-  }
-  .video-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    z-index: 1;
-  }
-  .play-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 28px;
-    z-index: 1;
+  .ad-video {
+    width: 100%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    background: #000;
+    display: block;
   }
   .ad-cta-bar {
     background: #f0f2f5;
@@ -235,13 +210,13 @@
 <body>
 
 <h1>Eirs Helsehus VO2 — M1 Split Test</h1>
-<p class="subtitle">2x2 split: 2 titler × 2 videoer · felles hovedtekst · VO2-funnel</p>
+<p class="subtitle">2x2 split: 2 titler × 1 bilde + 1 video · felles hovedtekst · VO2-funnel</p>
 
 <div class="grid">
 
-<!-- Annonse 1: Tittel 1 + Video A (montasje) -->
+<!-- Annonse 1: Tittel 1 + Bilde -->
 <div class="ad-wrapper">
-  <div class="ad-label">Annonse 1 · Tittel 1 + Video A</div>
+  <div class="ad-label">Annonse 1 · Tittel 1 + Bilde</div>
   <div class="ad-card">
     <div class="ad-header">
       <div class="avatar">E</div>
@@ -268,11 +243,8 @@ Du får:
 ✅ Umiddelbar gjennomgang av resultatene
 
 Vi tar imot inntil 15 nye for VO2-test i denne omgangen. Trykk på «Finn ut mer» for å sikre deg en av plassene. 👇</div>
-    <div class="ad-image-wrapper">
-      <div class="video-badge">VIDEO</div>
-      <div class="play-overlay">▶</div>
-      <img class="ad-image" src="assets/creative-a-vo2-montage.jpg" alt="Video A — VO2 montasje">
-    </div>
+    <img class="ad-image" src="assets/creative-image.jpg" alt="VO2-test bilde">
+
     <div class="ad-cta-bar">
       <div class="ad-cta-text">
         <div class="ad-link-domain">eirshelsehus.no</div>
@@ -288,9 +260,9 @@ Vi tar imot inntil 15 nye for VO2-test i denne omgangen. Trykk på «Finn ut mer
   </div>
 </div>
 
-<!-- Annonse 2: Tittel 1 + Video B (Alf talking-head) -->
+<!-- Annonse 2: Tittel 1 + Video -->
 <div class="ad-wrapper">
-  <div class="ad-label">Annonse 2 · Tittel 1 + Video B</div>
+  <div class="ad-label">Annonse 2 · Tittel 1 + Video</div>
   <div class="ad-card">
     <div class="ad-header">
       <div class="avatar">E</div>
@@ -317,11 +289,11 @@ Du får:
 ✅ Umiddelbar gjennomgang av resultatene
 
 Vi tar imot inntil 15 nye for VO2-test i denne omgangen. Trykk på «Finn ut mer» for å sikre deg en av plassene. 👇</div>
-    <div class="ad-image-wrapper">
-      <div class="video-badge">VIDEO</div>
-      <div class="play-overlay">▶</div>
-      <img class="ad-image" src="assets/creative-b-vo2-alf.jpg" alt="Video B — Alf talking-head">
-    </div>
+    <video class="ad-video" muted loop playsinline preload="metadata" controls poster="assets/creative-image.jpg">
+      <source src="assets/creative-video.mp4" type="video/mp4">
+      Nettleseren din støtter ikke video-avspilling.
+    </video>
+
     <div class="ad-cta-bar">
       <div class="ad-cta-text">
         <div class="ad-link-domain">eirshelsehus.no</div>
@@ -337,9 +309,9 @@ Vi tar imot inntil 15 nye for VO2-test i denne omgangen. Trykk på «Finn ut mer
   </div>
 </div>
 
-<!-- Annonse 3: Tittel 2 + Video A (montasje) -->
+<!-- Annonse 3: Tittel 2 + Bilde -->
 <div class="ad-wrapper">
-  <div class="ad-label">Annonse 3 · Tittel 2 + Video A</div>
+  <div class="ad-label">Annonse 3 · Tittel 2 + Bilde</div>
   <div class="ad-card">
     <div class="ad-header">
       <div class="avatar">E</div>
@@ -366,11 +338,8 @@ Du får:
 ✅ Umiddelbar gjennomgang av resultatene
 
 Vi tar imot inntil 15 nye for VO2-test i denne omgangen. Trykk på «Finn ut mer» for å sikre deg en av plassene. 👇</div>
-    <div class="ad-image-wrapper">
-      <div class="video-badge">VIDEO</div>
-      <div class="play-overlay">▶</div>
-      <img class="ad-image" src="assets/creative-a-vo2-montage.jpg" alt="Video A — VO2 montasje">
-    </div>
+    <img class="ad-image" src="assets/creative-image.jpg" alt="VO2-test bilde">
+
     <div class="ad-cta-bar">
       <div class="ad-cta-text">
         <div class="ad-link-domain">eirshelsehus.no</div>
@@ -386,9 +355,9 @@ Vi tar imot inntil 15 nye for VO2-test i denne omgangen. Trykk på «Finn ut mer
   </div>
 </div>
 
-<!-- Annonse 4: Tittel 2 + Video B (Alf talking-head) -->
+<!-- Annonse 4: Tittel 2 + Video -->
 <div class="ad-wrapper">
-  <div class="ad-label">Annonse 4 · Tittel 2 + Video B</div>
+  <div class="ad-label">Annonse 4 · Tittel 2 + Video</div>
   <div class="ad-card">
     <div class="ad-header">
       <div class="avatar">E</div>
@@ -415,11 +384,11 @@ Du får:
 ✅ Umiddelbar gjennomgang av resultatene
 
 Vi tar imot inntil 15 nye for VO2-test i denne omgangen. Trykk på «Finn ut mer» for å sikre deg en av plassene. 👇</div>
-    <div class="ad-image-wrapper">
-      <div class="video-badge">VIDEO</div>
-      <div class="play-overlay">▶</div>
-      <img class="ad-image" src="assets/creative-b-vo2-alf.jpg" alt="Video B — Alf talking-head">
-    </div>
+    <video class="ad-video" muted loop playsinline preload="metadata" controls poster="assets/creative-image.jpg">
+      <source src="assets/creative-video.mp4" type="video/mp4">
+      Nettleseren din støtter ikke video-avspilling.
+    </video>
+
     <div class="ad-cta-bar">
       <div class="ad-cta-text">
         <div class="ad-link-domain">eirshelsehus.no</div>
@@ -441,10 +410,10 @@ Vi tar imot inntil 15 nye for VO2-test i denne omgangen. Trykk på «Finn ut mer
   <h2>Test-matrise</h2>
   <table>
     <tr><th>Annonse</th><th>Tittel</th><th>Kreativ</th><th>Hypotese</th></tr>
-    <tr><td>1</td><td>Direkte verdi-tilbud</td><td>Video A (montasje)</td><td>Outcome-led + sosial proof (folk i test)</td></tr>
-    <tr><td>2</td><td>Direkte verdi-tilbud</td><td>Video B (Alf direkte)</td><td>Outcome-led + autoritet (behandler-tillit)</td></tr>
-    <tr><td>3</td><td>Nysgjerrighets-spørsmål</td><td>Video A (montasje)</td><td>Curiosity-led + sosial proof</td></tr>
-    <tr><td>4</td><td>Nysgjerrighets-spørsmål</td><td>Video B (Alf direkte)</td><td>Curiosity-led + autoritet</td></tr>
+    <tr><td>1</td><td>Direkte verdi-tilbud</td><td>Bilde (Alf med maske)</td><td>Outcome-led + statisk tillit</td></tr>
+    <tr><td>2</td><td>Direkte verdi-tilbud</td><td>Video (test i klinikk)</td><td>Outcome-led + bevegelse fanger scroll</td></tr>
+    <tr><td>3</td><td>Nysgjerrighets-spørsmål</td><td>Bilde (Alf med maske)</td><td>Curiosity-led + statisk tillit</td></tr>
+    <tr><td>4</td><td>Nysgjerrighets-spørsmål</td><td>Video (test i klinikk)</td><td>Curiosity-led + bevegelse fanger scroll</td></tr>
   </table>
 </div>
 
