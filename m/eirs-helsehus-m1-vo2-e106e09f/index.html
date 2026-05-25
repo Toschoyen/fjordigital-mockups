@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Eirs Helsehus VO2 — M1 Split Test Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f0f2f5;
+    color: #050505;
+    padding: 40px 20px;
+    line-height: 1.4;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 28px;
+    color: #1c1e21;
+  }
+  .subtitle {
+    text-align: center;
+    color: #65676b;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(380px, 500px));
+    gap: 32px;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  @media (max-width: 820px) {
+    body { padding: 20px 12px; }
+    h1 { font-size: 22px; }
+    .subtitle { font-size: 14px; margin-bottom: 24px; }
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 100%;
+    }
+    .ad-body { font-size: 14px; }
+    .ad-headline { font-size: 15px; }
+    .ad-cta-button { padding: 6px 12px; font-size: 13px; }
+    .legend { padding: 16px; margin-top: 24px; }
+    .legend table { font-size: 13px; }
+    .legend th, .legend td { padding: 6px 8px; }
+    .note { font-size: 13px; padding: 12px; }
+  }
+  .ad-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ad-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1877f2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-left: 4px;
+  }
+  .ad-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .ad-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    gap: 10px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2c5f5d 0%, #1a8a82 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .page-info { flex: 1; min-width: 0; }
+  .page-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #050505;
+  }
+  .sponsored {
+    font-size: 12px;
+    color: #65676b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .ad-body {
+    padding: 0 12px 12px;
+    font-size: 15px;
+    color: #050505;
+    white-space: pre-wrap;
+  }
+  .ad-image {
+    width: 100%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    background: #ddd;
+    display: block;
+    position: relative;
+  }
+  .ad-image-wrapper {
+    position: relative;
+  }
+  .video-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 1;
+  }
+  .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    z-index: 1;
+  }
+  .ad-cta-bar {
+    background: #f0f2f5;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .ad-cta-text { flex: 1; min-width: 0; }
+  .ad-link-domain {
+    font-size: 12px;
+    color: #65676b;
+    text-transform: uppercase;
+  }
+  .ad-headline {
+    font-size: 16px;
+    font-weight: 600;
+    color: #050505;
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+  .ad-cta-button {
+    background: #e4e6eb;
+    color: #050505;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .ad-actions {
+    display: flex;
+    border-top: 1px solid #e4e6eb;
+    padding: 4px 0;
+  }
+  .ad-action {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    color: #65676b;
+    font-weight: 600;
+  }
+  .legend {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e4e6eb;
+  }
+  .legend h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #1c1e21;
+  }
+  .legend table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .legend th, .legend td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid #e4e6eb;
+  }
+  .legend th {
+    background: #f0f2f5;
+    font-weight: 600;
+  }
+  .note {
+    max-width: 1100px;
+    margin: 16px auto 0;
+    padding: 16px;
+    background: #fff8e1;
+    border-left: 4px solid #f9a825;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #5d4e1a;
+  }
+</style>
+</head>
+<body>
+
+<h1>Eirs Helsehus VO2 — M1 Split Test</h1>
+<p class="subtitle">2x2 split: 2 titler × 2 videoer · felles hovedtekst · VO2-funnel</p>
+
+<div class="grid">
+
+<!-- Annonse 1: Tittel 1 + Video A (montasje) -->
+<div class="ad-wrapper">
+  <div class="ad-label">Annonse 1 · Tittel 1 + Video A</div>
+  <div class="ad-card">
+    <div class="ad-header">
+      <div class="avatar">E</div>
+      <div class="page-info">
+        <div class="page-name">Eirs Helsehus</div>
+        <div class="sponsored">Sponset · 🌐</div>
+      </div>
+    </div>
+    <div class="ad-body">Hei Arendal! 👋🏼
+
+Lurer du på hvor god kondisjonen din egentlig er?
+
+Mange trener uten å vite:
+• Om de trener på riktig intensitet
+• Hvor mye fremgang de faktisk har
+• Om hjertet og lungene jobber som de skal
+
+Vi tilbyr en VO2 max-test som gir deg et objektivt kondisjonstall, gullstandarden for å måle kondisjon. Du får et nøyaktig mål på "motoren" din og personlige treningssoner basert på din egen kropp.
+
+Du får:
+✅ 30-min test på tredemølle med profesjonell veiledning
+✅ Ditt objektive kondisjonstall (maksimalt oksygenopptak)
+✅ Personlige treningssoner for riktig intensitet
+✅ Umiddelbar gjennomgang av resultatene
+
+Vi har et begrenset antall ledige tider. Trykk på «Finn ut mer» for å sikre deg en time. 👇</div>
+    <div class="ad-image-wrapper">
+      <div class="video-badge">VIDEO</div>
+      <div class="play-overlay">▶</div>
+      <img class="ad-image" src="assets/creative-a-vo2-montage.jpg" alt="Video A — VO2 montasje">
+    </div>
+    <div class="ad-cta-bar">
+      <div class="ad-cta-text">
+        <div class="ad-link-domain">eirshelsehus.no</div>
+        <div class="ad-headline">VO2 max-test, kjenn din egentlige kondisjon</div>
+      </div>
+      <button class="ad-cta-button">Finn ut mer</button>
+    </div>
+    <div class="ad-actions">
+      <div class="ad-action">👍 Liker</div>
+      <div class="ad-action">💬 Kommenter</div>
+      <div class="ad-action">↗️ Del</div>
+    </div>
+  </div>
+</div>
+
+<!-- Annonse 2: Tittel 1 + Video B (Alf talking-head) -->
+<div class="ad-wrapper">
+  <div class="ad-label">Annonse 2 · Tittel 1 + Video B</div>
+  <div class="ad-card">
+    <div class="ad-header">
+      <div class="avatar">E</div>
+      <div class="page-info">
+        <div class="page-name">Eirs Helsehus</div>
+        <div class="sponsored">Sponset · 🌐</div>
+      </div>
+    </div>
+    <div class="ad-body">Hei Arendal! 👋🏼
+
+Lurer du på hvor god kondisjonen din egentlig er?
+
+Mange trener uten å vite:
+• Om de trener på riktig intensitet
+• Hvor mye fremgang de faktisk har
+• Om hjertet og lungene jobber som de skal
+
+Vi tilbyr en VO2 max-test som gir deg et objektivt kondisjonstall, gullstandarden for å måle kondisjon. Du får et nøyaktig mål på "motoren" din og personlige treningssoner basert på din egen kropp.
+
+Du får:
+✅ 30-min test på tredemølle med profesjonell veiledning
+✅ Ditt objektive kondisjonstall (maksimalt oksygenopptak)
+✅ Personlige treningssoner for riktig intensitet
+✅ Umiddelbar gjennomgang av resultatene
+
+Vi har et begrenset antall ledige tider. Trykk på «Finn ut mer» for å sikre deg en time. 👇</div>
+    <div class="ad-image-wrapper">
+      <div class="video-badge">VIDEO</div>
+      <div class="play-overlay">▶</div>
+      <img class="ad-image" src="assets/creative-b-vo2-alf.jpg" alt="Video B — Alf talking-head">
+    </div>
+    <div class="ad-cta-bar">
+      <div class="ad-cta-text">
+        <div class="ad-link-domain">eirshelsehus.no</div>
+        <div class="ad-headline">VO2 max-test, kjenn din egentlige kondisjon</div>
+      </div>
+      <button class="ad-cta-button">Finn ut mer</button>
+    </div>
+    <div class="ad-actions">
+      <div class="ad-action">👍 Liker</div>
+      <div class="ad-action">💬 Kommenter</div>
+      <div class="ad-action">↗️ Del</div>
+    </div>
+  </div>
+</div>
+
+<!-- Annonse 3: Tittel 2 + Video A (montasje) -->
+<div class="ad-wrapper">
+  <div class="ad-label">Annonse 3 · Tittel 2 + Video A</div>
+  <div class="ad-card">
+    <div class="ad-header">
+      <div class="avatar">E</div>
+      <div class="page-info">
+        <div class="page-name">Eirs Helsehus</div>
+        <div class="sponsored">Sponset · 🌐</div>
+      </div>
+    </div>
+    <div class="ad-body">Hei Arendal! 👋🏼
+
+Lurer du på hvor god kondisjonen din egentlig er?
+
+Mange trener uten å vite:
+• Om de trener på riktig intensitet
+• Hvor mye fremgang de faktisk har
+• Om hjertet og lungene jobber som de skal
+
+Vi tilbyr en VO2 max-test som gir deg et objektivt kondisjonstall, gullstandarden for å måle kondisjon. Du får et nøyaktig mål på "motoren" din og personlige treningssoner basert på din egen kropp.
+
+Du får:
+✅ 30-min test på tredemølle med profesjonell veiledning
+✅ Ditt objektive kondisjonstall (maksimalt oksygenopptak)
+✅ Personlige treningssoner for riktig intensitet
+✅ Umiddelbar gjennomgang av resultatene
+
+Vi har et begrenset antall ledige tider. Trykk på «Finn ut mer» for å sikre deg en time. 👇</div>
+    <div class="ad-image-wrapper">
+      <div class="video-badge">VIDEO</div>
+      <div class="play-overlay">▶</div>
+      <img class="ad-image" src="assets/creative-a-vo2-montage.jpg" alt="Video A — VO2 montasje">
+    </div>
+    <div class="ad-cta-bar">
+      <div class="ad-cta-text">
+        <div class="ad-link-domain">eirshelsehus.no</div>
+        <div class="ad-headline">Hvor god er kondisjonen din egentlig?</div>
+      </div>
+      <button class="ad-cta-button">Finn ut mer</button>
+    </div>
+    <div class="ad-actions">
+      <div class="ad-action">👍 Liker</div>
+      <div class="ad-action">💬 Kommenter</div>
+      <div class="ad-action">↗️ Del</div>
+    </div>
+  </div>
+</div>
+
+<!-- Annonse 4: Tittel 2 + Video B (Alf talking-head) -->
+<div class="ad-wrapper">
+  <div class="ad-label">Annonse 4 · Tittel 2 + Video B</div>
+  <div class="ad-card">
+    <div class="ad-header">
+      <div class="avatar">E</div>
+      <div class="page-info">
+        <div class="page-name">Eirs Helsehus</div>
+        <div class="sponsored">Sponset · 🌐</div>
+      </div>
+    </div>
+    <div class="ad-body">Hei Arendal! 👋🏼
+
+Lurer du på hvor god kondisjonen din egentlig er?
+
+Mange trener uten å vite:
+• Om de trener på riktig intensitet
+• Hvor mye fremgang de faktisk har
+• Om hjertet og lungene jobber som de skal
+
+Vi tilbyr en VO2 max-test som gir deg et objektivt kondisjonstall, gullstandarden for å måle kondisjon. Du får et nøyaktig mål på "motoren" din og personlige treningssoner basert på din egen kropp.
+
+Du får:
+✅ 30-min test på tredemølle med profesjonell veiledning
+✅ Ditt objektive kondisjonstall (maksimalt oksygenopptak)
+✅ Personlige treningssoner for riktig intensitet
+✅ Umiddelbar gjennomgang av resultatene
+
+Vi har et begrenset antall ledige tider. Trykk på «Finn ut mer» for å sikre deg en time. 👇</div>
+    <div class="ad-image-wrapper">
+      <div class="video-badge">VIDEO</div>
+      <div class="play-overlay">▶</div>
+      <img class="ad-image" src="assets/creative-b-vo2-alf.jpg" alt="Video B — Alf talking-head">
+    </div>
+    <div class="ad-cta-bar">
+      <div class="ad-cta-text">
+        <div class="ad-link-domain">eirshelsehus.no</div>
+        <div class="ad-headline">Hvor god er kondisjonen din egentlig?</div>
+      </div>
+      <button class="ad-cta-button">Finn ut mer</button>
+    </div>
+    <div class="ad-actions">
+      <div class="ad-action">👍 Liker</div>
+      <div class="ad-action">💬 Kommenter</div>
+      <div class="ad-action">↗️ Del</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="legend">
+  <h2>Test-matrise</h2>
+  <table>
+    <tr><th>Annonse</th><th>Tittel</th><th>Kreativ</th><th>Hypotese</th></tr>
+    <tr><td>1</td><td>Direkte verdi-tilbud</td><td>Video A (montasje)</td><td>Outcome-led + sosial proof (folk i test)</td></tr>
+    <tr><td>2</td><td>Direkte verdi-tilbud</td><td>Video B (Alf direkte)</td><td>Outcome-led + autoritet (behandler-tillit)</td></tr>
+    <tr><td>3</td><td>Nysgjerrighets-spørsmål</td><td>Video A (montasje)</td><td>Curiosity-led + sosial proof</td></tr>
+    <tr><td>4</td><td>Nysgjerrighets-spørsmål</td><td>Video B (Alf direkte)</td><td>Curiosity-led + autoritet</td></tr>
+  </table>
+</div>
+
+<div class="note">
+  <strong>Merknad:</strong> Videoene som vises her er kun frame-grabs fra råopptak (Project 04-29 og Project 05-06(5)) — de må fortsatt redigeres til 20-30s med tightere klipping, captions, og logo-outro før de kan brukes i Meta. Hovedtekst og titler er drafted basert på Alfs svar 25. mai. Pakker som vises kun: VO2 max-test (1 199 kr). Treningsprogram-pakken (2 299 kr) er NIKKE inkludert siden Alf venter på app-utvikling. Sykkel utilgjengelig nå — kun tredemølle nevnt.
+</div>
+
+</body>
+</html>
