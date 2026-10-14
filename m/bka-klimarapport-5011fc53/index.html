@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>BKA Klimarapport: annonseforhåndsvisning</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f0f2f5;
+    color: #050505;
+    padding: 40px 20px;
+    line-height: 1.4;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 28px;
+    color: #1c1e21;
+  }
+  .subtitle {
+    text-align: center;
+    color: #65676b;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+  .row-title {
+    max-width: 1140px;
+    margin: 0 auto 12px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1c1e21;
+  }
+  .row-title span { color: #65676b; font-weight: 400; font-size: 15px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 360px));
+    gap: 28px;
+    justify-content: center;
+    align-items: start;
+    max-width: 1140px;
+    margin: 0 auto 48px;
+  }
+  @media (max-width: 1100px) {
+    .grid { grid-template-columns: repeat(2, minmax(280px, 380px)); }
+  }
+  @media (max-width: 680px) {
+    body { padding: 20px 12px; }
+    h1 { font-size: 22px; }
+    .subtitle { font-size: 14px; margin-bottom: 24px; }
+    .grid { grid-template-columns: 1fr; gap: 24px; max-width: 420px; }
+    .legend { padding: 16px; }
+    .legend table { font-size: 13px; }
+    .legend th, .legend td { padding: 6px 8px; }
+  }
+  .ad-wrapper { display: flex; flex-direction: column; gap: 8px; }
+  .ad-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1877f2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-left: 4px;
+  }
+  .ad-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .ad-header { display: flex; align-items: center; padding: 12px; gap: 10px; }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2e7d4f 0%, #4caf6e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .page-info { flex: 1; min-width: 0; }
+  .page-name { font-size: 15px; font-weight: 600; color: #050505; }
+  .sponsored { font-size: 12px; color: #65676b; }
+  .ad-body-wrap { padding: 0 12px 12px; font-size: 15px; }
+  .ad-body { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .ad-body .full { display: none; }
+  .ad-body-wrap.open .ad-body .short { display: none; }
+  .ad-body-wrap.open .ad-body .full { display: inline; }
+  .see-more {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-weight: 600;
+    color: #65676b;
+    cursor: pointer;
+  }
+  .see-more:hover { text-decoration: underline; }
+  .ad-video {
+    width: 100%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    background: #000;
+    display: block;
+  }
+  .ad-cta-bar {
+    background: #f0f2f5;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .ad-cta-text { flex: 1; min-width: 0; }
+  .ad-link-domain { font-size: 12px; color: #65676b; text-transform: uppercase; }
+  .ad-headline { font-size: 16px; font-weight: 600; color: #050505; margin-top: 2px; line-height: 1.25; }
+  .ad-cta-button {
+    background: #e4e6eb;
+    color: #050505;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .ad-actions { display: flex; border-top: 1px solid #e4e6eb; padding: 4px 0; }
+  .ad-action { flex: 1; text-align: center; padding: 8px; font-size: 14px; color: #65676b; font-weight: 600; }
+  .legend {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e4e6eb;
+  }
+  .legend h2 { font-size: 18px; margin-bottom: 12px; color: #1c1e21; }
+  .legend p { font-size: 14px; color: #444; margin-bottom: 16px; }
+  .legend table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .legend th, .legend td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #e4e6eb; vertical-align: top; }
+  .legend th { background: #f0f2f5; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Besteforeldrenes klimaaksjon: Klimarapport</h1>
+<p class="subtitle">Medlemsverving · 6 videoannonser (3 åpninger × 2 hoveddeler) · felles hovedtekst</p>
+
+<template id="body-text">🌡️ August var den varmeste måneden som noen gang er målt på jorda.
+
+Bare én måned har vært like varm: juli 2023. Og Vest-Europa har akkurat lagt bak seg sin varmeste sommer siden målingene startet.
+
+Det viser nye tall fra EUs klimaovervåkingstjeneste Copernicus. I august lå verden 1,65 grader over førindustrielt nivå, godt over grensen på 1,5 grader som verden er enige om å holde seg under.
+
+Dette er ikke uflaks med været. De aller fleste forskere er enige om at oppvarmingen er forsterket av menneskeskapte klimautslipp. Hva slags klode skal barna og barnebarna våre arve?
+
+Mange føler at:
+- Politikerne handler for sakte.
+- Barna får regningen for dagens utslipp.
+- Klimakrisen er for stor til å ta alene.
+
+Besteforeldrenes klimaaksjon (BKA) er en tverrpolitisk organisasjon med over 9 000 medlemmer og lokallag over hele landet. Sammen presser vi politikerne til å ta klimaansvar, for barnas skyld.
+
+👉 Med deg som medlem blir stemmen vår enda sterkere.
+
+Meld deg inn i BKA i dag (300 kr/år), og stå sammen med oss for barnas framtid.</template>
+
+<h2 class="row-title">Hoveddel 1 <span>· «EUs klimaovervåking»</span></h2>
+<div class="grid">
+  <div class="ad" data-n="1" data-hook="Åpning 1 · «Aldri i vår tid»" data-file="H1_D1_9x16_v1"></div>
+  <div class="ad" data-n="2" data-hook="Åpning 2 · «Glomma»" data-file="H2_D1_9x16_v2"></div>
+  <div class="ad" data-n="3" data-hook="Åpning 3 · «1,5 grader»" data-file="H3_D1_9x16_v3"></div>
+</div>
+
+<h2 class="row-title">Hoveddel 2 <span>· «Europa i flammer»</span></h2>
+<div class="grid">
+  <div class="ad" data-n="4" data-hook="Åpning 1 · «Aldri i vår tid»" data-file="H1_D2_9x16_v4"></div>
+  <div class="ad" data-n="5" data-hook="Åpning 2 · «Glomma»" data-file="H2_D2_9x16_v5"></div>
+  <div class="ad" data-n="6" data-hook="Åpning 3 · «1,5 grader»" data-file="H3_D2_9x16_v6"></div>
+</div>
+
+<div class="legend">
+  <h2>Oversikt over annonsene</h2>
+  <p>Alle seks annonsene har samme tekst og samme tittel. Det eneste som varierer er videoen: hvilken åpning den starter med, og hvilken hoveddel som følger. Slik ser vi hvilken kombinasjon som får flest til å melde seg inn. Trykk på «Se mer» for å lese hele teksten slik den vises på Facebook og Instagram.</p>
+  <table>
+    <tr><th>Annonse</th><th>Åpning</th><th>Hoveddel</th><th>Lengde</th></tr>
+    <tr><td>1</td><td>«Aldri i vår tid»: varmeste august og sommer i Vest-Europa</td><td>EUs klimaovervåking</td><td>45 sek</td></tr>
+    <tr><td>2</td><td>«Glomma»: tørke i norske og europeiske elver</td><td>EUs klimaovervåking</td><td>44 sek</td></tr>
+    <tr><td>3</td><td>«1,5 grader»: august lå over grensen verden er enige om</td><td>EUs klimaovervåking</td><td>43 sek</td></tr>
+    <tr><td>4</td><td>«Aldri i vår tid»</td><td>Europa i flammer</td><td>40 sek</td></tr>
+    <tr><td>5</td><td>«Glomma»</td><td>Europa i flammer</td><td>38 sek</td></tr>
+    <tr><td>6</td><td>«1,5 grader»</td><td>Europa i flammer</td><td>37 sek</td></tr>
+  </table>
+</div>
+
+<script>
+  const bodyText = document.getElementById('body-text').innerHTML;
+  // Facebook viser omtrent de første 125 tegnene før «Se mer»
+  const cut = bodyText.lastIndexOf(' ', 125);
+  const shortText = bodyText.slice(0, cut).replace(/\s+$/, '');
+
+  document.querySelectorAll('.ad').forEach(el => {
+    const { n, hook, file } = el.dataset;
+    el.className = 'ad-wrapper';
+    el.innerHTML = `
+      <div class="ad-label">Annonse ${n} · ${hook}</div>
+      <div class="ad-card">
+        <div class="ad-header">
+          <div class="avatar">BKA</div>
+          <div class="page-info">
+            <div class="page-name">Besteforeldrenes klimaaksjon</div>
+            <div class="sponsored">Sponset · 🌐</div>
+          </div>
+        </div>
+        <div class="ad-body-wrap">
+          <div class="ad-body"><span class="short">${shortText}... </span><span class="full">${bodyText}
+</span><button class="see-more" type="button">Se mer</button></div>
+        </div>
+        <video class="ad-video" controls playsinline preload="none" poster="assets/${file}.jpg">
+          <source src="assets/${file}.mp4" type="video/mp4">
+          Nettleseren din støtter ikke videoavspilling.
+        </video>
+        <div class="ad-cta-bar">
+          <div class="ad-cta-text">
+            <div class="ad-link-domain">Skjema på Facebook</div>
+            <div class="ad-headline">Hva slags klode arver barna?</div>
+          </div>
+          <div class="ad-cta-button">Finn ut mer</div>
+        </div>
+        <div class="ad-actions">
+          <div class="ad-action">👍 Liker</div>
+          <div class="ad-action">💬 Kommenter</div>
+          <div class="ad-action">↗️ Del</div>
+        </div>
+      </div>`;
+  });
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.see-more');
+    if (!btn) return;
+    const wrap = btn.closest('.ad-body-wrap');
+    const open = wrap.classList.toggle('open');
+    btn.textContent = open ? 'Se mindre' : 'Se mer';
+  });
+
+  // Bare én video spiller om gangen
+  document.addEventListener('play', e => {
+    document.querySelectorAll('video').forEach(v => { if (v !== e.target) v.pause(); });
+  }, true);
+</script>
+
+</body>
+</html>
