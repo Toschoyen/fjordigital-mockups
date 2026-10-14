@@ -76,13 +76,8 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #2e7d4f 0%, #4caf6e 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 14px;
+    object-fit: cover;
+    border: 1px solid #e4e6eb;
     flex-shrink: 0;
   }
   .page-info { flex: 1; min-width: 0; }
@@ -121,6 +116,8 @@
   .ad-cta-text { flex: 1; min-width: 0; }
   .ad-link-domain { font-size: 12px; color: #65676b; text-transform: uppercase; }
   .ad-headline { font-size: 16px; font-weight: 600; color: #050505; margin-top: 2px; line-height: 1.25; }
+  a.ad-cta-bar { text-decoration: none; color: inherit; }
+  a.ad-cta-bar:hover .ad-cta-button { background: #d8dadf; }
   .ad-cta-button {
     background: #e4e6eb;
     color: #050505;
@@ -213,7 +210,7 @@ Meld deg inn i BKA i dag (300 kr/år), og stå sammen med oss for barnas framtid
       <div class="ad-label">Annonse ${n} · ${hook}</div>
       <div class="ad-card">
         <div class="ad-header">
-          <div class="avatar">BKA</div>
+          <img class="avatar" src="assets/bka-profil.png" alt="Besteforeldrenes klimaaksjon">
           <div class="page-info">
             <div class="page-name">Besteforeldrenes klimaaksjon</div>
             <div class="sponsored">Sponset · 🌐</div>
@@ -227,13 +224,13 @@ Meld deg inn i BKA i dag (300 kr/år), og stå sammen med oss for barnas framtid
           <source src="assets/${file}.mp4" type="video/mp4">
           Nettleseren din støtter ikke videoavspilling.
         </video>
-        <div class="ad-cta-bar">
+        <a class="ad-cta-bar" href="https://blimed.besteforeldreaksjonen.no/" target="_blank" rel="noopener">
           <div class="ad-cta-text">
-            <div class="ad-link-domain">Skjema på Facebook</div>
+            <div class="ad-link-domain">blimed.besteforeldreaksjonen.no</div>
             <div class="ad-headline">Hva slags klode arver barna?</div>
           </div>
           <div class="ad-cta-button">Finn ut mer</div>
-        </div>
+        </a>
         <div class="ad-actions">
           <div class="ad-action">👍 Liker</div>
           <div class="ad-action">💬 Kommenter</div>
@@ -248,6 +245,11 @@ Meld deg inn i BKA i dag (300 kr/år), og stå sammen med oss for barnas framtid
     const wrap = btn.closest('.ad-body-wrap');
     const open = wrap.classList.toggle('open');
     btn.textContent = open ? 'Se mindre' : 'Se mer';
+    // Ved «Se mindre» havner leseren ellers langt under annonsen
+    if (!open) {
+      const card = wrap.closest('.ad-card');
+      if (card.getBoundingClientRect().top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 
   // Bare én video spiller om gangen
