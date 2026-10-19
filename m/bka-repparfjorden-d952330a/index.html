@@ -186,7 +186,11 @@
     .test-head { flex-direction: column; gap: 8px; }
     .howto .key { min-width: 80px; }
   }
+  .video { padding: 8px 0 48px; }
+  .video .panel { border-left: 4px solid var(--bka-red); }
+  .stat { font-family: "Montserrat", sans-serif; font-weight: 800; color: var(--bka-red); font-size: 22px; line-height: 1.2; margin-bottom: 10px; }
 </style>
+</head>
 <body>
 
 <header class="top">
@@ -207,7 +211,9 @@
       <div class="panel">
         <h3>Hva dette er</h3>
         <p>Her ser du de oppdaterte annonsene slik de vil se ut i feeden på Facebook og Instagram. Ingenting her er publisert ennå.</p>
-        <p>Begge annonsene har <strong>samme tekst og samme bilde</strong>, og sender folk til underskriftssiden <strong>«Stopp dumpingen i Repparfjorden»</strong>, som allerede er oppdatert. Forskjellen ligger i tittelen: <strong>A</strong> er den direkte oppfordringen som har fungert best til nå («Stopp gruvedumping i Repparfjorden»), <strong>B</strong> bruker nyheten fra Høyesterett («Ulovlig i Førdefjorden. Hva med Repparfjorden?»).</p>
+        <p>Alle fire annonsene har <strong>samme bilde</strong> og sender folk til underskriftssiden <strong>«Stopp dumpingen i Repparfjorden»</strong>, som allerede er oppdatert. Vi tester to ting samtidig:</p>
+        <p><strong>Åpningen av teksten</strong>, altså det folk ser før «Se mer»: <strong>Tekst 1</strong> starter med fjorden, <strong>Tekst 2</strong> starter med dommen fra Høyesterett. Resten av teksten er lik.</p>
+        <p><strong>Tittelen</strong> under bildet: <strong>A</strong> er den direkte oppfordringen som har fungert best til nå («Stopp gruvedumping i Repparfjorden»), <strong>B</strong> bruker nyheten («Ulovlig i Førdefjorden. Hva med Repparfjorden?»).</p>
       </div>
       <div class="panel">
         <h3>Slik bruker du den</h3>
@@ -235,20 +241,31 @@
     <div class="test-head">
       <span class="badge">Split test</span>
       <div>
-        <h2 class="section">Krav mot nyhet</h2>
-        <p>Samme tekst, samme bilde, samme side. Vi tester om folk skriver under oftere på den kjente oppfordringen, eller når de møter nyheten om Førdefjorden først. Tallene avgjør hvilken tittel som får budsjettet.</p>
+        <h2 class="section">Fjorden mot dommen</h2>
+        <p>Fire annonser i samme test, med samme bilde og samme side. Vi finner ut om folk skriver under oftere når de møter fjorden først eller nyheten om Førdefjorden først, og hvilken tittel som får flest til å klikke videre. Tallene avgjør hvilken kombinasjon som får budsjettet.</p>
       </div>
     </div>
-    <div class="image-group"><h3>Bilde · Anlegget ved Repparfjorden</h3><div class="grid" data-image="1"></div></div>
+    <div class="image-group"><h3>Tekst 1 · Fjorden først</h3><div class="grid" data-text="1"></div></div>
+    <div class="image-group"><h3>Tekst 2 · Dommen først</h3><div class="grid" data-text="2"></div></div>
   </section>
 
   <section class="plan">
     <h2 class="section">Planen videre</h2>
     <ol class="steps">
-      <li><strong>1. Når dere har godkjent</strong>Vi bytter ut teksten i annonsene og starter kampanjen igjen med de to titlene samtidig.</li>
-      <li><strong>2. Vinneren får budsjettet</strong>Tittelen som gir flest underskrifter per krone, går videre alene.</li>
+      <li><strong>1. Når dere har godkjent</strong>Vi bytter ut teksten og starter kampanjen igjen med alle fire annonsene samtidig.</li>
+      <li><strong>2. Vinneren får budsjettet</strong>Kombinasjonen som gir flest underskrifter per krone, går videre, og budsjettet flyttes dit.</li>
       <li><strong>3. Fra underskrift til medlem</strong>Underskriverne følges opp av Dialog Norge og med egne annonser om å bli medlem, når de allerede har vist at de bryr seg om fjorden.</li>
     </ol>
+  </section>
+
+  <section class="video">
+    <h2 class="section">Vårt forslag: en video om Repparfjorden</h2>
+    <div class="panel">
+      <p class="stat">1 600 underskrifter ga 352 nye medlemmer</p>
+      <p>Repparfjorden er saken som har gitt dere flest nye medlemmer for minst penger. I uke 40 ble 1 600 underskrifter til 352 medlemmer gjennom Dialog Norge. Derfor vil vi at kampanjen skal kunne gå lenge.</p>
+      <p>Det som stopper en kampanje som fungerer, er som regel at de samme folkene har sett den samme annonsen for mange ganger. Når det skjer, blir hver underskrift dyrere. Med ett bilde kommer det punktet raskt. En kort video fra fjorden, med en av dere som forteller hvorfor dette betyr noe, gir oss flere annonser å veksle mellom, og den fungerer også i Reels og Stories, der bilder gjør det svakere.</p>
+      <p>Vi foreslår derfor at vi lager en video om Repparfjorden mens disse annonsene går. Da kan vi bytte inn videoen når bildet begynner å bli slitt, i stedet for å pause kampanjen.</p>
+    </div>
   </section>
 
 </main>
@@ -257,7 +274,7 @@
   <div class="wrap">Forhåndsvisning laget av Fjordigital for Besteforeldrenes klimaaksjon. Fakta i annonseteksten er de samme som på underskriftssiden, med status per 19. oktober 2026 (NRK, regjeringen.no og Geo365). Bildet er det samme som på underskriftssiden.</div>
 </footer>
 
-<template id="body-text">🐟 Repparfjorden i Finnmark er en nasjonal laksefjord og gyteområde for kysttorsk.
+<template id="body-1">🐟 Repparfjorden i Finnmark er en nasjonal laksefjord og gyteområde for kysttorsk.
 
 Staten har gitt tillatelse til å dumpe inntil 30 millioner tonn gruveavfall rett i fjorden.
 
@@ -265,7 +282,17 @@ I juni slo Høyesterett fast at en nesten lik tillatelse, i Førdefjorden, var u
 
 Likevel har regjeringen ikke tatt stilling til hva dommen betyr for Repparfjorden.
 
-Men det er ikke for sent:
+</template>
+
+<template id="body-2">⚖️ I juni slo Høyesterett fast at tillatelsen til å dumpe gruveavfall i Førdefjorden var ugyldig. Repparfjorden har en nesten lik tillatelse.
+
+Repparfjorden i Finnmark er en nasjonal laksefjord og gyteområde for kysttorsk. Der har staten gitt tillatelse til å dumpe inntil 30 millioner tonn gruveavfall rett i fjorden.
+
+Likevel har regjeringen ikke tatt stilling til hva dommen betyr for Repparfjorden.
+
+</template>
+
+<template id="body-rest">Men det er ikke for sent:
 
 ✅ Gruva skal etter planen starte produksjonen i 2027. Ingenting er dumpet ennå.
 
@@ -282,22 +309,27 @@ Vi er besteforeldre. Vi nekter å overlate ødelagte fjorder til barnebarna.
 👉 Skriv under mot gruvedumping i Repparfjorden.</template>
 
 <script>
-  const IMAGES = {
-    1: 'repparfjorden-anlegg.jpg',
-  };
+  const IMAGE = 'repparfjorden-anlegg.jpg';
   const TITLES = [
     ['A', 'Stopp gruvedumping i Repparfjorden'],
     ['B', 'Ulovlig i Førdefjorden. Hva med Repparfjorden?'],
   ];
   const LINK = 'https://www.besteforeldreaksjonen.no/underskrift-gruvedumping-repparfjorden/';
 
-  const bodyText = document.getElementById('body-text').innerHTML;
-  // Facebook viser omtrent de første 125 tegnene i mobilfeeden før «Se mer»
-  const shortText = bodyText.slice(0, bodyText.lastIndexOf(' ', 125)).replace(/\s+$/, '');
+  // Tekst 1 og 2 har ulik åpning og felles resten
+  const rest = document.getElementById('body-rest').innerHTML;
+  const BODIES = {
+    1: document.getElementById('body-1').innerHTML + rest,
+    2: document.getElementById('body-2').innerHTML + rest,
+  };
 
-  const card = (img, [code, title]) => `
+  const card = (text, [code, title]) => {
+    const bodyText = BODIES[text];
+    // Facebook viser omtrent de første 125 tegnene i mobilfeeden før «Se mer»
+    const shortText = bodyText.slice(0, bodyText.lastIndexOf(' ', 125)).replace(/\s+$/, '');
+    return `
     <div class="ad-wrapper">
-      <div class="ad-label">Tittel ${code} (${code === 'A' ? 'direkte' : 'nyhet'})</div>
+      <div class="ad-label">Tekst ${text} · Tittel ${code} (${code === 'A' ? 'direkte' : 'nyhet'})</div>
       <div class="ad-card">
         <div class="ad-header">
           <img class="avatar" src="assets/bka-profil.png" alt="">
@@ -310,7 +342,7 @@ Vi er besteforeldre. Vi nekter å overlate ødelagte fjorder til barnebarna.
           <div class="ad-body"><span class="short">${shortText}... </span><span class="full">${bodyText}
 </span><button class="see-more" type="button">Se mer</button></div>
         </div>
-        <img class="ad-image" src="assets/${IMAGES[img]}" alt="">
+        <img class="ad-image" src="assets/${IMAGE}" alt="">
         <a class="ad-cta-bar" href="${LINK}" target="_blank" rel="noopener">
           <div class="ad-cta-text">
             <div class="ad-link-domain">besteforeldreaksjonen.no</div>
@@ -325,10 +357,11 @@ Vi er besteforeldre. Vi nekter å overlate ødelagte fjorder til barnebarna.
         </div>
       </div>
     </div>`;
+  };
 
-  document.querySelectorAll('.grid[data-image]').forEach(grid => {
-    const img = grid.dataset.image;
-    grid.innerHTML = TITLES.map(t => card(img, t)).join('');
+  document.querySelectorAll('.grid[data-text]').forEach(grid => {
+    const text = grid.dataset.text;
+    grid.innerHTML = TITLES.map(t => card(text, t)).join('');
   });
 
   document.addEventListener('click', e => {
