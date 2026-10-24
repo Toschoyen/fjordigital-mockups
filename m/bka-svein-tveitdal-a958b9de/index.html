@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>BKA Svein Tveitdal: videoene</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bka-red: #af0000;
+    --bka-red-soft: #f7e6e6;
+    --bka-gray: #4d4d4d;
+    --ink: #212529;
+    --muted: #5f6368;
+    --line: #e2e2e2;
+    --page: #f4f4f4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--page);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  /* Topp i BKA-stil */
+  .top { background: #fff; border-bottom: 4px solid var(--bka-red); }
+  .top .wrap { display: flex; align-items: center; gap: 18px; padding-top: 18px; padding-bottom: 18px; }
+  .top img { width: 72px; height: auto; flex-shrink: 0; }
+  .top h1 {
+    font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase;
+    color: var(--bka-red); font-size: 26px; line-height: 1.15;
+  }
+  .top p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+  section { padding: 36px 0 8px; }
+  h2.section {
+    font-family: "Montserrat", sans-serif; font-weight: 800; color: var(--bka-red);
+    font-size: 24px; line-height: 1.2; margin-bottom: 8px;
+  }
+  .lead { font-size: 16px; max-width: 760px; }
+  .lead + .lead { margin-top: 10px; }
+
+  .panel { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 20px; }
+  .panel h3, .card h3 {
+    font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 15px;
+    text-transform: uppercase; letter-spacing: 0.3px; color: var(--bka-gray); margin-bottom: 8px;
+  }
+  .panel p, .card p { font-size: 15px; }
+
+  /* Oppbygging: tre byggeklosser */
+  .blocks { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 0; margin-top: 18px; }
+  .block { background: #fff; border: 1px solid var(--line); padding: 18px; position: relative; }
+  .block + .block { border-left: none; }
+  .block:first-child { border-radius: 6px 0 0 6px; border-top: 4px solid var(--bka-red); }
+  .block:nth-child(2) { border-top: 4px solid var(--bka-gray); }
+  .block:last-child { border-radius: 0 6px 6px 0; border-top: 4px solid var(--bka-red); }
+  .block .step { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  .block strong { display: block; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 18px; margin: 2px 0 6px; }
+  .block p { font-size: 14.5px; }
+  .block .sec { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--bka-red); }
+  .variants { margin-top: 10px; display: grid; gap: 6px; }
+  .variants span { display: block; font-size: 13.5px; background: var(--page); border-radius: 4px; padding: 5px 8px; }
+
+  /* Formatvelger */
+  .format-bar {
+    position: sticky; top: 0; z-index: 5; background: rgba(244, 244, 244, 0.96);
+    border-bottom: 1px solid var(--line); margin-top: 28px;
+  }
+  .format-bar .wrap { display: flex; align-items: center; gap: 12px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  .format-bar .label { font-size: 14px; font-weight: 700; color: var(--bka-gray); }
+  .seg { display: inline-flex; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+  .seg button {
+    font: inherit; font-size: 14px; font-weight: 700; border: none; background: none; cursor: pointer;
+    padding: 6px 14px; border-radius: 999px; color: var(--bka-gray);
+  }
+  .seg button[aria-pressed="true"] { background: var(--bka-red); color: #fff; }
+  .format-bar .hint { font-size: 13px; color: var(--muted); }
+
+  /* Testene */
+  .test-head { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+  .badge {
+    flex-shrink: 0; background: var(--bka-red); color: #fff; font-family: "Montserrat", sans-serif;
+    font-weight: 800; font-size: 13px; text-transform: uppercase; padding: 6px 10px; border-radius: 4px; margin-top: 3px;
+  }
+  .test-head p { font-size: 15px; max-width: 760px; }
+  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; }
+  .video-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .video-frame { background: #111; display: flex; justify-content: center; }
+  .video-frame video { display: block; width: 100%; max-width: 340px; aspect-ratio: 9 / 16; background: #000; object-fit: cover; }
+  body.fmt-1x1 .video-frame video { max-width: 460px; aspect-ratio: 1 / 1; }
+  .video-meta { padding: 16px 18px 18px; }
+  .video-meta .no { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  .video-meta h3 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 19px; line-height: 1.25; margin: 2px 0 8px; }
+  .quote { font-size: 15px; border-left: 4px solid var(--bka-red); padding-left: 10px; color: var(--ink); font-style: italic; }
+  .recipe { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--page); color: var(--bka-gray); }
+  .chip.h { background: var(--bka-red-soft); color: var(--bka-red); }
+  .video-meta .why { margin-top: 10px; font-size: 14.5px; color: var(--muted); }
+
+  /* Klippevalg */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 18px; }
+  .card .ico {
+    width: 34px; height: 34px; border-radius: 50%; background: var(--bka-red-soft); color: var(--bka-red);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px; font-size: 15px;
+  }
+
+  /* Avklaring og plan */
+  .ask { background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--bka-red); border-radius: 6px; padding: 18px 20px; max-width: 860px; }
+  .ask h3 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; margin-bottom: 6px; }
+  .ask p { font-size: 15px; }
+  .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 16px 0 24px; }
+  .steps li { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--bka-red); border-radius: 6px; padding: 16px; font-size: 15px; }
+  .steps strong { display: block; font-family: "Montserrat", sans-serif; font-weight: 700; color: var(--bka-red); margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; border: 1px solid var(--line); }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--bka-gray); color: #fff; font-weight: 700; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 3px; white-space: nowrap; background: var(--bka-red); color: #fff; }
+  .table-scroll { overflow-x: auto; }
+  .last { padding-bottom: 48px; }
+  footer { border-top: 1px solid var(--line); padding: 18px 0 28px; color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 900px) {
+    .cards, .steps { grid-template-columns: 1fr 1fr; }
+    .blocks { grid-template-columns: 1fr; }
+    .block + .block { border-left: 1px solid var(--line); border-top-width: 4px; }
+    .block:first-child, .block:last-child { border-radius: 0; }
+  }
+  @media (max-width: 640px) {
+    .top .wrap { gap: 12px; }
+    .top img { width: 52px; }
+    .top h1 { font-size: 19px; }
+    .top p { font-size: 14px; }
+    h2.section { font-size: 20px; }
+    .pair, .cards, .steps { grid-template-columns: 1fr; }
+    .test-head { flex-direction: column; gap: 8px; }
+    .format-bar .hint { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="assets/bka-logo.png" alt="Besteforeldrenes klimaaksjon">
+    <div>
+      <h1>Videoer: Svein Tveitdal</h1>
+      <p>Fire videoer til medlemsvervingen på Facebook og Instagram, klippet av Fjordigital</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section>
+      <h2 class="section">Slik er videoene bygget opp</h2>
+      <p class="lead">Opptaket med Svein Tveitdal er på nesten 26 minutter. Ut av det har vi laget fire korte videoer. Alle er satt sammen av de samme tre byggeklossene: en <strong>åpning</strong> som skal få folk til å stoppe opp, en <strong>hoveddel</strong> som forklarer hvorfor saken haster, og en <strong>avslutning</strong> som ber seeren melde seg inn.</p>
+      <p class="lead">Ved å bytte ut én kloss om gangen kan vi måle hva som faktisk får flest til å bli medlem, i stedet for å gjette.</p>
+
+      <div class="blocks" role="list">
+        <div class="block" role="listitem">
+          <span class="step">1 · Åpning</span>
+          <strong>Får folk til å stoppe</strong>
+          <p>De første sekundene avgjør om noen ser videre eller scroller forbi. Vi har tre ulike åpninger.</p>
+          <div class="variants">
+            <span>«Kloden vår har feber»</span>
+            <span>«40 år med klima»</span>
+            <span>«Hvorfor skal vi bry oss?»</span>
+          </div>
+          <span class="sec">Ca. 13 til 27 sekunder</span>
+        </div>
+        <div class="block" role="listitem">
+          <span class="step">2 · Hoveddel</span>
+          <strong>Forklarer hvorfor det haster</strong>
+          <p>Her får Svein tid til å forklare. Vi har to hoveddeler med hver sin vinkel.</p>
+          <div class="variants">
+            <span><b>Feberen:</b> 37 grader er normalt, 40 er livstruende. Slik er det med kloden også, og hver tiendels grad teller.</span>
+            <span><b>Det rammer oss også:</b> Norge klarer seg kanskje ved 1,5 grader, men ved 3 grader får vi klimaflyktninger, avlingssvikt, ekstremvær og havstigning.</span>
+          </div>
+          <span class="sec">Ca. 35 til 46 sekunder</span>
+        </div>
+        <div class="block" role="listitem">
+          <span class="step">3 · Avslutning</span>
+          <strong>Ber om innmelding</strong>
+          <p>Lik i alle fire videoene, slik at forskjellene i resultat kommer fra åpningen og hoveddelen.</p>
+          <div class="variants">
+            <span>«Det enkleste du kan gjøre, det er å melde deg inn i Besteforeldrenes klimaaksjon ... Så meld deg inn.»</span>
+          </div>
+          <span class="sec">Ca. 15 sekunder</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="format-bar">
+    <div class="wrap">
+      <span class="label">Vis videoene som:</span>
+      <div class="seg" role="group" aria-label="Format">
+        <button type="button" data-fmt="9x16" aria-pressed="true">Stående 9:16</button>
+        <button type="button" data-fmt="1x1" aria-pressed="false">Kvadrat 1:1</button>
+      </div>
+      <span class="hint">Stående brukes i Reels og Stories, kvadrat i feeden.</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="test1">
+      <div class="test-head">
+        <span class="badge">Test 1</span>
+        <div>
+          <h2 class="section">Hoveddel «Feberen»: to åpninger</h2>
+          <p>Video 1 og 2 har nøyaktig samme hoveddel og avslutning. Bare åpningen er forskjellig. Slik ser vi om folk lettest stopper for et bilde de kjenner seg igjen i, eller for hvem Svein er.</p>
+        </div>
+      </div>
+      <div class="pair" id="pair1"></div>
+    </section>
+
+    <section id="test2">
+      <div class="test-head">
+        <span class="badge">Test 2</span>
+        <div>
+          <h2 class="section">Hoveddel «Det rammer oss også»: to åpninger</h2>
+          <p>Video 3 og 4 har den andre hoveddelen, og den er lik for de to. Åpningen «40 år med klima» er med i begge testene. Den fungerer som et fast målepunkt, så vi også kan sammenligne på tvers av testene.</p>
+        </div>
+      </div>
+      <div class="pair" id="pair2"></div>
+    </section>
+
+    <section>
+      <h2 class="section">Valgene vi har tatt i klippingen</h2>
+      <p class="lead">Målet er at Svein skal fremstå slik han er: kunnskapsrik, rolig og troverdig. Samtidig må videoene holde på oppmerksomheten i en feed der neste video bare er et tommelgrep unna.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="ico">1</div>
+          <h3>Kuttet i pausene</h3>
+          <p>Vi har tatt bort lange pauser, omstarter og gjentakelser, men kutter bare der Svein selv tar en pause. Ingen ord blir klippet over, og han får snakke ferdig.</p>
+        </div>
+        <div class="card">
+          <div class="ico">2</div>
+          <h3>Vekslende utsnitt</h3>
+          <p>Ved hvert kutt bytter bildet mellom et nært og et litt videre utsnitt, og i lengre partier glir kameraet sakte inn. Da synes ikke kuttene som hopp, og bildet holder på blikket uten å bli hektisk.</p>
+        </div>
+        <div class="card">
+          <div class="ico">3</div>
+          <h3>Tekst ord for ord</h3>
+          <p>Mange ser videoer i feeden uten lyd. Teksten viser to til fire ord om gangen, og ordet Svein sier akkurat nå er markert i BKA-rødt. Tidspunktene er hentet fra lyden, så teksten følger talen nøyaktig.</p>
+        </div>
+        <div class="card">
+          <div class="ico">4</div>
+          <h3>Plassert for mobil</h3>
+          <p>Teksten ligger på brystet, aldri over ansiktet. Den holder seg også unna den nederste delen av skjermen, der Instagram og Facebook legger knapper og annonsetekst.</p>
+        </div>
+        <div class="card">
+          <div class="ico">5</div>
+          <h3>Navn og tittel først</h3>
+          <p>De første sekundene vises «Svein Tveitdal, tidligere direktør i FNs miljøprogram». Seeren vet hvem som snakker før de bestemmer seg for å se videre.</p>
+        </div>
+        <div class="card">
+          <div class="ico">6</div>
+          <h3>To formater, eget utsnitt</h3>
+          <p>Stående video fyller hele skjermen i Reels og Stories. Kvadratet til feeden har fått sitt eget utsnitt, ikke bare en beskjæring, så ansikt, navn og tekst sitter riktig også der. Lyden er jevnet ut mellom opptakene.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section">Dette trenger vi svar på</h2>
+      <div class="ask">
+        <h3>Medlemsmålet i avslutningen</h3>
+        <p>I avslutningen sier Svein: «Vi ønsker å bli 20 000 medlemmer.» Stemmer det med målet dere kommuniserer nå? Er det et annet tall dere heller vil stå for, bruker vi en annen avslutning fra opptaket.</p>
+      </div>
+    </section>
+
+    <section class="last">
+      <h2 class="section">Planen videre</h2>
+      <ol class="steps">
+        <li><strong>1. To tester samtidig</strong>Test 1 og 2 kjører parallelt. Hver test kåres når den har nok innmeldinger til at forskjellen er til å stole på.</li>
+        <li><strong>2. Vinnerne møtes</strong>Den beste åpningen fra hver test går mot hverandre. Da vet vi hvilken åpning og hvilken hoveddel som verver best.</li>
+        <li><strong>3. Flere varianter</strong>Opptaket har mer i seg, blant annet en åpning om den nye rapporten fra FNs miljøprogram og en om barnebarna. De kan bli neste runde.</li>
+      </ol>
+      <div class="table-scroll">
+        <table>
+          <tr><th>Video</th><th>Åpning</th><th>Hoveddel</th><th>Avslutning</th><th>Lengde</th><th>Brukes i</th></tr>
+          <tr><td>1</td><td>«Kloden vår har feber»</td><td>Feberen</td><td>Meld deg inn</td><td>64 sek</td><td><span class="tag">Test 1</span></td></tr>
+          <tr><td>2</td><td>«40 år med klima»</td><td>Feberen</td><td>Meld deg inn</td><td>78 sek</td><td><span class="tag">Test 1</span></td></tr>
+          <tr><td>3</td><td>«40 år med klima»</td><td>Det rammer oss også</td><td>Meld deg inn</td><td>86 sek</td><td><span class="tag">Test 2</span></td></tr>
+          <tr><td>4</td><td>«Hvorfor skal vi bry oss?»</td><td>Det rammer oss også</td><td>Meld deg inn</td><td>74 sek</td><td><span class="tag">Test 2</span></td></tr>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Forhåndsvisning laget av Fjordigital for Besteforeldrenes klimaaksjon. Videoene her er komprimert for rask avspilling; ferdige filer i full kvalitet leveres separat.</div>
+</footer>
+
+<script>
+  const VIDEOS = [
+    { no: 1, test: 1, fil: 'H4-D1-C2', v: 'v1', apning: '«Kloden vår har feber»', hoved: 'Feberen',
+      sitat: 'Kloden vår har feber.',
+      hvorfor: 'Starter rett i saken med et bilde alle forstår. Ingen innledning, bare budskapet.' },
+    { no: 2, test: 1, fil: 'H1-D1-C2', v: 'v2', apning: '«40 år med klima»', hoved: 'Feberen',
+      sitat: 'Hei, jeg heter Svein Tveitdal og har jobbet med klima og miljø i 40 år.',
+      hvorfor: 'Bygger tillit først: Svein forteller om bakgrunnen fra FNs miljøprogram og sekretariatet for FNs klimapanel, før han går over til feberbildet.' },
+    { no: 3, test: 2, fil: 'H1-D2-C2', v: 'v3', apning: '«40 år med klima»', hoved: 'Det rammer oss også',
+      sitat: 'Hei, jeg heter Svein Tveitdal og har jobbet med klima og miljø i 40 år.',
+      hvorfor: 'Samme åpning som video 2, men med den andre hoveddelen. Gjør at vi kan sammenligne de to testene.' },
+    { no: 4, test: 2, fil: 'H5-D2-C2', v: 'v4', apning: '«Hvorfor skal vi bry oss?»', hoved: 'Det rammer oss også',
+      sitat: 'I Norge så føler vi jo ikke klimaendringene så kraftig ... Så hvorfor skal vi bry oss?',
+      hvorfor: 'Tar tak i innvendingen mange nordmenn har, og svarer på den i hoveddelen.' },
+  ];
+
+  const kort = d => `
+    <article class="video-card">
+      <div class="video-frame">
+        <video controls playsinline preload="none" data-fil="${d.fil}" data-v="${d.v}"
+               poster="assets/${d.fil}_9x16_${d.v}.jpg">
+          <source src="assets/${d.fil}_9x16_${d.v}.mp4" type="video/mp4">
+          Nettleseren din støtter ikke videoavspilling.
+        </video>
+      </div>
+      <div class="video-meta">
+        <div class="no">Video ${d.no}</div>
+        <h3>Åpning ${d.apning}</h3>
+        <p class="quote">${d.sitat}</p>
+        <div class="recipe">
+          <span class="chip h">Åpning: ${d.apning.replace(/[«»]/g, '')}</span>
+          <span class="chip">Hoveddel: ${d.hoved}</span>
+          <span class="chip">Avslutning: Meld deg inn</span>
+        </div>
+        <p class="why">${d.hvorfor}</p>
+      </div>
+    </article>`;
+
+  document.getElementById('pair1').innerHTML = VIDEOS.filter(d => d.test === 1).map(kort).join('');
+  document.getElementById('pair2').innerHTML = VIDEOS.filter(d => d.test === 2).map(kort).join('');
+
+  // Bytt format for alle videoene på en gang
+  document.querySelectorAll('.seg button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const fmt = btn.dataset.fmt;
+      document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+      document.body.classList.toggle('fmt-1x1', fmt === '1x1');
+      document.querySelectorAll('video[data-fil]').forEach(v => {
+        const base = `assets/${v.dataset.fil}_${fmt}_${v.dataset.v}`;
+        v.pause();
+        v.poster = `${base}.jpg`;
+        v.querySelector('source').src = `${base}.mp4`;
+        v.load();
+      });
+    });
+  });
+
+  // Bare én video spiller om gangen
+  document.addEventListener('play', e => {
+    document.querySelectorAll('video').forEach(v => { if (v !== e.target) v.pause(); });
+  }, true);
+</script>
+
+</body>
+</html>
