@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designutkast · Bli medlem lokalt · Framtiden i våre hender</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange-200: #ffc585;
+    --blue-200: #c8daff;
+    --gray-100: #f6f6f6;
+    --orange-400: #ff7a00;
+    --black: #00091b;
+    --white: #ffffff;
+    --serif: 'Newsreader', Georgia, serif;
+    --sans: 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
+    --gutter: 16px;
+    --py: 64px;
+    --py-sm: 32px;
+  }
+  @media (min-width: 768px) { :root { --gutter: 32px; } }
+  @media (min-width: 1024px) { :root { --gutter: 56px; --py: 128px; --py-sm: 64px; } }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--gray-100); color: var(--black);
+    font-family: var(--sans); font-size: 16px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .serif { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+  .container { max-width: 1440px; margin: 0 auto; padding: 0 var(--gutter); }
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 8px; }
+  @media (min-width: 768px) { .grid { column-gap: 32px; } }
+
+  h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; line-height: 1.12; letter-spacing: -0.01em; }
+  h2 { font-size: 24px; margin-bottom: 20px; }
+  @media (min-width: 768px) { h2 { font-size: 28px; } }
+  @media (min-width: 1024px) { h2 { font-size: 38px; } }
+  .rich p { margin: 0 0 16px; }
+  .rich ul { margin: 0 0 16px; padding-left: 22px; }
+  .rich li { margin-bottom: 8px; }
+  .rich strong { font-weight: 600; }
+  .rich .punch { font-weight: 600; margin-top: 4px; }
+
+  /* Knapper: rounded-full, px-4 py-3, text-sm lg:text-lg */
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--black);
+    border-radius: 999px; padding: 12px 16px; font-size: 15px; text-decoration: none;
+    white-space: nowrap; background: transparent; color: var(--black);
+  }
+  @media (min-width: 1024px) { .btn { font-size: 18px; } }
+  .btn--orange { background: var(--orange-400); border-color: var(--orange-400); }
+  .btn:hover { text-decoration: underline; }
+  .pil { font-size: 0.95em; }
+
+  /* ---------- Header (global) ---------- */
+  .header { background: var(--white); }
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  @media (min-width: 1024px) { .header .container { height: 116px; } }
+  .logo { font-weight: 600; font-size: 16px; line-height: 1.15; text-decoration: none; }
+  @media (min-width: 1024px) { .logo { font-size: 19px; } }
+  .header__right { display: flex; align-items: center; gap: 24px; }
+  .pill-medlem { background: var(--orange-400); border-radius: 999px; padding: 10px 16px; text-decoration: none; font-size: 15px; }
+  @media (min-width: 1024px) { .pill-medlem { padding: 14px 18px; font-size: 19px; } }
+  .meny { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; }
+  @media (min-width: 1024px) { .meny { font-size: 19px; } }
+  .meny svg { width: 20px; height: 20px; }
+
+  .brodsmule { padding: 20px 0 0; font-size: 15px; }
+  .brodsmule a { text-decoration: none; border-bottom: 1px solid var(--black); }
+  .brodsmule span { margin: 0 8px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 32px 0 var(--py-sm); }
+  @media (min-width: 1024px) { .hero { padding-top: 64px; } }
+  .hero__bilde { border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 9; background: #ddd; }
+  @media (min-width: 1024px) { .hero__bilde { border-radius: 16px; aspect-ratio: 1328 / 747; } }
+  .hero__bilde img { width: 100%; height: 100%; object-fit: cover; }
+  .kreditt { font-size: 13px; margin: 10px 0 0; }
+  .hero__tekst { text-align: center; max-width: 820px; margin: 40px auto 0; }
+  .hero h1 { font-size: 38px; }
+  @media (min-width: 768px) { .hero h1 { font-size: 52px; } }
+  @media (min-width: 1024px) { .hero h1 { font-size: 66px; } }
+  .hero__ingress { font-family: var(--serif); font-weight: 500; font-size: 21px; line-height: 1.3; margin: 32px auto 0; max-width: 680px; }
+  @media (min-width: 1024px) { .hero__ingress { font-size: 31px; margin-top: 64px; } }
+
+  /* ---------- customCta: fullbredde fargebånd ---------- */
+  .cta { padding: var(--py) 0; }
+  .cta--orange { background: var(--orange-200); }
+  .cta--blue { background: var(--blue-200); }
+  .cta--white { background: var(--white); }
+  .cta__tekst { grid-column: 1 / -1; }
+  @media (min-width: 1024px) { .cta__tekst { grid-column: 3 / span 8; } }
+
+  /* customCta med bilde (hvit variant på sunn mat) */
+  .cta-bilde .cta__img { grid-column: 1 / -1; border-radius: 12px; overflow: hidden; margin-bottom: 32px; align-self: center; }
+  .cta-bilde .cta__img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+  .cta-bilde .cta__tekst { grid-column: 1 / -1; align-self: center; }
+  @media (min-width: 768px) {
+    .cta-bilde .cta__img { grid-column: 1 / span 5; margin-bottom: 0; }
+    .cta-bilde .cta__tekst { grid-column: 6 / span 7; }
+  }
+  @media (min-width: 1024px) {
+    .cta-bilde .cta__img { grid-column: 2 / span 4; border-radius: 16px; }
+    .cta-bilde .cta__tekst { grid-column: 6 / span 6; }
+  }
+
+  /* ---------- imageAndText ---------- */
+  .iat { padding: var(--py) 0; }
+  .iat__img { grid-column: 1 / -1; border-radius: 12px; overflow: hidden; margin-bottom: 32px; align-self: start; }
+  .iat__img img { width: 100%; aspect-ratio: 5 / 3; object-fit: cover; }
+  .iat__tekst { grid-column: 1 / -1; }
+  @media (min-width: 768px) {
+    .iat__img { grid-column: 1 / span 6; margin-bottom: 0; border-radius: 16px; }
+    .iat__tekst { grid-column: 8 / span 5; align-self: start; }
+    .iat--speilet .iat__img { grid-column: 7 / span 6; grid-row: 1; }
+    .iat--speilet .iat__tekst { grid-column: 1 / span 5; grid-row: 1; }
+  }
+
+  /* ---------- factBox: flytende kort ---------- */
+  .factbox-wrap { padding: 0 var(--gutter); }
+  .factbox {
+    max-width: 648px; margin: 0 auto; background: var(--orange-200); border-radius: 12px;
+    padding: 32px 24px;
+  }
+  @media (min-width: 1024px) { .factbox { padding: 64px; border-radius: 14px; } }
+  .factbox h2 { font-size: 24px; }
+  @media (min-width: 768px) { .factbox h2 { font-size: 32px; } }
+  .factbox .lenke { display: inline-block; margin-top: 8px; font-weight: 500; }
+
+  /* ---------- timeline: Våre seire ---------- */
+  .seire { padding: var(--py) 0; }
+  @media (min-width: 1024px) { .seire { padding: 96px 0; } }
+  .seire__inner { max-width: 874px; margin: 0 auto; }
+  .seire h2 { text-align: center; font-size: 30px; margin-bottom: 48px; }
+  @media (min-width: 1024px) { .seire h2 { font-size: 50px; margin-bottom: 64px; } }
+  .seier { position: relative; border-left: 2px solid var(--orange-400); padding: 0 0 48px 24px; }
+  @media (min-width: 768px) { .seier { padding-left: 32px; } }
+  .seier::before { content: ""; position: absolute; left: -9px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--orange-400); }
+  .seier__dato { display: flex; align-items: center; gap: 12px; font-size: 17px; margin-bottom: 20px; }
+  .seier__dato::after { content: ""; flex: 1; border-top: 1px solid var(--black); }
+  .merke { display: inline-block; background: var(--black); color: var(--white); border-radius: 6px; padding: 5px 10px; font-size: 14px; margin-bottom: 16px; }
+  .seier h3 { font-size: 21px; margin-bottom: 14px; }
+  @media (min-width: 768px) { .seier h3 { font-size: 25px; } }
+  .seier p { font-size: 14.5px; margin: 0; max-width: 760px; }
+
+  /* ---------- relatedArticles ---------- */
+  .artikler { padding: var(--py) 0; }
+  .artikler h2 { margin-bottom: 24px; }
+  .art-grid { display: grid; gap: 32px; }
+  @media (min-width: 768px) { .art-grid { grid-template-columns: 5fr 7fr; gap: 32px 64px; } }
+  .art-stor img { border-radius: 16px; width: 100%; aspect-ratio: 503 / 420; object-fit: cover; }
+  .art-meta { display: flex; align-items: center; gap: 8px; font-size: 12px; margin: 16px 0 10px; }
+  .tag { border: 1px solid var(--black); border-radius: 6px; padding: 4px 8px; }
+  .art-stor h3 { font-size: 22px; }
+  @media (min-width: 1024px) { .art-stor h3 { font-size: 28px; } }
+  .art-liten { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: center; margin-bottom: 16px; text-decoration: none; }
+  @media (min-width: 768px) { .art-liten { grid-template-columns: 194px 1fr; gap: 32px; } }
+  .art-liten img { border-radius: 12px; width: 100%; aspect-ratio: 194 / 156; object-fit: cover; }
+  .art-liten h3 { font-size: 17px; }
+  @media (min-width: 1024px) { .art-liten h3 { font-size: 28px; } }
+  .art-liten .art-meta { margin-top: 0; }
+  a.art-stor, a.art-liten { text-decoration: none; }
+  a.art-stor:hover h3, a.art-liten:hover h3 { text-decoration: underline; }
+
+  /* ---------- Footer (global) ---------- */
+  .footer { background: var(--black); color: var(--white); padding: 64px 0 40px; }
+  .footer .container { display: grid; gap: 48px; }
+  @media (min-width: 1024px) { .footer .container { grid-template-columns: 4fr 8fr; padding: 0 120px; } }
+  .footer__store a { display: block; font-family: var(--serif); font-size: 40px; line-height: 1.6; text-decoration: none; }
+  @media (min-width: 1024px) { .footer__store a { font-size: 50px; } }
+  .footer__badge { width: 192px; margin-top: 48px; }
+  .sok { border: 1px solid var(--white); border-radius: 4px; padding: 18px 32px; font-size: 15px; margin-bottom: 48px; }
+  .footer__kol { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 20px; font-size: 14px; }
+  @media (min-width: 768px) { .footer__kol { grid-template-columns: repeat(4, 1fr); } }
+  .footer__kol h4 { font-family: var(--serif); font-weight: 500; font-size: 19px; margin: 0 0 20px; }
+  .footer__kol a { display: block; text-decoration: none; margin-bottom: 8px; }
+  .feed { font-size: 12px; opacity: 0.5; margin-top: 48px; }
+
+  /* ---------- Craft-komponentmerker (av som standard) ---------- */
+  [data-craft] { position: relative; }
+  body.vis-craft [data-craft]::before {
+    content: attr(data-craft); position: absolute; top: 8px; left: 8px; z-index: 20;
+    background: #1d4ed8; color: #fff; font: 600 12px/1.3 var(--sans); padding: 5px 9px; border-radius: 4px;
+    max-width: calc(100% - 16px);
+  }
+  body.vis-craft [data-craft] { outline: 2px dashed #1d4ed8; outline-offset: -2px; }
+  .craft-bryter {
+    position: fixed; left: 16px; bottom: 16px; z-index: 50; font: 600 13px var(--sans);
+    background: #1d4ed8; color: #fff; border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  }
+</style>
+</head>
+<body>
+
+<!-- 0 · Header (global) -->
+<header class="header" data-craft="Global header · uendret">
+  <div class="container">
+    <a class="logo" href="https://www.framtiden.no/">Framtiden i<br>våre hender</a>
+    <div class="header__right">
+      <a class="pill-medlem" href="https://www.framtiden.no/medlemskap/bli-medlem">Bli medlem</a>
+      <span class="meny">Meny <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 1 · Hero -->
+  <section class="hero" data-craft="Hero · bilde + H1 + ingress">
+    <div class="container">
+      <nav class="brodsmule" aria-label="Brødsmulesti"><a href="https://www.framtiden.no/">Forsiden</a><span>→</span><a href="#">Bli medlem lokalt</a></nav>
+      <div style="margin-top:40px">
+        <div class="hero__bilde">
+          <img src="https://fivh.imgix.net/images/Prosjektarbeid/Folkeverksted/folkeverskted-1.jpg?auto=format&fit=crop&w=1800&h=1013&q=60" alt="Folk som syr ved symaskiner på Folkeverkstedet i Lillehammer">
+        </div>
+        <p class="kreditt">Foto: Arne Storrønningen</p>
+      </div>
+      <div class="hero__tekst">
+        <h1>Vi lærer folk å fikse ting og krever at det skal lønne seg.</h1>
+        <p class="hero__ingress">Det meste kan fikses: bukser med hull, en lampe som har gitt opp, en sykkel med slitte bremser. Likevel er det billigere å kaste og kjøpe nytt. Det er et rigget system, men vi gjør noe med det.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Kjerneargumentet -->
+  <section class="cta cta--orange" data-craft="customCta · bakgrunn orange-200 · med knapp">
+    <div class="container grid">
+      <div class="cta__tekst rich">
+        <h2>Ingen folkeverksted starter av seg selv</h2>
+        <p>Noen må finne lokaler, søke om midler og få med kommunen. Og noen må være der når dørene åpner.</p>
+        <p>Det gjør de ansatte på regionkontorene i Oslo, Trondheim, Lillehammer og Tromsø.</p>
+        <p>Når vi krever at politikerne kutter momsen på brukt og reparasjon, er det medlemstallet de ser på.</p>
+        <p class="punch">Jo flere medlemmer vi er, jo vanskeligere er vi å overse.</p>
+        <div class="btns"><a class="btn btn--orange" href="https://www.framtiden.no/medlemskap/bli-medlem">Bli medlem! <span class="pil">→</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Folkeverkstedene -->
+  <section class="iat" data-craft="imageAndText · bilde venstre">
+    <div class="container grid">
+      <div class="iat__img"><img src="https://fivh.imgix.net/images/Prosjektarbeid/Regionkontor/Nord/Nord-ungdomssnekring.jpg?auto=format&fit=crop&w=1100&h=660&q=60" alt="To ungdommer med hørselvern snekrer på verkstedet i Tromsø"></div>
+      <div class="iat__tekst rich">
+        <h2>Folkeverkstedene er åpne for alle</h2>
+        <p>Du kan ta med det som er ødelagt og få hjelp til å fikse det selv. Du trenger ingen forkunnskaper.</p>
+        <ul>
+          <li><strong>Tromsø:</strong> folkeverksted for ungdom hver torsdag, med håndverk for barn og unge. Fikse- og byttetreff på Kroken bibliotek en gang i måneden.</li>
+          <li><strong>Lofoten:</strong> sykkelverksted i det gamle fengselet i Kabelvåg.</li>
+          <li><strong>Trondheim:</strong> sykurs hver tirsdag på Møllenberg, med varm mat.</li>
+          <li><strong>Lillehammer:</strong> sy, snekre, fiks sykkel og ski, tirsdag til fredag.</li>
+        </ul>
+        <div class="btns"><a class="btn" href="https://www.framtiden.no/om-oss/prosjekter/folkeverksted">Les om folkeverkstedene</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Aktivitetene -->
+  <section class="cta cta--blue" data-craft="customCta · bakgrunn blue-200 · med knapp">
+    <div class="container grid">
+      <div class="cta__tekst rich">
+        <h2>Over 80 aktiviteter i år, de fleste gratis</h2>
+        <p>I 2026 har vi arrangert over 80 praktiske aktiviteter over hele landet. De aller fleste er gratis, og det dukker stadig opp nye i kalenderen.</p>
+        <ul>
+          <li><strong>Bytt &amp; Syng:</strong> klesbytte på en karaokebar på Grünerløkka, en gang i måneden.</li>
+          <li><strong>Fiksefest:</strong> frivillige hjelper deg å reparere elektronikk på Tønsberg bibliotek.</li>
+          <li><strong>Bruktmarked</strong> i Rødbanken i Tromsø, første lørdag hver måned.</li>
+          <li><strong>BytteBUA</strong> i Løten, der småbarnsfamilier bytter klær og leker etter hvert som barna vokser.</li>
+        </ul>
+        <div class="btns"><a class="btn" href="https://www.framtiden.no/arrangementer">Se hva som skjer der du bor</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Skole -->
+  <section class="iat iat--speilet" data-craft="imageAndText · bilde høyre (bekreft at Craft kan speilvende)">
+    <div class="container grid">
+      <div class="iat__img"><img src="https://fivh.imgix.net/images/Folk/Prosjekt/sirk-ws.jpg?auto=format&fit=crop&w=1100&h=660&q=60" alt="Elever i et auditorium under Sirkulær-workshopen"></div>
+      <div class="iat__tekst rich">
+        <h2>Fra prat til handling i klasserommet</h2>
+        <p>Vi besøker skoler i Trøndelag, Innlandet og Akershus. Elevene lærer om bruk-og-kast-klær, plast i klær og matsvinn, og lager sine egne løsninger.</p>
+        <ul>
+          <li><strong>Sirkulær:</strong> VG1-elever lager video og konkurrerer om 10 000 kroner til klassekassa.</li>
+          <li><strong>Tekstilworkshop</strong> om arbeidsforhold, overproduksjon og markedsføring.</li>
+          <li><strong>Fra matsvinn til MatVinn:</strong> workshop for 6. og 9. trinn i Trondheim, der elevene lærer hvor maten kommer fra, og ser, lukter og smaker på en utvalgt matvare.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · MatVinn -->
+  <section class="iat" style="padding-top:0" data-craft="imageAndText · bilde venstre · padding-top 0 (samme bakgrunn over)">
+    <div class="container grid">
+      <div class="iat__img"><img src="https://fivh.imgix.net/images/Folk/Andre/62a0784a595f063498f5cd97_Matsvinn-65-1280x720.jpg?auto=format&fit=crop&w=1100&h=660&q=60" alt="Mor og sønn på kjøkkenet, deltakere i MatVinn Familie"></div>
+      <div class="iat__tekst rich">
+        <h2>Rundt 150 familier har latt oss se i matsøpla</h2>
+        <p>Familiene veide og noterte først hva de kastet og hvorfor, og testet enkle grep i en måned for å kaste mindre.</p>
+        <ul>
+          <li>I snitt kuttet de matsvinnet med omtrent 70 prosent.</li>
+          <li>Flere familier, blant annet i Kristiansand, kuttet over 90 prosent.</li>
+          <li>Én familie i Asker sparer for eksempel 12 000 kroner i året på grepene de tok.</li>
+        </ul>
+        <p class="punch">Det nytter hjemme. Men matbransjen kaster også, og derfor jobbet vi i åtte år for matsvinnloven.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · Krav -->
+  <div class="factbox-wrap" data-craft="factBox · orange-200">
+    <div class="factbox rich">
+      <h2>Hold løftet: kutt momsen på brukt og reparasjon</h2>
+      <p>Arbeiderpartiet lovet i valgkampen å gjøre brukt billigere. I partiprogrammet står det at de vil redusere momsen på reparasjon og salg av brukte varer. Nå er svaret at det tar tid.</p>
+      <p>I mellomtiden er momsen en stor kostnad for bruktbutikker som allerede har små marginer. Det merker du på prislappen.</p>
+      <p><strong>Dette krever vi:</strong></p>
+      <ul>
+        <li><strong>Fjern momsen på brukt</strong> som selges gjennom bruktbutikker, kommisjon, auksjon og nettplattformer.</li>
+        <li><strong>Gjør ordningen enkel</strong>, så små bruktaktører ikke drukner i byråkrati.</li>
+        <li><strong>Si datoen.</strong> Slutt å svare «vi jobber med saken», og si når momskuttet gjelder fra.</li>
+      </ul>
+      <a class="lenke" href="https://www.framtiden.no/kampanjer/hold-loeftet-fjern-momsen-paa-brukt">Skriv under for momskutt på brukt →</a>
+    </div>
+  </div>
+
+  <!-- 8 · Våre seire -->
+  <section class="seire" data-craft="timeline · Våre seire · KURATERT utvalg, ikke tema-feed">
+    <div class="container">
+      <div class="seire__inner">
+        <h2>Dette har vi fått til sammen</h2>
+        <article class="seier">
+          <div class="seier__dato">27. mai 2025</div>
+          <span class="merke">✺ Gjennomslag</span>
+          <h3>Endelig er matsvinnloven vedtatt!</h3>
+          <p>Framtiden i våre hender har jobbet for matsvinnloven i åtte år, endelig ble den vedtatt av stortinget.</p>
+        </article>
+        <article class="seier">
+          <div class="seier__dato">05. april 2024</div>
+          <span class="merke">✺ Gjennomslag</span>
+          <h3>Farvel til den kronglete brukthandelloven</h3>
+          <p>Endelig blir det lettere å drive brukthandel i Norge! Loven krevde blant annet tungvint politigodkjenning og 14 dagers karantenetid for alle varer, etter at de ble skrevet inn for hånd. Nå er loven fjernet for de aller fleste varer.</p>
+        </article>
+        <article class="seier">
+          <div class="seier__dato">16. august 2023</div>
+          <span class="merke">✺ Gjennomslag</span>
+          <h3>Utredning av momsfritak for reparasjon og brukthandel på vei!</h3>
+          <p>Etter at vi har mast i flere år vil regjeringen endelig utrede momsfritak for reparasjon og brukthandel.</p>
+        </article>
+        <article class="seier" style="padding-bottom:0">
+          <div class="seier__dato">01. juli 2022</div>
+          <span class="merke">✺ Gjennomslag</span>
+          <h3>Åpenhetsloven er innført</h3>
+          <p>Vi foreslo og arbeidet for åpenhetsloven. Nå er loven innført!</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · Medlemskap -->
+  <section class="cta cta--white cta-bilde" id="medlem" data-craft="customCta · hvit · med bilde og knapper">
+    <div class="container grid">
+      <div class="cta__img"><img src="https://fivh.imgix.net/images/Prosjektarbeid/Regionkontor/OEstlandet/ostlandet-framtidenivaarehender-foto-arne-storronningen.jpg?auto=format&fit=crop&w=900&h=600&q=60" alt="Fire ansatte fra regionkontor Østlandet ute i parken"></div>
+      <div class="cta__tekst rich">
+        <h2>Bli med der du bor</h2>
+        <p>Vi har fire regionkontor og 31 lokallag fra Alta til Kristiansand. Finnes det ikke et lokallag der du bor, hjelper vi deg å starte et.</p>
+        <p>Som medlem får du:</p>
+        <ul>
+          <li>skattefordel</li>
+          <li>medlemsbladet vårt to ganger i året</li>
+          <li>nyheter om arbeidet vårt på e-post, om du vil</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn--orange" href="https://www.framtiden.no/medlemskap/bli-medlem">Bli medlem! <span class="pil">→</span></a>
+          <a class="btn" href="https://www.framtiden.no/medlemskap/bli-medlem">Redusert pris (student og uføre)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · Les mer -->
+  <section class="artikler" data-craft="relatedArticles · KURATERT, ikke automatisk">
+    <div class="container">
+      <h2>Les mer</h2>
+      <div class="art-grid">
+        <a class="art-stor" href="https://www.framtiden.no/artikler/folkeverkstedet-skaper-handlekraft">
+          <img src="https://fivh.imgix.net/images/Prosjektarbeid/Folkeverksted/2025-10-Folkeverksted-Trondheim-hoestferiekurs-fotograf-Lilli-Storroenningen-IMG_1151-15.jpg?auto=format&fit=crop&crop=faces&w=1000&h=835&q=60" alt="Kursholder hjelper en gutt ved symaskinen på Folkeverkstedet i Trondheim">
+          <div class="art-meta"><span>22. oktober 2025</span></div>
+          <h3>Folkeverkstedet skaper handlekraft</h3>
+        </a>
+        <div>
+          <a class="art-liten" href="https://www.framtiden.no/artikler/det-maa-bli-enklere-aa-selge-brukt">
+            <img src="https://fivh.imgix.net/images/Tema/Kl%C3%A6r/iStock-1471533886.jpg?auto=format&fit=crop&w=400&h=320&q=60" alt="">
+            <div><div class="art-meta"><span>02. mai 2023</span></div><h3>Det må bli enklere å selge brukt!</h3></div>
+          </a>
+          <a class="art-liten" href="https://www.framtiden.no/artikler/aarets-sirkulaere-initiativ-kaaret">
+            <img src="https://fivh.imgix.net/images/Prosjektarbeid/Sirkul%C3%A6r/Isaks-Groenne-Verden.jpg?auto=format&fit=crop&w=400&h=320&q=60" alt="">
+            <div><div class="art-meta"><span>13. februar 2025</span></div><h3>Årets sirkulære initiativ kåret</h3></div>
+          </a>
+          <a class="art-liten" href="https://www.framtiden.no/artikler/fem-anbefalinger-om-forbruksbaserte-klimatiltak">
+            <img src="https://fivh.imgix.net/images/Tema/Forbruk/shopping-ostbanehallen-foto-sonatali-iStock-1081006388.jpg?auto=format&fit=crop&w=400&h=320&q=60" alt="">
+            <div><div class="art-meta"><span class="tag">Forbruk</span><span>15. august 2025</span></div><h3>Fem anbefalinger om forbruksbaserte klimatiltak</h3></div>
+          </a>
+          <div class="btns" style="margin-top:24px">
+            <a class="btn" href="https://www.framtiden.no/om-oss/prosjekter">Se alle prosjektene</a>
+            <a class="btn" href="https://www.framtiden.no/arrangementer">Se alle arrangementer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 11 · Footer (global) -->
+<footer class="footer" data-craft="Global footer · uendret">
+  <div class="container">
+    <div>
+      <div class="footer__store"><a href="https://www.framtiden.no/medlemskap/bli-medlem">Bli medlem</a><a href="https://www.framtiden.no/kampanjer">Kampanjer</a><a href="https://www.framtiden.no/om-oss">Om oss</a></div>
+      <img class="footer__badge" src="https://fivh.imgix.net/images/FIVH_Badge_Blue_2023-04-06-083429_pfzc.png?auto=compress%2Cformat&fit=clip&q=40&w=320" alt="Bli medlem i dag">
+    </div>
+    <div>
+      <div class="sok">Søk</div>
+      <div class="footer__kol">
+        <div><h4>Tema</h4><a href="#">Overforbruk</a><a href="#">Bærekraftig mat</a><a href="#">Klær</a><a href="#">Penger</a></div>
+        <div><h4>Skriv under</h4><a href="#">Nok overforbruk – Stopp Temu!</a><a href="#">Gjør det lett å spise sunt!</a><a href="#">Spis grønnere – ta 5 av 7-utfordringen!</a></div>
+        <div><h4>Ressurser</h4><a href="#">Medlemsblad</a><a href="#">Rapporter</a><a href="#">Miljøprosjekter</a><a href="#">Arrangementer</a><a href="#">Ressursbank for lokallag</a></div>
+        <div><h4>Om oss</h4><a href="#">Om oss</a><a href="#">Ansatte</a><a href="#">Lokallag</a><a href="#">Ledige stillinger</a></div>
+      </div>
+      <p class="feed">Design and code by Feed</p>
+    </div>
+  </div>
+</footer>
+
+<button class="craft-bryter" type="button" aria-pressed="false">Vis Craft-komponenter</button>
+<script>
+  const b = document.querySelector('.craft-bryter');
+  b.addEventListener('click', () => {
+    const på = document.body.classList.toggle('vis-craft');
+    b.setAttribute('aria-pressed', på);
+    b.textContent = på ? 'Skjul Craft-komponenter' : 'Vis Craft-komponenter';
+  });
+</script>
+</body>
+</html>
