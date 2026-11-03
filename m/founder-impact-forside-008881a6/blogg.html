@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
+<title>Founder Impact · Bloggoversikten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#ea2c59;--accent-ink:#c11e46;--ink:#0d0d0d;--ink2:#555;--ink3:#666666;--flat:#fbfbfb;--line:rgba(0,0,0,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",system-ui,sans-serif}
+.pnav{background:#000;border-bottom:1px solid #222}
+.pnav .in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:4px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.pnav-t{flex:0 0 auto;color:#888;font-size:12.5px;margin-right:12px;white-space:nowrap}
+.pnav a{flex:0 0 auto;white-space:nowrap;color:#ddd;text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:8px}
+.pnav a:hover{background:#1a1a1a}
+.pnav a[aria-current=page]{background:#c11e46;color:#fff}
+.pnav a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.top{background:#0d0d0d;color:#cfcfcf;padding:56px 16px 40px}
+.top .in,.sec-in{max-width:1240px;margin:0 auto}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff8aa6;margin:0 0 10px}
+.top h1{font:600 46px/1.05 Afacad,sans-serif;color:#fff;margin:0 0 14px}
+.top p{max-width:760px;margin:0 0 10px}
+.glob{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.glob div{border:1px solid #2a2a2a;border-radius:12px;padding:14px 16px}
+.glob b{display:block;color:#fff;font:600 18px/1.2 Afacad,sans-serif;margin-bottom:4px}
+.glob span{font-size:13.5px}
+@media(max-width:900px){.glob{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.glob{grid-template-columns:1fr}.top h1{font-size:36px}}
+.toc{position:sticky;top:0;z-index:20;background:rgba(13,13,13,.96);backdrop-filter:blur(6px);border-top:1px solid #222}
+.toc .in{max-width:1240px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.toc a{flex:0 0 auto;white-space:nowrap;border:1px solid #3a3a3a;color:#ddd;border-radius:99px;padding:7px 14px;font-weight:600;font-size:13.5px;text-decoration:none}
+.toc a .n{opacity:.55;font-weight:400;margin-right:6px}
+.toc a:hover{border-color:var(--accent)}
+.sec{padding:56px 16px 8px;scroll-margin-top:56px}
+.sec h2.t{font:600 34px/1.1 Afacad,sans-serif;color:var(--ink);margin:0 0 16px}
+.sec h2.t small{font:400 15px "Open Sans";color:var(--ink3);margin-right:10px}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;margin-bottom:18px}
+.notes h3{font:600 13px "Open Sans";letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+.notes .bad h3{color:#8a8a8a}.notes .good h3{color:var(--accent-ink)}
+.notes ul{margin:0;padding-left:18px;font-size:14.5px}
+.notes li{margin-bottom:5px}
+@media(max-width:760px){.notes{grid-template-columns:1fr}}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;background:#e4e4e1;border-radius:99px;padding:3px}
+.seg button{border:0;background:none;border-radius:99px;padding:7px 16px;font:600 13.5px "Open Sans";color:#555;cursor:pointer}
+.seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{background:#d9d9d6;border-radius:16px;padding:18px;overflow:hidden}
+.frame{container:fx/inline-size;margin:0 auto;max-width:100%;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);transition:max-width .3s}
+.stage.m .frame{max-width:390px}
+.naa{display:none;margin:0 auto;max-width:100%;max-height:820px;overflow:auto;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.12);background:#000}
+.naa img{display:block;width:100%}
+.stage.m .naa{max-width:390px}
+.stage.show-naa .frame{display:none}.stage.show-naa .naa{display:block}
+.frame[hidden]{display:none}
+.vnote{list-style:none;margin:0 0 12px;padding:0;font-size:14px}
+.vnote li{padding:6px 12px;border-radius:8px;color:#777}
+.vnote li.on{background:#fff;color:var(--ink)}
+.naa .d-only{display:block}.naa .m-only{display:none}
+.stage.m .naa .d-only{display:none}.stage.m .naa .m-only{display:block}
+.end{max-width:1240px;margin:56px auto 0;padding:0 16px 96px}
+.end .box{background:#fff;border-radius:20px;padding:30px}
+.end h2{font:600 30px Afacad,sans-serif;color:var(--ink);margin:0 0 10px}
+
+/* ---------------- Forslagene (fx-), styrt av containerbredden ---------------- */
+.frame{font:16px/1.65 "Open Sans",sans-serif;color:var(--ink2)}
+.frame h1,.frame h2,.frame h3{font-family:Afacad,sans-serif;font-weight:600;color:var(--ink);margin:0;line-height:1.2}
+.frame p{margin:0 0 12px}
+.frame a{color:inherit}
+.fx-wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+.fx-pad{padding:88px 0}
+.fx-dark{background:#0a0a0a;color:#c9c9c9}
+.fx-dark h2,.fx-dark h3{color:#fff}
+.fx-light{background:var(--flat)}
+.fx-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.fx-head h2{font-size:42px;line-height:1.1;margin-bottom:10px}
+/* Hvit på #ea2c59 er 4,2:1 (stryker). Knappene bruker #c11e46, 5,9:1. */
+.fx-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--accent-ink);color:#fff!important;text-decoration:none;font-weight:600;font-size:16px;border-radius:8px;padding:12px 24px;border:1px solid var(--accent-ink);transition:background .2s}
+.fx-btn:hover{background:#a3183a}
+.fx-btn-sm{min-height:44px;padding:10px 18px;font-size:15px}
+.frame .fx-center{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.fx-ghost{background:transparent;border-color:rgba(255,255,255,.45)}
+.fx-ghost:hover{background:rgba(255,255,255,.1)}
+.fx-ghost-dark{background:transparent;color:var(--ink)!important;border-color:rgba(0,0,0,.2)}
+.fx-ghost-dark:hover{background:rgba(0,0,0,.04)}
+.fx-eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#ff8aa6;margin-bottom:14px}
+.fx-eyebrow.fx-ink{color:var(--accent-ink)}
+.frame .fx-center{text-align:center;margin:32px 0 0}
+/* Meny */
+.fx-nav{display:flex;align-items:center;gap:28px;background:#000;padding:16px 40px}
+.fx-logo{font:600 21px Afacad,sans-serif;color:#fff;margin-right:auto}
+.fx-logo i{font-family:Georgia,serif;font-weight:400}
+.fx-nav nav{display:flex;gap:26px}
+.fx-nav nav a{color:#ddd;font-weight:600;font-size:14.5px}
+.fx-burger{display:none;flex-direction:column;gap:4px}
+.fx-burger b{width:20px;height:2px;background:#fff;border-radius:2px}
+/* Hero */
+.fx-hero{position:relative;background:#000;min-height:640px;display:flex;align-items:flex-end}
+.fx-hero-img{position:absolute;inset:0}
+.fx-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.fx-hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.85) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.05) 75%),linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,0) 45%)}
+.fx-hero-txt{position:relative;padding:0 40px 64px;max-width:660px}
+.fx-hero h1{font-size:54px;line-height:1.04;color:#fff;margin-bottom:16px}
+.fx-lead{font-size:17px;color:#e2e2e2;max-width:520px}
+.fx-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 26px}
+.fx-proof{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:12px 36px;list-style:none;margin:0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.18)}
+.fx-proof li{display:flex;flex-direction:column}
+.fx-proof b{font:600 32px/1.1 Afacad,sans-serif;color:#fff}
+.fx-proof span{font-size:14px;color:#d6d6d6}
+/* Intro */
+.fx-intro{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.fx-intro h2{font-size:42px;line-height:1.1;margin-bottom:16px}
+.fx-quote{font:600 28px/1.25 Afacad,sans-serif;color:#fff;margin-top:24px!important}
+.fx-fit{display:grid;grid-template-columns:1fr 1fr;background:#151515;border:1px solid #262626;border-radius:16px;overflow:hidden}
+.fx-fit>div{padding:28px}
+.fx-fit>div+div{border-left:1px solid #262626}
+.fx-fit h3{font-size:22px;margin-bottom:14px}
+.fx-list{list-style:none;margin:0;padding:0}
+.fx-list li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:16px;line-height:1.45}
+.fx-list svg{flex:0 0 18px;width:18px;height:18px;margin-top:2px;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fx-yes svg{stroke:var(--accent)}.fx-yes li{color:#eee}
+.fx-no svg{stroke:#777}.fx-no li{color:#999}
+/* Hanne */
+.fx-story{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:center}
+.fx-portrait{margin:0;border-radius:16px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 20px 50px rgba(0,0,0,.15)}
+.fx-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.fx-story blockquote{font:600 34px/1.18 Afacad,sans-serif;color:var(--ink);margin:0 0 22px}
+.fx-more summary{cursor:pointer;font-weight:600;color:var(--accent-ink);margin-bottom:12px;list-style:none}
+.fx-more summary::-webkit-details-marker{display:none}
+.fx-more summary::after{content:" +"}.fx-more[open] summary::after{content:" −"}
+.fx-sign{font:600 22px/1.2 Afacad,sans-serif;color:var(--ink);margin-top:20px!important}
+.fx-sign span{display:block;font:400 14px "Open Sans";color:var(--ink3)}
+/* Prosess */
+.fx-steps{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.fx-steps li{position:relative}
+.fx-steps-a::before{content:"";position:absolute;left:20px;right:20px;top:20px;height:1px;background:#333}
+.fx-steps-b li{border-top:1px solid #2a2a2a;padding-top:20px}
+.fx-steps-b .fx-n{display:block;font:600 56px/1 Afacad,sans-serif;color:var(--accent);margin-bottom:14px}
+.fx-steps-a .fx-n{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#0a0a0a;border:1px solid var(--accent);color:var(--accent);font:600 15px Afacad,sans-serif;margin-bottom:18px;position:relative}
+.fx-steps h3{font-size:24px;margin-bottom:6px}
+.fx-steps p{font-size:16px;margin:0}
+.fx-cta-box{text-align:center;border-top:1px solid #262626;padding-top:40px}
+.fx-cta-box p{margin:14px 0 0;font-size:14.5px}.fx-cta-box b{color:#fff}
+/* Fordeler */
+/* Fire kolonner, to rader: 2+1+1 og 1+2+1, ingen hull */
+.fx-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fx-tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+.fx-tile>svg{width:40px;height:40px;padding:9px;border-radius:10px;background:rgba(234,44,89,.09);fill:none;stroke:var(--accent-ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:auto}
+.fx-tile h3{font-size:22px;margin:22px 0 6px}
+.fx-tile p{font-size:16px;margin:0}
+.fx-photo{padding:0;overflow:hidden;position:relative;min-height:280px;justify-content:flex-end;border:0}
+.fx-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fx-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,0) 60%);z-index:1}
+.fx-photo div{position:relative;z-index:2;padding:22px 24px}
+.fx-photo h3{color:#fff;margin-top:0}.fx-photo p{color:#e6e6e6}
+.fx-wide{grid-column:span 2}
+/* Fordeler som liste (variant B) */
+.fx-benefits{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+.fx-ben-txt h2{font-size:42px;line-height:1.1;margin-bottom:24px}
+.fx-ben{list-style:none;margin:0;padding:0}
+.fx-ben li{padding:16px 0;border-top:1px solid var(--line)}
+.fx-ben h3{font-size:22px;margin-bottom:4px}
+.fx-ben p{margin:0;font-size:16px}
+.fx-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:560px;position:sticky;top:24px}
+.fx-photos img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.fx-light .fx-dates{margin-top:24px}
+.fx-light .fx-date{background:#fff;border-color:var(--line)}
+.fx-light .fx-date span{color:var(--ink3)}
+.fx-light .fx-date b{color:var(--ink)}
+/* Turer */
+.fx-trips{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.fx-trips h2{font-size:42px;line-height:1.1;margin-bottom:12px}
+.fx-dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.fx-date{border:1px solid #2a2a2a;border-radius:16px;padding:16px 18px;background:#141414}
+.fx-date svg{width:20px;height:20px;fill:none;stroke:var(--accent);stroke-width:2;margin-bottom:8px}
+.fx-date span{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#999}
+.fx-date b{font:600 22px Afacad,sans-serif;color:#fff}
+.fx-mosaic{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:420px}
+.fx-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.fx-mosaic img:first-child{grid-row:span 2}
+/* Medlemmer */
+.fx-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.fx-face{position:relative;display:block;border-radius:16px;overflow:hidden;aspect-ratio:4/5;text-decoration:none}
+.fx-face img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.fx-face:hover img{transform:scale(1.05)}
+.fx-face::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0) 50%)}
+.fx-face span{position:absolute;left:12px;right:12px;bottom:10px;z-index:1;color:rgba(255,255,255,.8);font-size:12px;line-height:1.3}
+.fx-face b{display:block;color:#fff;font:600 17px/1.15 Afacad,sans-serif}
+/* FAQ */
+.fx-faq{display:grid;grid-template-columns:4fr 8fr;gap:56px;align-items:start}
+.fx-faq h2{font-size:42px;margin-bottom:12px}
+.fx-faq-side a{color:#fff}
+.fx-acc details{border-bottom:1px solid #262626}
+.fx-acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font:600 20px/1.3 Afacad,sans-serif;color:#fff}
+.fx-acc summary::-webkit-details-marker{display:none}
+.fx-acc summary::after{content:"+";color:var(--accent);font-size:24px;line-height:1}
+.fx-acc details[open] summary::after{content:"−"}
+.fx-acc p{padding:0 0 18px;font-size:16px}
+.fx-final{text-align:center;border-top:1px solid #262626;margin-top:72px;padding-top:64px}
+.fx-final h2{font-size:34px;line-height:1.15;max-width:720px;margin:0 auto 12px}
+.fx-final p{margin-bottom:24px}
+.fx-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:72px;padding-top:24px;border-top:1px solid #1e1e1e;font-size:14px;color:#999}
+.fx-foot span:last-child{display:flex;gap:18px}
+
+/* Mobil: styres av bredden paa rammen, saa «Mobil»-bryteren gir ekte mobillayout */
+@container fx (max-width:700px){
+  .fx-wrap{padding:0 20px}
+  .fx-pad{padding:56px 0}
+  .fx-head{margin-bottom:28px}
+  .fx-head h2,.fx-intro h2,.fx-trips h2,.fx-faq h2{font-size:30px}
+  .fx-nav{padding:14px 20px;gap:14px}
+  .fx-nav nav{display:none}
+  .fx-burger{display:flex}
+  .fx-hero{display:block;min-height:0}
+  .fx-hero-img{position:relative;aspect-ratio:4/3}
+  .fx-hero-img::after{background:linear-gradient(to top,#000 0%,rgba(0,0,0,0) 40%)}
+  .fx-hero-txt{padding:4px 20px 40px}
+  .fx-hero h1{font-size:30px}
+  .fx-hero-img{aspect-ratio:16/9}
+  .fx-proof{grid-template-columns:1fr 1fr;gap:14px 20px}
+  .fx-proof b{font-size:26px}
+  .fx-lead{font-size:16px}
+  .fx-ctas .fx-btn{flex:1 1 100%}
+  .fx-intro,.fx-story,.fx-trips,.fx-faq{grid-template-columns:1fr;gap:32px}
+  .fx-quote{font-size:24px}
+  .fx-fit{grid-template-columns:1fr}
+  .fx-fit>div{padding:22px}
+  .fx-fit>div+div{border-left:0;border-top:1px solid #262626}
+  .fx-story blockquote{font-size:27px}
+  .fx-portrait{aspect-ratio:1/1}
+  .fx-steps{grid-template-columns:1fr;gap:22px;margin-bottom:36px}
+  .fx-steps-a::before{left:20px;right:auto;top:20px;bottom:20px;width:1px;height:auto}
+  .fx-steps-a li{display:grid;grid-template-columns:40px 1fr;column-gap:16px}
+  .fx-steps-a .fx-n{grid-row:span 2;margin:0}
+  .fx-steps-b li{display:grid;grid-template-columns:64px 1fr;column-gap:12px}
+  .fx-steps-b .fx-n{grid-row:span 2;font-size:44px;margin:0}
+  .fx-steps h3{font-size:21px}
+  .fx-bento{grid-template-columns:1fr;gap:12px}
+  .fx-wide{grid-column:auto}
+  .fx-photo{min-height:240px}
+  .fx-tile{padding:22px}
+  .fx-mosaic{height:300px}
+  .fx-dates{grid-template-columns:1fr 1fr}
+  .fx-strip{grid-template-columns:1fr 1fr;gap:12px}
+  .frame .fx-center .fx-btn{flex:1 1 100%}
+  .fx-benefits{grid-template-columns:1fr;gap:28px}
+  .fx-photos{order:-1;height:260px}
+  .fx-ben-txt h2{font-size:30px}
+  .fx-final h2{font-size:26px}
+  .fx-foot{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.fx-pad-s{padding:64px 0}
+.fx-blog-head{text-align:center;max-width:720px}
+.fx-blog-head h1{font-size:52px;color:#fff;margin-bottom:12px}
+.fx-blog-head p{font-size:17px;margin:0}
+.fx-meta{font-size:14px;color:var(--ink3)}
+.fx-dark .fx-meta{color:#a8a8a8}
+.fx-post{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit!important}
+.fx-post img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.fx-post>div{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.fx-post .fx-eyebrow{margin-bottom:8px}
+.fx-post h3{font-size:24px;margin-bottom:8px}
+.fx-post h2{font-size:36px;line-height:1.12;margin-bottom:12px}
+.fx-ex{font-size:16px}
+.fx-post .fx-meta{margin:auto 0 0}
+.fx-post:hover h2,.fx-post:hover h3{color:var(--accent-ink)}
+.fx-post-lead{display:grid;grid-template-columns:7fr 5fr;margin-bottom:24px}
+.fx-post-lead img{height:100%;aspect-ratio:auto;min-height:360px}
+.fx-post-lead>div{padding:36px 36px 32px;justify-content:center}
+.fx-post-lead .fx-meta{margin:0 0 18px}
+.fx-more-link{font-weight:600;color:var(--accent-ink)}
+.fx-posts{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+/* Innlegg */
+.fx-article{padding:72px 0 88px}
+.fx-art-head,.fx-prose,.fx-art-cta,.fx-more-posts{max-width:680px;margin:0 auto;padding:0 24px}
+.fx-art-head h1{font-size:50px;line-height:1.08;margin-bottom:22px}
+.fx-byline{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink3)}
+.fx-byline b{display:block;color:var(--ink);font-size:15px}
+.fx-av{flex:0 0 48px;height:48px;border-radius:50%;background:url(img/hanne.jpg) 56% 30%/320% no-repeat}
+.fx-art-img{max-width:960px;margin:36px auto 40px;padding:0 24px}
+.fx-art-img img{width:100%;max-height:480px;object-fit:cover;border-radius:16px}
+.fx-prose{font-size:18px;line-height:1.7;color:#333}
+.fx-prose p{margin:0 0 20px}
+.fx-prose h2{font-size:30px;margin:40px 0 14px}
+.fx-prose h3{font-size:22px;margin:28px 0 10px}
+.fx-prose ul{margin:0 0 20px;padding-left:22px}
+.fx-prose li{margin-bottom:6px}
+.fx-art-cta{margin-top:48px;padding:36px;background:#0a0a0a;border-radius:16px;color:#c9c9c9}
+.fx-art-cta h2{color:#fff;font-size:30px;margin-bottom:8px}
+.fx-art-cta .fx-btn{margin:10px 0 4px}
+.fx-small{font-size:14px;margin:10px 0 0!important}.fx-small b{color:#fff}
+.fx-more-posts{margin-top:64px;max-width:960px}
+.fx-more-posts>h2{font-size:30px;margin-bottom:20px}
+/* Juridiske sider */
+.fx-legal-wrap{padding:64px 0 88px}
+.fx-legal{display:grid;grid-template-columns:260px minmax(0,720px);gap:56px;justify-content:center}
+.fx-toc{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;font-size:14px}
+.fx-toc summary{font:600 13px "Open Sans";letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;list-style:none;cursor:pointer}
+.fx-toc summary::-webkit-details-marker{display:none}
+.fx-toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.fx-toc a{display:block;padding:6px 0 6px 14px;color:#444;text-decoration:none;line-height:1.35}
+.fx-toc a:hover{color:var(--accent-ink)}
+.fx-legal-body{max-width:none;padding:0;font-size:17px}
+.fx-legal-body h1{font-size:46px;margin-bottom:8px}
+.fx-legal-body h2{font-size:26px;scroll-margin-top:20px;padding-top:12px}
+.frame.fx-scroll{max-height:900px;overflow:auto}
+.fx-foot-solo{margin-top:0;border-top:0;padding:28px 40px}
+.fx-final-solo{margin-top:0;border-top:0;padding-top:0}
+@container fx (max-width:700px){
+  .fx-blog-head h1{font-size:34px}
+  .fx-post-lead{grid-template-columns:1fr}
+  .fx-post-lead img{min-height:0;aspect-ratio:16/10}
+  .fx-post-lead>div{padding:22px 22px 24px}
+  .fx-post h2{font-size:28px}
+  .fx-posts{grid-template-columns:1fr;gap:16px}
+  .fx-article{padding:40px 0 56px}
+  .fx-art-head,.fx-prose,.fx-art-cta,.fx-more-posts{padding-left:20px;padding-right:20px}
+  .fx-art-head h1{font-size:32px}
+  .fx-art-img{margin:24px auto 28px;padding:0 20px}
+  .fx-art-img img{max-height:300px}
+  .fx-prose{font-size:17px}
+  .fx-prose h2{font-size:24px}
+  .fx-art-cta{margin-left:20px;margin-right:20px;padding:26px 22px}
+  .fx-legal-wrap{padding:36px 0 56px}
+  .fx-legal{grid-template-columns:1fr;gap:20px}
+  .fx-toc{position:static;max-height:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+  .fx-toc summary{margin:0}
+  .fx-toc details[open] summary{margin-bottom:10px}
+  .fx-legal-body h1{font-size:32px}
+  .fx-legal-body{font-size:16px}
+  .fx-foot-solo{padding:24px 20px}
+}
+
+.kutt{font-size:13px;color:#777;margin:-4px 0 10px}</style></head><body>
+<nav class="pnav" aria-label="Sider"><div class="in"><span class="pnav-t">Founder Impact · forslag</span><a href="index.html">Forsiden</a><a href="blogg.html" aria-current="page">Bloggen</a><a href="innlegg-10k.html">Innlegg: $10k a Month</a><a href="innlegg-3-people.html">Innlegg: The 3 People</a><a href="innlegg-loneliness.html">Innlegg: The Loneliness</a><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy &amp; Cookies</a></div></nav>
+<header class="top"><div class="in">
+  <p class="kicker">Founder Impact × Fjordigital · november 2026</p>
+  <h1>Bloggoversikten</h1>
+  <p>Bytt mellom «Forslag» og «Nå», og mellom desktop og mobil. Teksten er Founder Impacts egen, ordrett. Forslaget er
+  sjekket mot WCAG-kontrast, én H1 per side, minst 16 px brødtekst og 48 px knapper på mobil.</p>
+  <p>Fire ting går igjen på alle undersidene:</p>
+  <div class="glob"><div><b>Norsk på en engelsk side</b><span>«av», «mai», «0 kommentarer» og «Følg» kommer fra WordPress-språket. Settes til engelsk under Innstillinger &gt; Generelt, eller i Divi sin metatekst.</span></div><div><b>Bunnteksten er limt inn</b><span>Hvert innlegg har bunnteksten kopiert inn nederst i selve teksten. Den bør ut, og den felles bunnen brukes.</span></div><div><b>H1 mangler eller er dobbel</b><span>Bloggen og de juridiske sidene har ingen H1. Ett innlegg har to. Hver side skal ha én.</span></div><div><b>Innleggsmalen</b><span>Tittelen er 1,7:1 mot bakgrunnen og brødteksten 14 px. Det rettes én gang i Divi Theme Builder og gjelder alle innlegg.</span></div></div>
+</div></header>
+<section class="sec" id="s-blog"><div class="sec-in">
+  <div class="notes">
+    <div class="bad"><h3>Nå</h3><ul><li>Ingen H1. Overskriften er satt i Abyssinica SIL med sperret tekst, og ingressen er sperret liten tekst.</li><li>Datoer og forfatter står på norsk («av HanneG | mai 19, 2026») på en engelsk side.</li><li>Utdragene er avkuttet midt i tittelen («The 3 People Every Founder…») og sier ingenting om innholdet.</li><li>«Blog» i menyen har den samme forskjøvede røde rammen som «Home» på forsiden.</li></ul></div>
+    <div class="good"><h3>Forslaget</h3><ul><li>Én H1 i sidens egen overskriftsfont, og vanlig ingress.</li><li>Nyeste innlegg stort øverst, de andre som kort under. Utdraget er første avsnitt, ikke tittelen på nytt.</li><li>Engelsk dato, forfatter og lesetid: «Hanne G · 23 June 2026 · 2 min read».</li><li>Samme avslutning og bunn som forsiden.</li></ul></div>
+  </div>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
+  </div>
+  
+  <div class="stage">
+    <div class="frame" data-v="v0"><header class="fx-nav"><span class="fx-logo"><i>Founder</i> Impact</span><nav><a>Home</a><a>Members</a><a>Blog</a></nav><a class="fx-btn fx-btn-sm" href="#apply">Apply</a><span class="fx-burger" aria-hidden="true"><b></b><b></b><b></b></span></header>
+<section class="fx-dark fx-pad-s"><div class="fx-wrap fx-blog-head">
+  <h1>Founder stories &amp; insights</h1>
+  <p>Real stories, practical lessons, and growth strategies from founders building ambitious companies.</p>
+</div></section>
+<section class="fx-light fx-pad"><div class="fx-wrap">
+  <a class="fx-post fx-post-lead" href="#p1"><img src="img/post1.jpg" alt=""><div><p class="fx-eyebrow fx-ink">Founder Mindset</p><h2>$10k a Month Is Not Success in Itself</h2><p class="fx-ex">I have nothing against making money. I value ambition, and I root for growth. But I’ve been in environments where one goal dominate everything: “Hit 100k a month.” For many, that became the ultimate measure of success…</p><p class="fx-meta">Hanne G · 23 June 2026 · 2 min read</p><span class="fx-more-link">Read the story →</span></div></a>
+  <div class="fx-posts"><a class="fx-post" href="#p2"><img src="img/post2.jpg" alt=""><div><p class="fx-eyebrow fx-ink">Founder Mindset</p><h3>The 3 People Every Founder Needs</h3><p class="fx-ex">Most founders spend countless hours thinking about product, marketing, sales, and fundraising. Few spend enough time thinking about who…</p><p class="fx-meta">Hanne G · 19 May 2026 · 2 min read</p></div></a><a class="fx-post" href="#p3"><img src="img/post3.jpg" alt=""><div><p class="fx-eyebrow fx-ink">Founder Mindset</p><h3>The Loneliness Nobody Talks About In Entrepreneurship</h3><p class="fx-ex">Building a company can look exciting from the outside. Freedom. Ambition. Big goals. Working from anywhere. Creating something of your own…</p><p class="fx-meta">Hanne G · 30 April 2026 · 2 min read</p></div></a></div>
+</div></section>
+<section class="fx-dark fx-pad-s"><div class="fx-wrap fx-final fx-final-solo">
+  <h2>Founder Impact is for founders who are actually building. Not just talking.</h2>
+  <p>If that's you, apply and we'll take it from there.</p>
+  <a class="fx-btn" href="#apply">Apply to join Founder Impact</a>
+</div></section>
+<footer class="fx-dark"><div class="fx-wrap fx-foot fx-foot-solo">
+  <span>© Founder Impact AS · Org. No. 938 253 935 · Fjordavegen 858, 5750 Odda</span>
+  <span><a>Privacy &amp; Cookies</a><a>Terms &amp; Conditions</a><a>Instagram</a><a>LinkedIn</a></span>
+</div></footer></div>
+    <div class="naa"><img class="d-only" src="naa/blog-desktop.jpg" alt="Slik ser siden ut på desktop i dag" loading="lazy"><img class="m-only" src="naa/blog-mobil.jpg" alt="Slik ser siden ut på mobil i dag" loading="lazy"></div>
+  </div>
+</div></section>
+<section class="end"><div class="box">
+  <h2>Hva synes dere?</h2>
+  <p>De tre innleggene bruker samme mal. Den bygges én gang i Divi Theme Builder og gjelder alle innlegg, også de som kommer.
+  Det samme gjelder de to juridiske sidene.</p>
+  <p><b>Dette trenger vi fra Hanne:</b> om tittelen skal være «$10k» eller «100k», og om innleggsadressene kan endres
+  (vi setter opp videresending fra de gamle).</p>
+</div></section>
+<script>
+document.querySelectorAll('.sec').forEach(function (sec) {
+  var stage = sec.querySelector('.stage');
+  sec.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var g = b.parentNode;
+      g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      if (b.dataset.view) {
+        stage.classList.toggle('show-naa', b.dataset.view === 'naa');
+        stage.querySelectorAll('.frame').forEach(function (f) { f.hidden = f.dataset.v !== b.dataset.view; });
+        sec.querySelectorAll('.vnote li').forEach(function (li) { li.classList.toggle('on', li.dataset.v === b.dataset.view); });
+      }
+      if (b.dataset.dev) stage.classList.toggle('m', b.dataset.dev === 'm');
+    });
+  });
+});
+// Lenkene inne i forslagene er bare demo
+document.querySelectorAll('.frame a').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); }); });
+</script>
+</body></html>

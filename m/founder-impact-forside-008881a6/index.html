@@ -9,6 +9,13 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",system-ui,sans-serif}
+.pnav{background:#000;border-bottom:1px solid #222}
+.pnav .in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:4px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.pnav-t{flex:0 0 auto;color:#888;font-size:12.5px;margin-right:12px;white-space:nowrap}
+.pnav a{flex:0 0 auto;white-space:nowrap;color:#ddd;text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:8px}
+.pnav a:hover{background:#1a1a1a}
+.pnav a[aria-current=page]{background:#c11e46;color:#fff}
+.pnav a:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .top{background:#0d0d0d;color:#cfcfcf;padding:56px 16px 40px}
 .top .in,.sec-in{max-width:1240px;margin:0 auto}
 .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff8aa6;margin:0 0 10px}
@@ -245,6 +252,7 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
+<nav class="pnav" aria-label="Sider"><div class="in"><span class="pnav-t">Founder Impact · forslag</span><a href="index.html" aria-current="page">Forsiden</a><a href="blogg.html">Bloggen</a><a href="innlegg-10k.html">Innlegg: $10k a Month</a><a href="innlegg-3-people.html">Innlegg: The 3 People</a><a href="innlegg-loneliness.html">Innlegg: The Loneliness</a><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy &amp; Cookies</a></div></nav>
 <header class="top"><div class="in">
   <p class="kicker">Founder Impact × Fjordigital · november 2026</p>
   <h1>Forsiden, forslag per seksjon</h1>

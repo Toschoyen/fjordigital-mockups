@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
+<title>Founder Impact · Terms &amp; Conditions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#ea2c59;--accent-ink:#c11e46;--ink:#0d0d0d;--ink2:#555;--ink3:#666666;--flat:#fbfbfb;--line:rgba(0,0,0,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",system-ui,sans-serif}
+.pnav{background:#000;border-bottom:1px solid #222}
+.pnav .in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:4px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.pnav-t{flex:0 0 auto;color:#888;font-size:12.5px;margin-right:12px;white-space:nowrap}
+.pnav a{flex:0 0 auto;white-space:nowrap;color:#ddd;text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:8px}
+.pnav a:hover{background:#1a1a1a}
+.pnav a[aria-current=page]{background:#c11e46;color:#fff}
+.pnav a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.top{background:#0d0d0d;color:#cfcfcf;padding:56px 16px 40px}
+.top .in,.sec-in{max-width:1240px;margin:0 auto}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff8aa6;margin:0 0 10px}
+.top h1{font:600 46px/1.05 Afacad,sans-serif;color:#fff;margin:0 0 14px}
+.top p{max-width:760px;margin:0 0 10px}
+.glob{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.glob div{border:1px solid #2a2a2a;border-radius:12px;padding:14px 16px}
+.glob b{display:block;color:#fff;font:600 18px/1.2 Afacad,sans-serif;margin-bottom:4px}
+.glob span{font-size:13.5px}
+@media(max-width:900px){.glob{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.glob{grid-template-columns:1fr}.top h1{font-size:36px}}
+.toc{position:sticky;top:0;z-index:20;background:rgba(13,13,13,.96);backdrop-filter:blur(6px);border-top:1px solid #222}
+.toc .in{max-width:1240px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.toc a{flex:0 0 auto;white-space:nowrap;border:1px solid #3a3a3a;color:#ddd;border-radius:99px;padding:7px 14px;font-weight:600;font-size:13.5px;text-decoration:none}
+.toc a .n{opacity:.55;font-weight:400;margin-right:6px}
+.toc a:hover{border-color:var(--accent)}
+.sec{padding:56px 16px 8px;scroll-margin-top:56px}
+.sec h2.t{font:600 34px/1.1 Afacad,sans-serif;color:var(--ink);margin:0 0 16px}
+.sec h2.t small{font:400 15px "Open Sans";color:var(--ink3);margin-right:10px}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;margin-bottom:18px}
+.notes h3{font:600 13px "Open Sans";letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+.notes .bad h3{color:#8a8a8a}.notes .good h3{color:var(--accent-ink)}
+.notes ul{margin:0;padding-left:18px;font-size:14.5px}
+.notes li{margin-bottom:5px}
+@media(max-width:760px){.notes{grid-template-columns:1fr}}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;background:#e4e4e1;border-radius:99px;padding:3px}
+.seg button{border:0;background:none;border-radius:99px;padding:7px 16px;font:600 13.5px "Open Sans";color:#555;cursor:pointer}
+.seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{background:#d9d9d6;border-radius:16px;padding:18px;overflow:hidden}
+.frame{container:fx/inline-size;margin:0 auto;max-width:100%;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);transition:max-width .3s}
+.stage.m .frame{max-width:390px}
+.naa{display:none;margin:0 auto;max-width:100%;max-height:820px;overflow:auto;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.12);background:#000}
+.naa img{display:block;width:100%}
+.stage.m .naa{max-width:390px}
+.stage.show-naa .frame{display:none}.stage.show-naa .naa{display:block}
+.frame[hidden]{display:none}
+.vnote{list-style:none;margin:0 0 12px;padding:0;font-size:14px}
+.vnote li{padding:6px 12px;border-radius:8px;color:#777}
+.vnote li.on{background:#fff;color:var(--ink)}
+.naa .d-only{display:block}.naa .m-only{display:none}
+.stage.m .naa .d-only{display:none}.stage.m .naa .m-only{display:block}
+.end{max-width:1240px;margin:56px auto 0;padding:0 16px 96px}
+.end .box{background:#fff;border-radius:20px;padding:30px}
+.end h2{font:600 30px Afacad,sans-serif;color:var(--ink);margin:0 0 10px}
+
+/* ---------------- Forslagene (fx-), styrt av containerbredden ---------------- */
+.frame{font:16px/1.65 "Open Sans",sans-serif;color:var(--ink2)}
+.frame h1,.frame h2,.frame h3{font-family:Afacad,sans-serif;font-weight:600;color:var(--ink);margin:0;line-height:1.2}
+.frame p{margin:0 0 12px}
+.frame a{color:inherit}
+.fx-wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+.fx-pad{padding:88px 0}
+.fx-dark{background:#0a0a0a;color:#c9c9c9}
+.fx-dark h2,.fx-dark h3{color:#fff}
+.fx-light{background:var(--flat)}
+.fx-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.fx-head h2{font-size:42px;line-height:1.1;margin-bottom:10px}
+/* Hvit på #ea2c59 er 4,2:1 (stryker). Knappene bruker #c11e46, 5,9:1. */
+.fx-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--accent-ink);color:#fff!important;text-decoration:none;font-weight:600;font-size:16px;border-radius:8px;padding:12px 24px;border:1px solid var(--accent-ink);transition:background .2s}
+.fx-btn:hover{background:#a3183a}
+.fx-btn-sm{min-height:44px;padding:10px 18px;font-size:15px}
+.frame .fx-center{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.fx-ghost{background:transparent;border-color:rgba(255,255,255,.45)}
+.fx-ghost:hover{background:rgba(255,255,255,.1)}
+.fx-ghost-dark{background:transparent;color:var(--ink)!important;border-color:rgba(0,0,0,.2)}
+.fx-ghost-dark:hover{background:rgba(0,0,0,.04)}
+.fx-eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#ff8aa6;margin-bottom:14px}
+.fx-eyebrow.fx-ink{color:var(--accent-ink)}
+.frame .fx-center{text-align:center;margin:32px 0 0}
+/* Meny */
+.fx-nav{display:flex;align-items:center;gap:28px;background:#000;padding:16px 40px}
+.fx-logo{font:600 21px Afacad,sans-serif;color:#fff;margin-right:auto}
+.fx-logo i{font-family:Georgia,serif;font-weight:400}
+.fx-nav nav{display:flex;gap:26px}
+.fx-nav nav a{color:#ddd;font-weight:600;font-size:14.5px}
+.fx-burger{display:none;flex-direction:column;gap:4px}
+.fx-burger b{width:20px;height:2px;background:#fff;border-radius:2px}
+/* Hero */
+.fx-hero{position:relative;background:#000;min-height:640px;display:flex;align-items:flex-end}
+.fx-hero-img{position:absolute;inset:0}
+.fx-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.fx-hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.85) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.05) 75%),linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,0) 45%)}
+.fx-hero-txt{position:relative;padding:0 40px 64px;max-width:660px}
+.fx-hero h1{font-size:54px;line-height:1.04;color:#fff;margin-bottom:16px}
+.fx-lead{font-size:17px;color:#e2e2e2;max-width:520px}
+.fx-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 26px}
+.fx-proof{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:12px 36px;list-style:none;margin:0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.18)}
+.fx-proof li{display:flex;flex-direction:column}
+.fx-proof b{font:600 32px/1.1 Afacad,sans-serif;color:#fff}
+.fx-proof span{font-size:14px;color:#d6d6d6}
+/* Intro */
+.fx-intro{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.fx-intro h2{font-size:42px;line-height:1.1;margin-bottom:16px}
+.fx-quote{font:600 28px/1.25 Afacad,sans-serif;color:#fff;margin-top:24px!important}
+.fx-fit{display:grid;grid-template-columns:1fr 1fr;background:#151515;border:1px solid #262626;border-radius:16px;overflow:hidden}
+.fx-fit>div{padding:28px}
+.fx-fit>div+div{border-left:1px solid #262626}
+.fx-fit h3{font-size:22px;margin-bottom:14px}
+.fx-list{list-style:none;margin:0;padding:0}
+.fx-list li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:16px;line-height:1.45}
+.fx-list svg{flex:0 0 18px;width:18px;height:18px;margin-top:2px;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fx-yes svg{stroke:var(--accent)}.fx-yes li{color:#eee}
+.fx-no svg{stroke:#777}.fx-no li{color:#999}
+/* Hanne */
+.fx-story{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:center}
+.fx-portrait{margin:0;border-radius:16px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 20px 50px rgba(0,0,0,.15)}
+.fx-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.fx-story blockquote{font:600 34px/1.18 Afacad,sans-serif;color:var(--ink);margin:0 0 22px}
+.fx-more summary{cursor:pointer;font-weight:600;color:var(--accent-ink);margin-bottom:12px;list-style:none}
+.fx-more summary::-webkit-details-marker{display:none}
+.fx-more summary::after{content:" +"}.fx-more[open] summary::after{content:" −"}
+.fx-sign{font:600 22px/1.2 Afacad,sans-serif;color:var(--ink);margin-top:20px!important}
+.fx-sign span{display:block;font:400 14px "Open Sans";color:var(--ink3)}
+/* Prosess */
+.fx-steps{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.fx-steps li{position:relative}
+.fx-steps-a::before{content:"";position:absolute;left:20px;right:20px;top:20px;height:1px;background:#333}
+.fx-steps-b li{border-top:1px solid #2a2a2a;padding-top:20px}
+.fx-steps-b .fx-n{display:block;font:600 56px/1 Afacad,sans-serif;color:var(--accent);margin-bottom:14px}
+.fx-steps-a .fx-n{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#0a0a0a;border:1px solid var(--accent);color:var(--accent);font:600 15px Afacad,sans-serif;margin-bottom:18px;position:relative}
+.fx-steps h3{font-size:24px;margin-bottom:6px}
+.fx-steps p{font-size:16px;margin:0}
+.fx-cta-box{text-align:center;border-top:1px solid #262626;padding-top:40px}
+.fx-cta-box p{margin:14px 0 0;font-size:14.5px}.fx-cta-box b{color:#fff}
+/* Fordeler */
+/* Fire kolonner, to rader: 2+1+1 og 1+2+1, ingen hull */
+.fx-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fx-tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+.fx-tile>svg{width:40px;height:40px;padding:9px;border-radius:10px;background:rgba(234,44,89,.09);fill:none;stroke:var(--accent-ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:auto}
+.fx-tile h3{font-size:22px;margin:22px 0 6px}
+.fx-tile p{font-size:16px;margin:0}
+.fx-photo{padding:0;overflow:hidden;position:relative;min-height:280px;justify-content:flex-end;border:0}
+.fx-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fx-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,0) 60%);z-index:1}
+.fx-photo div{position:relative;z-index:2;padding:22px 24px}
+.fx-photo h3{color:#fff;margin-top:0}.fx-photo p{color:#e6e6e6}
+.fx-wide{grid-column:span 2}
+/* Fordeler som liste (variant B) */
+.fx-benefits{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+.fx-ben-txt h2{font-size:42px;line-height:1.1;margin-bottom:24px}
+.fx-ben{list-style:none;margin:0;padding:0}
+.fx-ben li{padding:16px 0;border-top:1px solid var(--line)}
+.fx-ben h3{font-size:22px;margin-bottom:4px}
+.fx-ben p{margin:0;font-size:16px}
+.fx-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:560px;position:sticky;top:24px}
+.fx-photos img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.fx-light .fx-dates{margin-top:24px}
+.fx-light .fx-date{background:#fff;border-color:var(--line)}
+.fx-light .fx-date span{color:var(--ink3)}
+.fx-light .fx-date b{color:var(--ink)}
+/* Turer */
+.fx-trips{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.fx-trips h2{font-size:42px;line-height:1.1;margin-bottom:12px}
+.fx-dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.fx-date{border:1px solid #2a2a2a;border-radius:16px;padding:16px 18px;background:#141414}
+.fx-date svg{width:20px;height:20px;fill:none;stroke:var(--accent);stroke-width:2;margin-bottom:8px}
+.fx-date span{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#999}
+.fx-date b{font:600 22px Afacad,sans-serif;color:#fff}
+.fx-mosaic{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:420px}
+.fx-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.fx-mosaic img:first-child{grid-row:span 2}
+/* Medlemmer */
+.fx-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.fx-face{position:relative;display:block;border-radius:16px;overflow:hidden;aspect-ratio:4/5;text-decoration:none}
+.fx-face img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.fx-face:hover img{transform:scale(1.05)}
+.fx-face::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0) 50%)}
+.fx-face span{position:absolute;left:12px;right:12px;bottom:10px;z-index:1;color:rgba(255,255,255,.8);font-size:12px;line-height:1.3}
+.fx-face b{display:block;color:#fff;font:600 17px/1.15 Afacad,sans-serif}
+/* FAQ */
+.fx-faq{display:grid;grid-template-columns:4fr 8fr;gap:56px;align-items:start}
+.fx-faq h2{font-size:42px;margin-bottom:12px}
+.fx-faq-side a{color:#fff}
+.fx-acc details{border-bottom:1px solid #262626}
+.fx-acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font:600 20px/1.3 Afacad,sans-serif;color:#fff}
+.fx-acc summary::-webkit-details-marker{display:none}
+.fx-acc summary::after{content:"+";color:var(--accent);font-size:24px;line-height:1}
+.fx-acc details[open] summary::after{content:"−"}
+.fx-acc p{padding:0 0 18px;font-size:16px}
+.fx-final{text-align:center;border-top:1px solid #262626;margin-top:72px;padding-top:64px}
+.fx-final h2{font-size:34px;line-height:1.15;max-width:720px;margin:0 auto 12px}
+.fx-final p{margin-bottom:24px}
+.fx-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:72px;padding-top:24px;border-top:1px solid #1e1e1e;font-size:14px;color:#999}
+.fx-foot span:last-child{display:flex;gap:18px}
+
+/* Mobil: styres av bredden paa rammen, saa «Mobil»-bryteren gir ekte mobillayout */
+@container fx (max-width:700px){
+  .fx-wrap{padding:0 20px}
+  .fx-pad{padding:56px 0}
+  .fx-head{margin-bottom:28px}
+  .fx-head h2,.fx-intro h2,.fx-trips h2,.fx-faq h2{font-size:30px}
+  .fx-nav{padding:14px 20px;gap:14px}
+  .fx-nav nav{display:none}
+  .fx-burger{display:flex}
+  .fx-hero{display:block;min-height:0}
+  .fx-hero-img{position:relative;aspect-ratio:4/3}
+  .fx-hero-img::after{background:linear-gradient(to top,#000 0%,rgba(0,0,0,0) 40%)}
+  .fx-hero-txt{padding:4px 20px 40px}
+  .fx-hero h1{font-size:30px}
+  .fx-hero-img{aspect-ratio:16/9}
+  .fx-proof{grid-template-columns:1fr 1fr;gap:14px 20px}
+  .fx-proof b{font-size:26px}
+  .fx-lead{font-size:16px}
+  .fx-ctas .fx-btn{flex:1 1 100%}
+  .fx-intro,.fx-story,.fx-trips,.fx-faq{grid-template-columns:1fr;gap:32px}
+  .fx-quote{font-size:24px}
+  .fx-fit{grid-template-columns:1fr}
+  .fx-fit>div{padding:22px}
+  .fx-fit>div+div{border-left:0;border-top:1px solid #262626}
+  .fx-story blockquote{font-size:27px}
+  .fx-portrait{aspect-ratio:1/1}
+  .fx-steps{grid-template-columns:1fr;gap:22px;margin-bottom:36px}
+  .fx-steps-a::before{left:20px;right:auto;top:20px;bottom:20px;width:1px;height:auto}
+  .fx-steps-a li{display:grid;grid-template-columns:40px 1fr;column-gap:16px}
+  .fx-steps-a .fx-n{grid-row:span 2;margin:0}
+  .fx-steps-b li{display:grid;grid-template-columns:64px 1fr;column-gap:12px}
+  .fx-steps-b .fx-n{grid-row:span 2;font-size:44px;margin:0}
+  .fx-steps h3{font-size:21px}
+  .fx-bento{grid-template-columns:1fr;gap:12px}
+  .fx-wide{grid-column:auto}
+  .fx-photo{min-height:240px}
+  .fx-tile{padding:22px}
+  .fx-mosaic{height:300px}
+  .fx-dates{grid-template-columns:1fr 1fr}
+  .fx-strip{grid-template-columns:1fr 1fr;gap:12px}
+  .frame .fx-center .fx-btn{flex:1 1 100%}
+  .fx-benefits{grid-template-columns:1fr;gap:28px}
+  .fx-photos{order:-1;height:260px}
+  .fx-ben-txt h2{font-size:30px}
+  .fx-final h2{font-size:26px}
+  .fx-foot{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.fx-pad-s{padding:64px 0}
+.fx-blog-head{text-align:center;max-width:720px}
+.fx-blog-head h1{font-size:52px;color:#fff;margin-bottom:12px}
+.fx-blog-head p{font-size:17px;margin:0}
+.fx-meta{font-size:14px;color:var(--ink3)}
+.fx-dark .fx-meta{color:#a8a8a8}
+.fx-post{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit!important}
+.fx-post img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.fx-post>div{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.fx-post .fx-eyebrow{margin-bottom:8px}
+.fx-post h3{font-size:24px;margin-bottom:8px}
+.fx-post h2{font-size:36px;line-height:1.12;margin-bottom:12px}
+.fx-ex{font-size:16px}
+.fx-post .fx-meta{margin:auto 0 0}
+.fx-post:hover h2,.fx-post:hover h3{color:var(--accent-ink)}
+.fx-post-lead{display:grid;grid-template-columns:7fr 5fr;margin-bottom:24px}
+.fx-post-lead img{height:100%;aspect-ratio:auto;min-height:360px}
+.fx-post-lead>div{padding:36px 36px 32px;justify-content:center}
+.fx-post-lead .fx-meta{margin:0 0 18px}
+.fx-more-link{font-weight:600;color:var(--accent-ink)}
+.fx-posts{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+/* Innlegg */
+.fx-article{padding:72px 0 88px}
+.fx-art-head,.fx-prose,.fx-art-cta,.fx-more-posts{max-width:680px;margin:0 auto;padding:0 24px}
+.fx-art-head h1{font-size:50px;line-height:1.08;margin-bottom:22px}
+.fx-byline{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink3)}
+.fx-byline b{display:block;color:var(--ink);font-size:15px}
+.fx-av{flex:0 0 48px;height:48px;border-radius:50%;background:url(img/hanne.jpg) 56% 30%/320% no-repeat}
+.fx-art-img{max-width:960px;margin:36px auto 40px;padding:0 24px}
+.fx-art-img img{width:100%;max-height:480px;object-fit:cover;border-radius:16px}
+.fx-prose{font-size:18px;line-height:1.7;color:#333}
+.fx-prose p{margin:0 0 20px}
+.fx-prose h2{font-size:30px;margin:40px 0 14px}
+.fx-prose h3{font-size:22px;margin:28px 0 10px}
+.fx-prose ul{margin:0 0 20px;padding-left:22px}
+.fx-prose li{margin-bottom:6px}
+.fx-art-cta{margin-top:48px;padding:36px;background:#0a0a0a;border-radius:16px;color:#c9c9c9}
+.fx-art-cta h2{color:#fff;font-size:30px;margin-bottom:8px}
+.fx-art-cta .fx-btn{margin:10px 0 4px}
+.fx-small{font-size:14px;margin:10px 0 0!important}.fx-small b{color:#fff}
+.fx-more-posts{margin-top:64px;max-width:960px}
+.fx-more-posts>h2{font-size:30px;margin-bottom:20px}
+/* Juridiske sider */
+.fx-legal-wrap{padding:64px 0 88px}
+.fx-legal{display:grid;grid-template-columns:260px minmax(0,720px);gap:56px;justify-content:center}
+.fx-toc{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;font-size:14px}
+.fx-toc summary{font:600 13px "Open Sans";letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;list-style:none;cursor:pointer}
+.fx-toc summary::-webkit-details-marker{display:none}
+.fx-toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.fx-toc a{display:block;padding:6px 0 6px 14px;color:#444;text-decoration:none;line-height:1.35}
+.fx-toc a:hover{color:var(--accent-ink)}
+.fx-legal-body{max-width:none;padding:0;font-size:17px}
+.fx-legal-body h1{font-size:46px;margin-bottom:8px}
+.fx-legal-body h2{font-size:26px;scroll-margin-top:20px;padding-top:12px}
+.frame.fx-scroll{max-height:900px;overflow:auto}
+.fx-foot-solo{margin-top:0;border-top:0;padding:28px 40px}
+.fx-final-solo{margin-top:0;border-top:0;padding-top:0}
+@container fx (max-width:700px){
+  .fx-blog-head h1{font-size:34px}
+  .fx-post-lead{grid-template-columns:1fr}
+  .fx-post-lead img{min-height:0;aspect-ratio:16/10}
+  .fx-post-lead>div{padding:22px 22px 24px}
+  .fx-post h2{font-size:28px}
+  .fx-posts{grid-template-columns:1fr;gap:16px}
+  .fx-article{padding:40px 0 56px}
+  .fx-art-head,.fx-prose,.fx-art-cta,.fx-more-posts{padding-left:20px;padding-right:20px}
+  .fx-art-head h1{font-size:32px}
+  .fx-art-img{margin:24px auto 28px;padding:0 20px}
+  .fx-art-img img{max-height:300px}
+  .fx-prose{font-size:17px}
+  .fx-prose h2{font-size:24px}
+  .fx-art-cta{margin-left:20px;margin-right:20px;padding:26px 22px}
+  .fx-legal-wrap{padding:36px 0 56px}
+  .fx-legal{grid-template-columns:1fr;gap:20px}
+  .fx-toc{position:static;max-height:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+  .fx-toc summary{margin:0}
+  .fx-toc details[open] summary{margin-bottom:10px}
+  .fx-legal-body h1{font-size:32px}
+  .fx-legal-body{font-size:16px}
+  .fx-foot-solo{padding:24px 20px}
+}
+
+.kutt{font-size:13px;color:#777;margin:-4px 0 10px}</style></head><body>
+<nav class="pnav" aria-label="Sider"><div class="in"><span class="pnav-t">Founder Impact · forslag</span><a href="index.html">Forsiden</a><a href="blogg.html">Bloggen</a><a href="innlegg-10k.html">Innlegg: $10k a Month</a><a href="innlegg-3-people.html">Innlegg: The 3 People</a><a href="innlegg-loneliness.html">Innlegg: The Loneliness</a><a href="terms.html" aria-current="page">Terms &amp; Conditions</a><a href="privacy.html">Privacy &amp; Cookies</a></div></nav>
+<header class="top"><div class="in">
+  <p class="kicker">Founder Impact × Fjordigital · november 2026</p>
+  <h1>Terms &amp; Conditions</h1>
+  <p>Bytt mellom «Forslag» og «Nå», og mellom desktop og mobil. Teksten er Founder Impacts egen, ordrett. Forslaget er
+  sjekket mot WCAG-kontrast, én H1 per side, minst 16 px brødtekst og 48 px knapper på mobil.</p>
+  <p>Fire ting går igjen på alle undersidene:</p>
+  <div class="glob"><div><b>Norsk på en engelsk side</b><span>«av», «mai», «0 kommentarer» og «Følg» kommer fra WordPress-språket. Settes til engelsk under Innstillinger &gt; Generelt, eller i Divi sin metatekst.</span></div><div><b>Bunnteksten er limt inn</b><span>Hvert innlegg har bunnteksten kopiert inn nederst i selve teksten. Den bør ut, og den felles bunnen brukes.</span></div><div><b>H1 mangler eller er dobbel</b><span>Bloggen og de juridiske sidene har ingen H1. Ett innlegg har to. Hver side skal ha én.</span></div><div><b>Innleggsmalen</b><span>Tittelen er 1,7:1 mot bakgrunnen og brødteksten 14 px. Det rettes én gang i Divi Theme Builder og gjelder alle innlegg.</span></div></div>
+</div></header>
+<section class="sec" id="s-terms"><div class="sec-in">
+  <div class="notes">
+    <div class="bad"><h3>Nå</h3><ul><li>3 754 ord uten en eneste ekte overskrift. Seksjonene er fete avsnitt, og siden har ingen H1.</li><li>Teksten går i full bredde (1 080 px) i 14 px. Det gir 150 tegn per linje, dobbelt så mye som er lett å lese.</li><li>På mobil er siden 16 000 px lang uten noen vei til en bestemt seksjon.</li></ul></div>
+    <div class="good"><h3>Forslaget</h3><ul><li>H1, dato og 23 seksjoner som ekte overskrifter med anker.</li><li>Innholdsliste som følger med når man scroller på desktop, og som kan foldes ut på mobil.</li><li>Smal spalte (720 px) i 17 px. Teksten er ikke endret.</li><li>Forslag til Hanne: lenke rett til seksjon 5 (Cancellation) i stedet for «Cancel membership» på forsiden.</li></ul></div>
+  </div>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
+  </div>
+  <p class="kutt">«Nå» viser toppen av siden. Hele siden er 6 770 px på desktop og 16 000 px på mobil.</p>
+  <div class="stage">
+    <div class="frame fx-scroll" data-v="v0"><header class="fx-nav"><span class="fx-logo"><i>Founder</i> Impact</span><nav><a>Home</a><a>Members</a><a>Blog</a></nav><a class="fx-btn fx-btn-sm" href="#apply">Apply</a><span class="fx-burger" aria-hidden="true"><b></b><b></b><b></b></span></header>
+<div class="fx-light fx-legal-wrap"><div class="fx-wrap fx-legal">
+  <nav class="fx-toc" aria-label="Contents"><details open><summary>Contents</summary><ol><li><a href="#j1">1. Acceptance of Terms</a></li><li><a href="#j2">2. Eligibility &amp; Admission</a></li><li><a href="#j3">3. Cessation of the Member’s Business</a></li><li><a href="#j4">4. Membership Fees, Invoicing &amp; Payment</a></li><li><a href="#j5">5. Cancellation &amp; Right of Withdrawal</a></li><li><a href="#j6">6. Termination or Suspension by Founder Impact</a></li><li><a href="#j7">7. Community Standards</a></li><li><a href="#j8">8. Meetings, Events &amp; Recordings</a></li><li><a href="#j9">9. Confidentiality</a></li><li><a href="#j10">10. Intellectual Property</a></li><li><a href="#j11">11. Disclaimer</a></li><li><a href="#j12">12. Limitation of Liability</a></li><li><a href="#j13">13. Physical Events, Travel &amp; Alcohol</a></li><li><a href="#j14">14. Force Majeure</a></li><li><a href="#j15">15. Changes to These Terms &amp; to Founder Impact’s Offering</a></li><li><a href="#j16">16. Assignment</a></li><li><a href="#j17">17. Winding Up &amp; Insolvency</a></li><li><a href="#j18">18. Notices &amp; Complaints</a></li><li><a href="#j19">19. Governing Law &amp; Dispute Resolution</a></li><li><a href="#j20">20. Severability</a></li><li><a href="#j21">21. Electronic Acceptance</a></li><li><a href="#j22">22. Entire Agreement</a></li><li><a href="#j23">23. Contact</a></li></ol></details></nav>
+  <article class="fx-prose fx-legal-body">
+    <p class="fx-eyebrow fx-ink">Founder Impact AS</p>
+    <h1>Terms &amp; Conditions</h1>
+    <p class="fx-meta">Last updated: 18 October 2026</p>
+    <h2 id="j1">1. Acceptance of Terms</h2><p>These Terms &amp; Conditions (“Terms”) describe, in English, the membership terms that apply to Founder Impact’s community. These Terms are provided as a convenience translation of the binding Norwegian-language Medlemsavtale (“Membership Agreement”). In the event of any conflict or inconsistency between these Terms and the Norwegian Medlemsavtale, the Norwegian Medlemsavtale shall prevail.</p><p>In these Terms, “Founder Impact,” “we,” “us,” and “our” refer to Founder Impact AS.</p><p>Membership is entered into by an applicant representing a registered business — including a sole proprietorship (enkeltpersonforetak), limited company (aksjeselskap), or equivalent registered business form — through an authorised contact person who is at least 18 years old. The membership is entered into, and the purchase is made, as part of that business’s commercial activity, and not by the contact person as a private consumer.</p><p>Where the represented business is a sole proprietorship, the contact person is themselves the registered owner of that business and is, for legal purposes, personally the contracting party (since a sole proprietorship has no separate legal identity from its owner in Norway). This does not change the fact that the agreement is entered into, and the membership is used, as part of that person’s business activity rather than in a personal or consumer capacity, and the Norwegian Right of Withdrawal Act (angrerettloven) accordingly does not apply, see Section 5.</p><p>By applying for membership, accepting membership, paying a membership fee, or participating in Founder Impact, the member agrees to be bound by these Terms.</p><p>Our processing of personal data is described in our Privacy Policy, which is a separate informational document and does not itself form a contractual term of these Terms.</p><h2 id="j2">2. Eligibility &amp; Admission</h2><p>Founder Impact is intended exclusively for individuals who represent a registered business, are themselves a founder, entrepreneur, or business owner, and are at least 18 years of age.</p><p>To be admitted as a member, the applicant must document their business’s registration by providing a valid organisation number or equivalent registration proof, confirm that the contact person has the authority to bind the business, and confirm that the membership is being acquired substantially for use in that business’s commercial activity.</p><p>Submitting an application does not guarantee membership. Founder Impact reserves the right to accept or decline any membership application on objective grounds — including where the applicant does not meet the requirements above, is not considered a good fit for the community, or does not appear sufficiently serious or active. Any refusal shall be based on objective grounds and shall not be based on grounds protected under the Norwegian Equality and Anti-Discrimination Act. Founder Impact is not obligated to provide a detailed justification for a refusal.</p><p>If the contact person who entered into these Terms leaves or otherwise no longer represents the member’s business, the business must notify Founder Impact of a new contact person and their authority to represent the business, without undue delay. The same applies if the member’s registered business form changes, for example where a sole proprietorship is converted into a limited company. Membership continues unaffected by such changes.</p><h2 id="j3">3. Cessation of the Member’s Business</h2><p>If the member’s business ceases to exist — including through bankruptcy, dissolution, or winding-up, or through the death of a sole proprietor where no one steps into the agreement — membership ends automatically from the time Founder Impact becomes aware of this. Any membership fee already due remains payable under Section 4, but the member or estate will not be charged for periods after the date membership ended.</p><p>If the individual behind the business wishes to continue as a member through a different registered business — for example, by incorporating a limited company after a sole proprietorship’s bankruptcy — Founder Impact may approve continuation of membership under the new business on the same terms as a change of contact person under Section 2, provided the admission requirements in Section 2 are met.</p><h2 id="j4">4. Membership Fees, Invoicing &amp; Payment</h2><p>The membership fee is NOK 150 per month, exclusive of VAT. From the date Founder Impact becomes registered in the Norwegian VAT Register (Merverdiavgiftsregisteret), VAT will be added to invoices at the applicable rate.</p><p>Payment obligation arises from the date the Agreement is entered into, see Section 21. The membership fee is invoiced monthly in advance. Invoices are issued on the 15th of each month and cover the following calendar month, with a payment deadline on the last day of the month in which the invoice is issued.</p><p>The first invoice is issued on entry into the Agreement and covers the remainder of the current calendar month on a pro rata basis. If the Agreement is entered into on or after the 15th, the first invoice also covers the following calendar month. The payment deadline for the first invoice is the last day of the month, or 14 days from the invoice date if this is later.</p><p>Late payment is subject to statutory interest and fees under Norwegian law, and Founder Impact may suspend community access upon late payment. If the fee remains unpaid after Founder Impact has sent a written payment reminder with an additional deadline of at least 14 days, Founder Impact may terminate membership with immediate effect. Non-payment does not by itself constitute cancellation by the member — membership and the payment obligation continue until the member actively cancels under Section 5, or Founder Impact terminates membership under this Section or Section 6. Termination under this Section does not relieve the member of the obligation to pay any fee already due.</p><p>Membership continues on a monthly basis until the member cancels under Section 5, or Founder Impact terminates membership under Section 6.</p><p>Founder Impact may adjust membership fees with at least 60 days’ written notice. The new price takes effect at the start of the first calendar month beginning after the notice period expires. Members may cancel before the new price takes effect, under Section 5, without being charged the new price.</p><h2 id="j5">5. Cancellation &amp; Right of Withdrawal</h2><p>The member may cancel membership at any time. Cancellation is immediately effective for the member’s access: access to Discord and other membership benefits ends from the time Founder Impact receives the cancellation.</p><p>Cancellation does not affect the payment obligation. Membership fees invoiced, due, or paid for the current month are considered fully earned by Founder Impact and are not refunded, regardless of whether the member stops using access before the end of the month. To avoid being invoiced for the following month, cancellation must be received before the 15th of the current month. If cancellation is received on or after the 15th, the invoice issued for the following month remains payable.</p><p>As the Agreement is entered into by a registered business as part of its commercial activity, the Norwegian Right of Withdrawal Act (angrerettloven) does not apply, and the member has no statutory right of withdrawal in connection with this Agreement.</p><h2 id="j6">6. Termination or Suspension by Founder Impact</h2><p>Founder Impact may suspend or terminate membership where a member:</p><ul><li>fails to pay membership fees, see Section 4;</li></ul><ul><li>breaches the Community Standards in Section 7, including by actively recruiting other members to a competing community, network, or offering for founders;</li></ul><ul><li>engages in harassment, discrimination, threats, or abusive conduct;</li></ul><ul><li>engages in unlawful activity;</li></ul><ul><li>breaches the confidentiality obligations in Section 9;</li></ul><ul><li>shares or distributes Founder Impact’s content without authorisation, in breach of Section 10;</li></ul><ul><li>otherwise misuses the membership;</li></ul><ul><li>damages the reputation of Founder Impact or the community, based on a fair assessment of concrete, documented circumstances;</li></ul><ul><li>materially breaches these Terms.</li></ul><p>For serious breaches — including harassment, discrimination, threats, unlawful activity, breach of confidentiality, or breach of Section 10 — Founder Impact may terminate membership immediately, without refund of fees already paid. For less serious or isolated breaches, Founder Impact will, where circumstances allow, give the member a written warning and a reasonable opportunity to remedy the situation before terminating membership.</p><h3>6.3 Non-Renewal by Founder Impact</h3><p>Founder Impact may end a member’s membership with effect from the end of a calendar month, without this requiring any breach of these Terms by the member. Such a decision will be notified in writing at least 30 days before membership ends, and shall not be based on grounds protected under the Norwegian Equality and Anti-Discrimination Act. The member will not be charged for any period after membership ends, and any amount already paid for such periods will be refunded.</p><h2 id="j7">7. Community Standards</h2><p>Founder Impact exists to create a professional, supportive, and trustworthy environment for founders.</p><p>Members agree to communicate respectfully, contribute constructively, treat other members professionally, and comply with these Terms. The following is not permitted: harassment, bullying, or discrimination; racist, sexist, or otherwise hateful remarks; sexual harassment; threats; spam or unsolicited marketing directed at other members; direct sales to other members without Founder Impact’s prior written approval; actively recruiting other members to a competing community, network, or offering for founders; misuse of the member list or other members’ contact information; conduct damaging to Founder Impact’s or the community’s reputation; sharing confidential information in breach of Section 9; and other conduct clearly harmful to the community’s culture or the trust between members, even where not itself unlawful.</p><p>Members should avoid sharing sensitive personal information or confidential third-party information within community channels unless necessary and appropriate.</p><h2 id="j8">8. Meetings, Events &amp; Recordings</h2><p>Founder Impact organises online meetings, workshops, networking sessions, educational events, retreats, and other community activities. Participation is voluntary and at the member’s own risk, except where otherwise required by applicable law.</p><p>As a general rule, Founder Impact’s digital community calls, webinars, courses, masterminds, and hot seats are recorded and transcribed using our meeting tools. Participants are informed before a recording starts. This notice does not by itself constitute consent under data protection law; the legal basis for these recordings is Founder Impact’s legitimate interest, as described in our Privacy Policy. Recordings are made available to members in a community library as part of the community’s knowledge archive.</p><p>A member who does not wish to be recorded during a specific event may notify Founder Impact via Discord or email before the event starts. Founder Impact will seek a practical solution but cannot absolutely guarantee that a member will never appear in the background of a recording primarily concerning others. A member or former member may request that their own identifiable contributions to a recording be redacted, anonymised, or removed.</p><p>Use of a member’s image, audio, or video in external marketing requires a separate, specific consent from the member, given independently of membership, and may be withdrawn at any time by emailing kontakt@founderimpact.no . If a member withdraws consent, Founder Impact will take down videos featuring the member from its own channels, and will otherwise remove or anonymise the member in already published material where practically possible. Withdrawal of consent takes effect for future use only, and does not affect the lawfulness of use that took place before withdrawal.</p><p>Photographs and video taken at physical events may be used internally within the community, and may also be used for external marketing subject to the separate consent requirement above.</p><h2 id="j9">9. Confidentiality</h2><p>Members agree to treat as confidential everything they learn through the community about other members’ businesses, including business ideas, strategies, financial matters, documents, conversations, recordings, Discord content, and internal discussions. This information must not be shared with third parties or used for purposes other than participation in the community.</p><p>Founder Impact undertakes an equivalent obligation to keep confidential any business information it learns about a member’s business through the community, and will not share such information with other members or third parties, or use it for external marketing, without the member’s consent. This does not prevent Founder Impact from discussing general, anonymised experiences and learnings from the community in a way that does not identify the individual member.</p><p>This obligation continues after membership ends, without time limit, unless the information is or becomes publicly known other than through a breach of this Section, must be disclosed under law or order of a public authority, or is shared with the relevant party’s own advisors, such as legal counsel, accountants, or auditors, under an equivalent duty of confidentiality.</p><h2 id="j10">10. Intellectual Property</h2><p>Unless otherwise stated, all intellectual property rights relating to Founder Impact remain the exclusive property of Founder Impact. This includes, but is not limited to, branding, logos, educational materials, presentations, templates, videos, recordings, Discord material, and written or website content. Members are granted a limited, non-exclusive, and non-transferable right to use this content for their own use within their own business, for as long as membership continues.</p><p>Members may not resell, copy, distribute, or otherwise make this content available to third parties without Founder Impact’s prior written consent. Members may use artificial intelligence tools to prepare their own notes and summaries of this content for their own use, but such material must not be published, resold, used to train AI models, or otherwise shared outside the community. Members must not upload or share Founder Impact’s content with third-party AI tools in a way that gives the third party a right to store, reuse, or train models on the material, beyond what is necessary for the member’s own search for answers or summaries for their own use.</p><p>Founder Impact’s ownership of recordings under this Section covers the recording file itself and its technical production. This ownership does not give Founder Impact any right to use, further process, or share a member’s own business ideas, trade secrets, or other confidential information beyond what follows from Section 9, and any such use requires the relevant member’s specific consent. Where Founder Impact wishes to use such information further, it may ask the member for specific consent, and the parties will agree the terms of use at that time.</p><p>Breach of this Section is considered a material breach of these Terms, and may result in suspension or termination of membership without refund, see Section 6, as well as a claim for damages for any resulting financial loss. Founder Impact reserves the right to pursue breaches of this Section through legal action, including seeking an injunction to stop further distribution or use of the content.</p><p>When membership ends, the member’s right to use Founder Impact’s content ends. The member must delete or destroy their own stored copies of such content, to the extent practically possible.</p><p>Members retain ownership of content they create themselves. Founder Impact does not claim ownership of member-created intellectual property, and does not obtain any licence to such content beyond what is necessary to operate recordings, the community library, and Discord, as described in Section 8 and the Privacy Policy.</p><h2 id="j11">11. Disclaimer</h2><p>As a fundamental principle underlying this entire Section 11: Founder Impact is not liable for financial loss, errors, or other adverse consequences arising from a member’s own actions, decisions, or omissions in connection with participation in the community — including decisions made on the basis of content or communication within the community, and losses arising from collaborations, agreements, or transactions the member enters into with other members, speakers, or third parties the member meets through the community. Everything a member does as part of their participation in Founder Impact is at that member’s own and full risk, except where mandatory law provides otherwise, or where Founder Impact’s own intent (forsett) or gross negligence (grov uaktsomhet) is involved, see Section 12.</p><p>Founder Impact makes no guarantees regarding revenue, business growth, funding, investment, partnerships, customer acquisition, or any specific business outcome.</p><p>Founder Impact provides a community for the exchange of experience, professional networking, and educational content, and does not provide legal, financial, investment, tax, or other individual professional advice. Any information, experiences, opinions, and suggestions shared in the community are general in nature, and each member is solely responsible for evaluating such information, obtaining appropriate professional advice, and conducting their own investigations before making any decision.</p><h2 id="j12">12. Limitation of Liability</h2><p>Founder Impact’s total liability towards a member under this Agreement is, except where mandatory law provides otherwise, limited to the higher of (i) the membership fees the member has paid during the 12 months preceding the event giving rise to liability, or (ii) NOK 1,800. Founder Impact is not liable for indirect losses, including loss of profit, loss of business opportunities, or consequential losses.</p><p>This limitation does not apply where Founder Impact has acted with intent (forsett) or gross negligence (grov uaktsomhet), or where the limitation cannot be applied under mandatory Norwegian law.</p><p>This limitation is in addition to, and does not affect, the disclaimer in Section 11.</p><h2 id="j13">13. Physical Events, Travel &amp; Alcohol</h2><p>Founder Impact is not responsible for travel, transport, flights, hotels, or other accommodation in connection with physical events, and is not liable for health issues, insurance matters, accidents, illness, loss of belongings, or personal injury arising in connection with a member’s participation. Members are solely responsible for their own safety, health, travel arrangements, and insurance, and are encouraged to obtain appropriate travel and accident insurance. This disclaimer does not apply to loss or damage caused by Founder Impact’s intent or gross negligence, or where it cannot be applied under mandatory Norwegian law.</p><p>Alcohol consumption is permitted at Founder Impact events where appropriate, but each member is responsible for keeping their consumption at a level that is not noticeably impairing to other participants and that does not prevent the member from participating actively and professionally in the professional programme, and must not consume alcohol during professional sessions, workshops, or similar where this is not appropriate. Founder Impact encourages members to consider abstaining out of consideration for others. Founder Impact, or a Founder Impact representative present at the event, may at any time ask a member to reduce or stop drinking, or to leave the event, if the member’s condition is considered inappropriate; such a request must be complied with immediately. Outside of the event itself, members are expected to act responsibly and not endanger other members or the community’s reputation through intoxication or inappropriate conduct.</p><h2 id="j14">14. Force Majeure</h2><p>Neither party shall be considered in breach of these Terms where performance is prevented by circumstances beyond that party’s reasonable control, including natural disasters, government action, strikes, pandemics, or serious failure of third-party platforms such as Discord. The affected party shall notify the other party without undue delay, and the parties’ obligations are suspended for the duration of the force majeure event.</p><p>If a force majeure event continues for more than 3 consecutive months, either party may terminate the Agreement with immediate effect by written notice to the other party. Membership fees already paid or due are not refunded upon such termination.</p><h2 id="j15">15. Changes to These Terms &amp; to Founder Impact’s Offering</h2><p>Founder Impact may update its membership benefits, events, digital platforms, and community features from time to time, and does not guarantee that any specific feature, benefit, or event will remain available indefinitely.</p><p>Founder Impact may also update these Terms. Material changes that reduce members’ rights will be notified in writing at least 60 days before taking effect, unless required earlier by law; members may cancel under Section 5 before such changes take effect. Continued use of membership after updated Terms take effect constitutes acceptance of the revised Terms.</p><h2 id="j16">16. Assignment</h2><p>The member may not assign or transfer their rights or obligations under these Terms to a third party without Founder Impact’s prior written consent. Founder Impact may assign these Terms, in whole or in part, in connection with a transfer of its business or part of it, provided the member’s rights under these Terms are not materially diminished as a result. Where such a transfer results in a change of data controller for the member’s personal data, the member will be informed of this.</p><h2 id="j17">17. Winding Up &amp; Insolvency</h2><p>If Founder Impact decides to wind up the community, members will be notified in writing with reasonable notice. From the time of such notice, no further months will be invoiced for periods after the wind-up date, and any amount already paid for such periods will be refunded.</p><p>In the event of Founder Impact’s bankruptcy or insolvency, any claim by a member for refund of prepaid membership fees is governed by the Norwegian Bankruptcy Act (konkursloven), and the member may in that case be treated as an ordinary creditor in the bankruptcy estate.</p><h2 id="j18">18. Notices &amp; Complaints</h2><p>Notice of cancellation, price changes, material changes to these Terms, notice of payment default, and other legally binding notices shall be sent in writing to the email address provided as contact information. Other day-to-day communication may take place via Discord. Notice is deemed received once sent to the correct, current email address.</p><p>Enquiries or complaints relating to membership should be directed to kontakt@founderimpact.no . Founder Impact will respond within a reasonable time, normally within 14 days. If unresolved, Section 19 applies.</p><h2 id="j19">19. Governing Law &amp; Dispute Resolution</h2><p>These Terms are governed by the laws of Norway. Any dispute shall first be sought resolved through good-faith dialogue between the parties. If not resolved, the dispute shall be brought before the ordinary Norwegian courts, with Founder Impact’s registered place of business at the relevant time as the agreed venue.</p><h2 id="j20">20. Severability</h2><p>If any provision of these Terms is found invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall seek to replace the invalid provision with a valid provision that, to the greatest extent possible, achieves the original purpose of the provision and the parties’ intentions.</p><h2 id="j21">21. Electronic Acceptance</h2><p>These Terms are entered into and become binding upon the member’s electronic acceptance, including by checkbox, electronic signature, or other reliable electronic confirmation. Electronic acceptance has the same legal effect as a signature on paper. The time of acceptance constitutes the date the Agreement is entered into, and forms the basis for calculating payment obligations under Section 4.</p><p>Founder Impact seeks to document the time of acceptance, the contact person’s name, the business name and organisation number, checkbox confirmations, and which version of these Terms was accepted.</p><h2 id="j22">22. Entire Agreement</h2><p>These Terms, together with any attachments, constitute the entire agreement between the parties regarding membership, and supersede all prior oral or written understandings regarding membership. This does not affect the validity of separate agreements entered into for specific events, retreats, or travel arranged by Founder Impact, which apply in addition to these Terms.</p><h2 id="j23">23. Contact</h2><p>Founder Impact AS, Organisation No.: 938253935, Fjordavegen 858, 5750 Odda, Norway. Email: kontakt@founderimpact.no</p><p>© Founder Impact AS Contact: Kontakt@founderimpact.no Org. No. 938 253 935</p><p>Privacy &amp; Cookies</p><ul><li>Følg</li></ul><ul><li>Følg</li></ul>
+  </article>
+</div></div>
+<footer class="fx-dark"><div class="fx-wrap fx-foot fx-foot-solo">
+  <span>© Founder Impact AS · Org. No. 938 253 935 · Fjordavegen 858, 5750 Odda</span>
+  <span><a>Privacy &amp; Cookies</a><a>Terms &amp; Conditions</a><a>Instagram</a><a>LinkedIn</a></span>
+</div></footer></div>
+    <div class="naa"><img class="d-only" src="naa/terms-desktop.jpg" alt="Slik ser siden ut på desktop i dag" loading="lazy"><img class="m-only" src="naa/terms-mobil.jpg" alt="Slik ser siden ut på mobil i dag" loading="lazy"></div>
+  </div>
+</div></section>
+<section class="end"><div class="box">
+  <h2>Hva synes dere?</h2>
+  <p>De tre innleggene bruker samme mal. Den bygges én gang i Divi Theme Builder og gjelder alle innlegg, også de som kommer.
+  Det samme gjelder de to juridiske sidene.</p>
+  <p><b>Dette trenger vi fra Hanne:</b> om tittelen skal være «$10k» eller «100k», og om innleggsadressene kan endres
+  (vi setter opp videresending fra de gamle).</p>
+</div></section>
+<script>
+document.querySelectorAll('.sec').forEach(function (sec) {
+  var stage = sec.querySelector('.stage');
+  sec.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var g = b.parentNode;
+      g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      if (b.dataset.view) {
+        stage.classList.toggle('show-naa', b.dataset.view === 'naa');
+        stage.querySelectorAll('.frame').forEach(function (f) { f.hidden = f.dataset.v !== b.dataset.view; });
+        sec.querySelectorAll('.vnote li').forEach(function (li) { li.classList.toggle('on', li.dataset.v === b.dataset.view); });
+      }
+      if (b.dataset.dev) stage.classList.toggle('m', b.dataset.dev === 'm');
+    });
+  });
+});
+// Lenkene inne i forslagene er bare demo
+document.querySelectorAll('.frame a').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); }); });
+</script>
+</body></html>
