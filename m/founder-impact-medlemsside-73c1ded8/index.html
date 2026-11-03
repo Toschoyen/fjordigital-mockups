@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
+<title>Founder Impact · Medlemssiden, seks varianter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#ea2c59;--accent-ink:#c11e46;--ink:#0d0d0d;--ink2:#555;--ink3:#8a8a8a;--flat:#fbfbfb;
+--card:#fff;--line:rgba(0,0,0,.09);--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--flat);color:var(--ink2);font:15px/1.6 "Open Sans",system-ui,sans-serif}
+button{font:inherit}
+/* Presentasjonsrammen */
+.top{background:#0d0d0d;color:#cfcfcf;padding:56px 16px 40px}
+.top .in{max-width:1240px;margin:0 auto}
+.top .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff8aa6;margin:0 0 10px}
+.top h1{font:600 46px/1.05 Afacad,sans-serif;color:#fff;margin:0 0 14px}
+.top p{max-width:720px;margin:0 0 10px}
+.tabs{position:sticky;top:0;z-index:20;background:rgba(13,13,13,.96);backdrop-filter:blur(6px);border-top:1px solid #222}
+.tabs .in{max-width:1240px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.tabs button{flex:0 0 auto;white-space:nowrap;cursor:pointer;border:1px solid #3a3a3a;background:transparent;color:#ddd;
+  border-radius:99px;padding:8px 16px;font-weight:600;font-size:14px}
+.tabs button .n{opacity:.55;font-weight:400;margin-right:6px}
+.tabs button[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+.tabs button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.vhead{max-width:1240px;margin:0 auto;padding:40px 16px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px 40px}
+.vhead h2{grid-column:1/-1;font:600 34px/1.1 Afacad,sans-serif;color:var(--ink);margin:0}
+.vhead h2 small{display:block;font:400 15px "Open Sans";color:var(--ink3);margin-top:6px}
+.vhead p{margin:0;font-size:14.5px}
+.vhead b{color:var(--ink)}
+@media(max-width:760px){.vhead{grid-template-columns:1fr}.top h1{font-size:36px}.tabs .in{flex-wrap:wrap}.tabs button{padding:7px 12px;font-size:13px}}
+.stage{max-width:1240px;margin:28px auto 0;padding:0 16px}
+.demo{background:var(--flat);border:1px dashed rgba(0,0,0,.14);border-radius:20px;padding:64px 28px 72px}
+@media(max-width:600px){.demo{padding:44px 14px 52px;border-radius:14px}}
+.demo h3.title{font:600 42px/1.1 Afacad,sans-serif;color:var(--ink);text-align:center;margin:0 0 10px}
+.demo .intro{max-width:620px;margin:0 auto 40px;text-align:center}
+@media(max-width:520px){.demo h3.title{font-size:32px}}
+.choose{max-width:1240px;margin:56px auto 0;padding:0 16px 96px}
+.choose .box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px}
+.choose h2{font:600 30px Afacad,sans-serif;color:var(--ink);margin:0 0 12px}
+.choose ul{margin:8px 0 0;padding-left:20px}
+.choose table{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px}
+.choose th,.choose td{text-align:left;padding:10px;border-top:1px solid var(--line);vertical-align:top}
+.choose th{color:var(--ink)}
+.wrapt{overflow-x:auto}
+
+/* Felles kortdeler */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;
+  flex-direction:column;transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.10);border-color:rgba(234,44,89,.35)}
+.photo{overflow:hidden;background:#e9e9e9}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.card:hover .photo img{transform:scale(1.05)}
+.body{padding:18px 20px 16px;display:flex;flex-direction:column;flex:1}
+.name{font:600 21px/1.2 Afacad,sans-serif;color:var(--ink);margin:0}
+.meta{margin:2px 0 8px;font-size:12px;color:var(--ink3);letter-spacing:.02em}
+.role{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--ink);line-height:1.4}
+.clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+.bio p{margin:0 0 8px;font-size:13.5px;line-height:1.55}
+.teaser{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:4.65em}
+.more{overflow:hidden;max-height:0;transition:max-height .4s ease}
+.open .teaser{display:block;-webkit-line-clamp:unset;min-height:0}
+.open .more{max-height:1400px}
+.fun{margin:12px 0 8px!important;padding:10px 12px;border-radius:10px;background:rgba(234,44,89,.06);
+  border:1px solid rgba(234,44,89,.18);font-size:13px!important;color:#444}
+.fun-l{display:block;font:600 11px/1.2 "Open Sans";letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:3px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:6px 0 14px;padding:0}
+.tags li{padding:4px 10px;border-radius:99px;border:1px solid var(--line);background:rgba(0,0,0,.045);
+  font-size:11px;font-weight:600;color:#555;white-space:nowrap}
+.tags li:first-child{border-color:rgba(234,44,89,.32);background:rgba(234,44,89,.09);color:var(--accent-ink)}
+.read{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+  background:none;border:0;padding:6px 0;font-weight:600;font-size:13px;color:var(--accent-ink)}
+.read:hover .lbl{text-decoration:underline;text-underline-offset:3px}
+.read svg{width:16px;height:16px;transition:transform .25s}
+.open .read svg{transform:rotate(180deg)}
+.read.side svg{transform:rotate(-90deg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Folgefonna, Hardanger, Sørfjorden: rutenett */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}
+@media(max-width:1080px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+.grid .photo{aspect-ratio:1/1}
+
+/* Trolltunga: portrett med navn i bildet */
+.tt{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1080px){.tt{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.tt{grid-template-columns:repeat(2,1fr);gap:12px}}
+.tt .card{cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit}
+.tt .photo{aspect-ratio:4/5;position:relative}
+.tt .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0) 48%)}
+.tt .over{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;color:#fff}
+.tt .over .name{color:#fff;font-size:22px}
+.tt .over .meta{color:rgba(255,255,255,.8);margin:2px 0 0}
+.tt .body{padding:14px 16px 16px}
+.tt .role{margin:0 0 8px}
+.tt .cta{font-size:13px;font-weight:600;color:var(--accent-ink);margin-top:auto}
+@media(max-width:520px){.tt .over .name{font-size:18px}.tt .body{padding:12px}.tt .tags{display:none}}
+
+/* Buer: bildevegg + sidepanel */
+.wall{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+@media(max-width:1080px){.wall{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){.wall{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media(max-width:420px){.wall{grid-template-columns:repeat(2,1fr)}}
+.tile{all:unset;cursor:pointer;display:block;border-radius:12px}
+.tile .photo{aspect-ratio:1/1;border-radius:12px}
+.tile:hover .photo img{transform:scale(1.05)}
+.tile .name{font-size:16px;margin-top:8px}
+.tile .meta{margin:0}
+.count{text-align:center;font-size:13px;color:var(--ink3);margin:28px 0 0}
+
+/* Låtefoss: liggende kort */
+.rows{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media(max-width:860px){.rows{grid-template-columns:1fr}}
+.h{flex-direction:row}
+.h .photo{flex:0 0 180px;align-self:stretch;min-height:240px}
+@media(max-width:520px){.h .photo{flex-basis:112px;min-height:0}}
+.h .body{padding:18px 20px}
+.h .teaser{-webkit-line-clamp:4;min-height:6.2em}
+
+/* Sørfjorden: filter */
+.filters{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:center;margin:0 0 28px}
+.search{flex:1 1 260px;max-width:340px;position:relative}
+.search input{width:100%;padding:11px 14px 11px 38px;border:1px solid rgba(0,0,0,.16);border-radius:10px;font:inherit;font-size:14px;background:#fff}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#999}
+.chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.chip{cursor:pointer;border:1px solid rgba(0,0,0,.14);background:#fff;border-radius:99px;padding:6px 12px;font-size:12.5px;font-weight:600;color:#444}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.found{text-align:center;font-size:13px;color:var(--ink3);margin:-14px 0 22px}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--ink3)}
+
+/* Vindu og sidepanel */
+dialog{border:0;padding:0;color:var(--ink2);box-shadow:0 30px 80px rgba(0,0,0,.25)}
+dialog::backdrop{background:rgba(13,13,13,.55);backdrop-filter:blur(3px)}
+dialog.modal{border-radius:18px;max-width:900px;width:calc(100% - 32px);max-height:calc(100% - 48px)}
+.dlg{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.dlg .photo{min-height:360px}
+.dlg .txt{padding:34px 34px 28px;overflow:auto;max-height:calc(100vh - 48px)}
+.dlg .name{font-size:32px}
+.dlg .bio p{font-size:14.5px}
+dialog.drawer{margin:0 0 0 auto;height:100%;max-height:100%;width:min(460px,100%);border-radius:0}
+dialog.drawer[open]{animation:slide .3s cubic-bezier(.2,.7,.3,1)}
+@keyframes slide{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+dialog.drawer .dlg{grid-template-columns:1fr}
+dialog.drawer .photo{min-height:0;aspect-ratio:1/1}
+dialog.drawer .txt{max-height:none;padding:24px 28px 40px}
+.close{position:absolute;top:12px;right:12px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(255,255,255,.94);font-size:24px;line-height:1;color:#111;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+@media(max-width:700px){
+  dialog.modal{width:100%;max-width:none;margin:auto 0 0;border-radius:18px 18px 0 0;max-height:92vh}
+  .dlg{grid-template-columns:1fr}.dlg .photo{min-height:0;aspect-ratio:4/3}
+  .dlg .txt{max-height:none;padding:22px 20px 32px}.dlg .name{font-size:26px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<header class="top"><div class="in">
+  <p class="kicker">Founder Impact × Fjordigital · november 2026</p>
+  <h1>Medlemssiden, seks varianter</h1>
+  <p>Alle seks viser de samme tolv medlemmene med ekte bilder og tekst fra dagens side. Alle har en måte å lese
+  hele teksten og fun fact på. Forskjellen er hvordan kortene ser ut, og hva som skjer når man vil lese mer.</p>
+  <p>Bla mellom variantene med knappene under, og klikk deg rundt slik en besøkende ville gjort. Prøv gjerne på mobilen også.</p>
+</div></header>
+<nav class="tabs" aria-label="Varianter"><div class="in" role="tablist"><button type="button" role="tab" data-v="folgefonna" aria-selected="false"><span class="n">1</span>Folgefonna</button><button type="button" role="tab" data-v="hardanger" aria-selected="false"><span class="n">2</span>Hardanger</button><button type="button" role="tab" data-v="trolltunga" aria-selected="false"><span class="n">3</span>Trolltunga</button><button type="button" role="tab" data-v="buer" aria-selected="false"><span class="n">4</span>Buer</button><button type="button" role="tab" data-v="latefoss" aria-selected="false"><span class="n">5</span>Låtefoss</button><button type="button" role="tab" data-v="sorfjorden" aria-selected="false"><span class="n">6</span>Sørfjorden</button></div></nav>
+<section class="vhead" id="vhead" aria-live="polite"></section>
+<section class="stage" id="stage"></section>
+<section class="choose"><div class="box">
+  <h2>Hvilken liker du best?</h2>
+  <p>Svar med navnet på varianten, for eksempel «Hardanger». Det går fint å kombinere, for eksempel «Trolltunga med filteret fra Sørfjorden».</p>
+  <div class="wrapt"><table><tr><th>Variant</th><th>Kort fortalt</th><th>Passer når</th></tr><tr><th>Folgefonna</th><td>Kort i rutenett, teksten utvides i kortet</td><td>du vil at besøkende skal kunne lese flere profiler etter hverandre uten å miste oversikten.</td></tr><tr><th>Hardanger</th><td>Samme kort, hele profilen åpnes i et vindu</td><td>bildene skal få mest mulig plass, og hver profil skal føles som en liten presentasjon.</td></tr><tr><th>Trolltunga</th><td>Høye portretter med navnet i bildet</td><td>dere vil vise ansiktene først. Krever at portrettene har litt luft under ansiktet.</td></tr><tr><th>Buer</th><td>Bildevegg, profilen åpnes i et sidepanel</td><td>communityet vokser mot 40+ og det viktigste er å vise hvor mange dere er.</td></tr><tr><th>Låtefoss</th><td>Liggende kort, bilde til venstre og tekst til høyre</td><td>teksten er like viktig som bildene.</td></tr><tr><th>Sørfjorden</th><td>Folgefonna med søk og filter</td><td>besøkende skal kunne finne folk i sin egen bransje. Blir viktigere jo flere medlemmer dere får.</td></tr></table></div>
+  <p style="margin-top:20px"><b>Dette må dere se over uansett variant:</b></p>
+  <ul>
+    <li>Rollen under navnet og taggene er våre forslag, laget ut fra teksten til hver person. De må bekreftes eller rettes.</li>
+    <li>Fire av bildene er små (276 px) og blir litt uskarpe i de største variantene. Nye portretter på minst 800 px, gjerne i samme format, løfter alle variantene.</li>
+  </ul>
+</div></section>
+<dialog id="dlg" aria-labelledby="dlgt"><button class="close" type="button" aria-label="Close">×</button><div class="dlg" id="slot"></div></dialog>
+<script>window.MEMBERS=[{"name": "Emelie Solming", "meta": "Sweden · 22", "role": "Marketing agency for construction companies", "bio": ["Runs a marketing agency helping construction companies with Meta ads.", "She’s also a YouTuber and is making a course on self-belief and understanding the power of your internal state.", "Outside of work, she enjoys traveling, meeting like-minded people, and learning."], "fun": null, "tags": ["Meta Ads", "Agency", "Content"], "img": "img/emelie-solming.jpg"}, {"name": "Tobias Schøyen", "meta": "Norway · 28", "role": "Digital marketer and systems developer", "bio": ["Solves the problem before the solution. Never accepts “it can’t be done” as an answer.", "Performance marketing and AI automations for businesses from 5M+, ranging from local companies to Kawasaki and Framtiden i Våre Hender."], "fun": null, "tags": ["Performance", "AI Automation", "Dev"], "img": "img/tobias-schoyen.jpg"}, {"name": "Fillip Kanić-Abrahamsen", "meta": "Norway · 23", "role": "Sales manager at Verisure", "bio": ["Experience in scaling small to mid-sized marketing agencies in the construction niche.", "Specialises in sales and is the sales manager at Verisure."], "fun": "Has worked in both sales and the military - but has never tried snus or a white Monster.", "tags": ["Sales", "Agency Scaling"], "img": "img/fillip-kanic-abrahamsen.jpg"}, {"name": "David Michelsen", "meta": "Denmark · 25", "role": "Founder, The Discipline Group", "bio": ["David is the founder of The Discipline Group, where he helps aspiring entrepreneurs go from idea to first payment through a structured accelerator program. His long-term goal is to help 100 million people start a business and get paid.", "He specializes in client acquisition, particularly cold outreach, and currently works with founders across various niches, ranging from HVAC lead generation to SaaS for health clinics."], "fun": "Love human psychology and stoicism as well as working out.", "tags": ["Cold Outreach", "Accelerator", "B2B"], "img": "img/david-michelsen.jpg"}, {"name": "Malin Kristine Moen", "meta": "Norway · 28", "role": "Online coach, habits and health", "bio": ["Malin is an online coach helping women lose weight and build sustainable habits without letting it consume their lives.", "She shares practical tips, motivation, and lessons from her own journey.", "Alongside coaching, she works full-time as a teacher, prioritizes her own training, and enjoys challenging herself through solo travel and new experiences."], "fun": "Recently went skydiving.", "tags": ["Coaching", "Health", "Content"], "img": "img/malin-kristine-moen.jpg"}, {"name": "Markus Lien", "meta": "Norway · 22", "role": "Closer in the info product space", "bio": ["Markus have a long-standing interest in entrepreneurship. From an early age, he's been exploring different paths building he's own agency, working in door-to-door and phone sales, and continuously learning through real world experience.", "Today, he work as a closer in the info product space."], "fun": "I have invested over $10k in mentorship in business", "tags": ["Sales", "Info Products"], "img": "img/markus-lien.jpg"}, {"name": "Patrick Leth", "meta": "Denmark · 20", "role": "Client acquisition for clinics", "bio": ["He is helping clinics get more qualified client inquiries through ads, content production, and structured follow-up. He also helps them with organic content to become more visible online."], "fun": "He likes horses and loves going on tours in nature and riding horses.", "tags": ["Clinics", "Ads", "Content"], "img": "img/patrick-leth.jpg"}, {"name": "Simen Liadal", "meta": "Norway · 29", "role": "Founder, Leadlinks", "bio": ["Runs Leadlinks, helping clinics and practitioners get more clients through digital marketing.", "Works fully remote and travels frequently. Outside of work, spends time on football both watching and playing."], "fun": "Enjoys seeking out new adventures - the kind you look back on and think, “what the f*ck… I actually did that.”", "tags": ["Lead Gen", "Clinics", "Remote"], "img": "img/simen-liadal.jpg"}, {"name": "Tymur Lubinsky", "meta": "Norway · 30", "role": "Marketer, 9 years experience", "bio": ["He is a marketer with over nine years of experience. He currently works at a marketing company in Norway.", "Throughout his career, he has gained experience across international markets, including the United States, the Middle East, the European Union, and the Nordic countries.", "Alongside his full-time job, he is building his own e-commerce projects."], "fun": "He won the World Chessboxing Championship.", "tags": ["Marketing", "Ecommerce", "International"], "img": "img/tymur-lubinsky.jpg"}, {"name": "Ellen Marie Vigrestad", "meta": "Norway · 21", "role": "Founder, Pennifly", "bio": ["I’m Ellen, a 21-year-old entrepreneur based in Oslo and founder of Pennifly.", "I’m currently focused on building a fintech product that makes smarter financial decisions seamless at the moment of purchase.", "My goal is to scale it globally and create something that genuinely changes the way people interact with their money."], "fun": "I’m also an artist, drawing portraits 🎨✨", "tags": ["Fintech", "Product", "Startup"], "img": "img/ellen-marie-vigrestad.jpg"}, {"name": "Ingvar Mjanger Rafteseth", "meta": "Norway · 22", "role": "Founder, Mavelo", "bio": ["Ingvar is building Mavelo, a performance-based Google Ads agency that helps Norwegian B2C companies get the most out of Google Ads.", "He dropped out of his studies in Munich to move back to Norway and go all in on building Mavelo."], "fun": "He's highly competitive, social, and notoriously bad at saying no to padel, tennis, or a spontaneous plan. Especially if it involves traveling to a country he's never been to.", "tags": ["Google Ads", "Agency", "B2C"], "img": "img/ingvar-mjanger-rafteseth.jpg"}, {"name": "Mads Trippestad", "meta": "Norway · 23", "role": "Founder, Norland & Co.", "bio": ["Mads runs Norland & Co. Where they get B2B companies in front of senior decision-makers through personalized, physical video mailers that turns into sales meetings"], "fun": null, "tags": ["B2B", "Outbound", "Video"], "img": "img/mads-trippestad.jpg"}];window.VARIANTS=[{"id": "folgefonna", "navn": "Folgefonna", "kort": "Kort i rutenett, teksten utvides i kortet", "tekst": "Fire kort i bredden med bilde, navn, rolle og starten på bioen. «Read more» åpner resten av teksten og fun fact rett i kortet, uten at noe annet på siden flytter seg.", "passer": "Når du vil at besøkende skal kunne lese flere profiler etter hverandre uten å miste oversikten."}, {"id": "hardanger", "navn": "Hardanger", "kort": "Samme kort, hele profilen åpnes i et vindu", "tekst": "Kortene er like Folgefonna, men «Read more» åpner et vindu med stort bilde og hele teksten. Rutenettet står alltid stille. På mobil glir vinduet opp nedenfra.", "passer": "Når bildene skal få mest mulig plass, og hver profil skal føles som en liten presentasjon."}, {"id": "trolltunga", "navn": "Trolltunga", "kort": "Høye portretter med navnet i bildet", "tekst": "Bildet er høyere og navnet står over bunnen av bildet. Under står rolle og tagger. Hele kortet er klikkbart og åpner profilen i et vindu. Den mest eksklusive av de seks.", "passer": "Når dere vil vise ansiktene først. Krever at portrettene har litt luft under ansiktet."}, {"id": "buer", "navn": "Buer", "kort": "Bildevegg, profilen åpnes i et sidepanel", "tekst": "Seks bilder i bredden med bare navn og land. Klikk på en person, så glir et panel inn fra høyre med hele profilen. Viser mange medlemmer på liten plass.", "passer": "Når communityet vokser mot 40+ og det viktigste er å vise hvor mange dere er."}, {"id": "latefoss", "navn": "Låtefoss", "kort": "Liggende kort, bilde til venstre og tekst til høyre", "tekst": "To kort i bredden med bildet ved siden av teksten. Mer av bioen vises med en gang, og «Read more» åpner resten i kortet. Nærmest dagens side.", "passer": "Når teksten er like viktig som bildene."}, {"id": "sorfjorden", "navn": "Sørfjorden", "kort": "Folgefonna med søk og filter", "tekst": "Samme kort som Folgefonna, men med søkefelt og knapper for land og fagområde over. Prøv å trykke på «Sweden» eller «Sales». Filteret kan også legges på de andre variantene.", "passer": "Når besøkende skal kunne finne folk i sin egen bransje. Blir viktigere jo flere medlemmer dere får."}];</script>
+<script>
+const M = window.MEMBERS, V = window.VARIANTS;
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const chev = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const tags = m => '<ul class="tags">' + m.tags.map(t => `<li>${esc(t)}</li>`).join('') + '</ul>';
+const fun = m => m.fun ? `<p class="fun"><span class="fun-l">Fun fact</span>${esc(m.fun)}</p>` : '';
+const rest = m => m.bio.slice(1).map(p => `<p>${esc(p)}</p>`).join('') + fun(m);
+const photo = (m, extra='') => `<div class="photo">${extra}<img src="${m.img}" alt="Portrait of ${esc(m.name)}" loading="lazy"></div>`;
+const head = m => `<h4 class="name">${esc(m.name)}</h4><p class="meta">${esc(m.meta)}</p>`;
+
+function inlineCard(m, i, cls='') {
+  return `<article class="card ${cls}">${photo(m)}<div class="body">${head(m)}
+    <p class="role clamp2">${esc(m.role)}</p>
+    <div class="bio" id="b${cls}${i}"><p class="teaser">${esc(m.bio[0])}</p><div class="more">${rest(m)}</div></div>
+    ${tags(m)}<button class="read" type="button" aria-expanded="false" aria-controls="b${cls}${i}" data-act="toggle">
+    <span class="lbl">Read more</span>${chev}</button></div></article>`;
+}
+function modalCard(m, i) {
+  return `<article class="card">${photo(m)}<div class="body">${head(m)}
+    <p class="role clamp2">${esc(m.role)}</p><div class="bio"><p class="teaser">${esc(m.bio[0])}</p></div>
+    ${tags(m)}<button class="read side" type="button" data-act="modal" data-i="${i}" aria-haspopup="dialog">
+    <span class="lbl">Read more</span>${chev}</button></div></article>`;
+}
+const intro = (t, s) => `<h3 class="title">${t}</h3><p class="intro">${s}</p>`;
+const INTRO = '40+ founders across Norway, Sweden and Denmark, all building their own businesses.';
+
+const R = {
+  folgefonna: () => intro('Meet the founders', INTRO) + '<div class="grid">' + M.map((m,i) => inlineCard(m,i,'f')).join('') + '</div>',
+  hardanger: () => intro('Meet the founders', INTRO) + '<div class="grid">' + M.map(modalCard).join('') + '</div>',
+  trolltunga: () => intro('The people you will be building with', INTRO) + '<div class="tt">' + M.map((m,i) =>
+    `<button class="card" type="button" data-act="modal" data-i="${i}" aria-haspopup="dialog">
+      ${photo(m, `<div class="over"><span class="name" style="display:block">${esc(m.name)}</span><span class="meta" style="display:block">${esc(m.meta)}</span></div>`)}
+      <span class="body"><span class="role clamp2" style="display:-webkit-box">${esc(m.role)}</span>${tags(m)}<span class="cta">View profile →</span></span></button>`).join('') + '</div>',
+  buer: () => intro(`${M.length} founders. One room.`, 'Scandinavian founders across marketing, sales, AI, ecom and coaching. Tap a face to meet them.') +
+    '<div class="wall">' + M.map((m,i) => `<button class="tile" type="button" data-act="drawer" data-i="${i}" aria-haspopup="dialog">
+      ${photo(m)}<span class="name" style="display:block">${esc(m.name)}</span><span class="meta" style="display:block">${esc(m.meta.split(' · ')[0])}</span></button>`).join('') +
+    '</div><p class="count">With 40 members this wall fills about seven rows on desktop.</p>',
+  latefoss: () => intro('Meet the founders', INTRO) + '<div class="rows">' + M.map((m,i) =>
+    `<article class="card h">${photo(m)}<div class="body">${head(m)}<p class="role">${esc(m.role)}</p>
+      <div class="bio" id="bl${i}"><p class="teaser">${esc(m.bio[0])}</p><div class="more">${rest(m)}</div></div>
+      ${tags(m)}<button class="read" type="button" aria-expanded="false" aria-controls="bl${i}" data-act="toggle"><span class="lbl">Read more</span>${chev}</button></div></article>`).join('') + '</div>',
+  sorfjorden: () => {
+    const countries = [...new Set(M.map(m => m.meta.split(' · ')[0]))];
+    const areas = [...new Set(M.flatMap(m => m.tags))].sort();
+    const top = areas.filter(a => M.filter(m => m.tags.includes(a)).length > 1);
+    return intro('Who is inside', 'Search by name or filter by country and focus area.') +
+      `<div class="filters"><label class="search"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input type="search" placeholder="Search members" aria-label="Search members" data-f="q"></label>
+      <div class="chips" role="group" aria-label="Country">${countries.map(c => `<button class="chip" type="button" aria-pressed="false" data-c="${c}">${c}</button>`).join('')}</div>
+      <div class="chips" role="group" aria-label="Focus area">${top.map(a => `<button class="chip" type="button" aria-pressed="false" data-t="${esc(a)}">${esc(a)}</button>`).join('')}</div></div>
+      <p class="found" aria-live="polite"></p><div class="grid" data-filtered>${M.map((m,i) => inlineCard(m,i,'s')).join('')}</div>`;
+  },
+};
+
+const stage = document.getElementById('stage'), vhead = document.getElementById('vhead');
+function show(id, push) {
+  const v = V.find(x => x.id === id) || V[0];
+  document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.v === v.id));
+  vhead.innerHTML = `<h2>${v.navn}<small>${v.kort}</small></h2><p><b>Slik virker den.</b> ${v.tekst}</p><p><b>Passer når</b> ${v.passer.replace(/^Når /,'')}</p>`;
+  stage.innerHTML = `<div class="demo">${R[v.id]()}</div>`;
+  if (v.id === 'sorfjorden') filter();
+  if (push) history.replaceState(null, '', '#' + v.id);
+}
+
+const state = {q:'', c:new Set(), t:new Set()};
+function filter() {
+  const cards = stage.querySelectorAll('[data-filtered] .card'); let n = 0;
+  cards.forEach((el, i) => { const m = M[i];
+    const ok = (!state.q || (m.name + ' ' + m.role + ' ' + m.bio.join(' ') + ' ' + m.tags.join(' ')).toLowerCase().includes(state.q))
+      && (!state.c.size || state.c.has(m.meta.split(' · ')[0])) && (!state.t.size || m.tags.some(t => state.t.has(t)));
+    el.hidden = !ok; n += ok; });
+  stage.querySelector('.found').textContent = `Showing ${n} of ${M.length} founders`;
+}
+
+const dlg = document.getElementById('dlg'), slot = document.getElementById('slot'); let last = null;
+function openProfile(i, kind, btn) {
+  const m = M[i]; last = btn;
+  dlg.className = kind;
+  slot.innerHTML = photo(m) + `<div class="txt">${head(m).replace('<h4', '<h4 id="dlgt"')}<p class="role">${esc(m.role)}</p>
+    <div class="bio">${m.bio.map(p => `<p>${esc(p)}</p>`).join('')}${fun(m)}</div>${tags(m)}</div>`;
+  dlg.showModal(); dlg.querySelector('.close').focus();
+}
+dlg.querySelector('.close').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+dlg.addEventListener('close', () => last && last.focus());
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-v]'); if (t) { show(t.dataset.v, true); document.getElementById('vhead').scrollIntoView({block:'start'}); return; }
+  const a = e.target.closest('[data-act]'); if (a) {
+    if (a.dataset.act === 'toggle') { const c = a.closest('.card'); const o = !c.classList.contains('open');
+      c.classList.toggle('open', o); a.setAttribute('aria-expanded', o); a.querySelector('.lbl').textContent = o ? 'Show less' : 'Read more'; }
+    else openProfile(+a.dataset.i, a.dataset.act, a);
+    return; }
+  const ch = e.target.closest('.chip'); if (ch) { const on = ch.getAttribute('aria-pressed') !== 'true';
+    ch.setAttribute('aria-pressed', on); const set = ch.dataset.c ? state.c : state.t, k = ch.dataset.c || ch.dataset.t;
+    on ? set.add(k) : set.delete(k); filter(); }
+});
+document.addEventListener('input', e => { if (e.target.dataset.f === 'q') { state.q = e.target.value.trim().toLowerCase(); filter(); } });
+show(location.hash.slice(1), false);
+</script>
+</body></html>
