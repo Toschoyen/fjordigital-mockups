@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#ea2c59;--accent-ink:#c11e46;--ink:#0d0d0d;--ink2:#555;--ink3:#8a8a8a;--flat:#fbfbfb;--line:rgba(0,0,0,.09)}
+:root{--accent:#ea2c59;--accent-ink:#c11e46;--ink:#0d0d0d;--ink2:#555;--ink3:#666666;--flat:#fbfbfb;--line:rgba(0,0,0,.09)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",system-ui,sans-serif}
@@ -46,6 +46,10 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
 .naa img{display:block;width:100%}
 .stage.m .naa{max-width:390px}
 .stage.show-naa .frame{display:none}.stage.show-naa .naa{display:block}
+.frame[hidden]{display:none}
+.vnote{list-style:none;margin:0 0 12px;padding:0;font-size:14px}
+.vnote li{padding:6px 12px;border-radius:8px;color:#777}
+.vnote li.on{background:#fff;color:var(--ink)}
 .naa .d-only{display:block}.naa .m-only{display:none}
 .stage.m .naa .d-only{display:none}.stage.m .naa .m-only{display:block}
 .end{max-width:1240px;margin:56px auto 0;padding:0 16px 96px}
@@ -64,9 +68,11 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
 .fx-light{background:var(--flat)}
 .fx-head{text-align:center;max-width:640px;margin:0 auto 44px}
 .fx-head h2{font-size:42px;line-height:1.1;margin-bottom:10px}
-.fx-btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff!important;text-decoration:none;font-weight:600;font-size:15px;border-radius:8px;padding:14px 24px;border:1px solid var(--accent);transition:background .2s}
-.fx-btn:hover{background:var(--accent-ink)}
-.fx-btn-sm{padding:9px 16px;font-size:14px}
+/* Hvit på #ea2c59 er 4,2:1 (stryker). Knappene bruker #c11e46, 5,9:1. */
+.fx-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--accent-ink);color:#fff!important;text-decoration:none;font-weight:600;font-size:16px;border-radius:8px;padding:12px 24px;border:1px solid var(--accent-ink);transition:background .2s}
+.fx-btn:hover{background:#a3183a}
+.fx-btn-sm{min-height:44px;padding:10px 18px;font-size:15px}
+.frame .fx-center{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .fx-ghost{background:transparent;border-color:rgba(255,255,255,.45)}
 .fx-ghost:hover{background:rgba(255,255,255,.1)}
 .fx-ghost-dark{background:transparent;color:var(--ink)!important;border-color:rgba(0,0,0,.2)}
@@ -91,18 +97,20 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
 .fx-hero h1{font-size:54px;line-height:1.04;color:#fff;margin-bottom:16px}
 .fx-lead{font-size:17px;color:#e2e2e2;max-width:520px}
 .fx-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 26px}
-.fx-proof{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;margin:0;padding:18px 0 0;border-top:1px solid rgba(255,255,255,.18);font-size:14px;color:#cfcfcf}
-.fx-proof b{color:#fff;margin-right:4px}
+.fx-proof{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:12px 36px;list-style:none;margin:0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.18)}
+.fx-proof li{display:flex;flex-direction:column}
+.fx-proof b{font:600 32px/1.1 Afacad,sans-serif;color:#fff}
+.fx-proof span{font-size:14px;color:#d6d6d6}
 /* Intro */
 .fx-intro{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
 .fx-intro h2{font-size:42px;line-height:1.1;margin-bottom:16px}
-.fx-quote{font:600 26px/1.25 Afacad,sans-serif;color:#fff;border-left:3px solid var(--accent);padding-left:18px;margin-top:22px!important}
+.fx-quote{font:600 28px/1.25 Afacad,sans-serif;color:#fff;margin-top:24px!important}
 .fx-fit{display:grid;grid-template-columns:1fr 1fr;background:#151515;border:1px solid #262626;border-radius:16px;overflow:hidden}
 .fx-fit>div{padding:28px}
 .fx-fit>div+div{border-left:1px solid #262626}
 .fx-fit h3{font-size:22px;margin-bottom:14px}
 .fx-list{list-style:none;margin:0;padding:0}
-.fx-list li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:15px;line-height:1.45}
+.fx-list li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:16px;line-height:1.45}
 .fx-list svg{flex:0 0 18px;width:18px;height:18px;margin-top:2px;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .fx-yes svg{stroke:var(--accent)}.fx-yes li{color:#eee}
 .fx-no svg{stroke:#777}.fx-no li{color:#999}
@@ -115,14 +123,16 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
 .fx-more summary::-webkit-details-marker{display:none}
 .fx-more summary::after{content:" +"}.fx-more[open] summary::after{content:" −"}
 .fx-sign{font:600 22px/1.2 Afacad,sans-serif;color:var(--ink);margin-top:20px!important}
-.fx-sign span{display:block;font:400 13.5px "Open Sans";color:var(--ink3)}
+.fx-sign span{display:block;font:400 14px "Open Sans";color:var(--ink3)}
 /* Prosess */
 .fx-steps{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
-.fx-steps::before{content:"";position:absolute;left:20px;right:20px;top:20px;height:1px;background:#333}
 .fx-steps li{position:relative}
-.fx-n{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#0a0a0a;border:1px solid var(--accent);color:var(--accent);font:600 15px Afacad,sans-serif;margin-bottom:18px;position:relative}
+.fx-steps-a::before{content:"";position:absolute;left:20px;right:20px;top:20px;height:1px;background:#333}
+.fx-steps-b li{border-top:1px solid #2a2a2a;padding-top:20px}
+.fx-steps-b .fx-n{display:block;font:600 56px/1 Afacad,sans-serif;color:var(--accent);margin-bottom:14px}
+.fx-steps-a .fx-n{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#0a0a0a;border:1px solid var(--accent);color:var(--accent);font:600 15px Afacad,sans-serif;margin-bottom:18px;position:relative}
 .fx-steps h3{font-size:24px;margin-bottom:6px}
-.fx-steps p{font-size:15px;margin:0}
+.fx-steps p{font-size:16px;margin:0}
 .fx-cta-box{text-align:center;border-top:1px solid #262626;padding-top:40px}
 .fx-cta-box p{margin:14px 0 0;font-size:14.5px}.fx-cta-box b{color:#fff}
 /* Fordeler */
@@ -131,27 +141,40 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
 .fx-tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
 .fx-tile>svg{width:40px;height:40px;padding:9px;border-radius:10px;background:rgba(234,44,89,.09);fill:none;stroke:var(--accent-ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:auto}
 .fx-tile h3{font-size:22px;margin:22px 0 6px}
-.fx-tile p{font-size:14.5px;margin:0}
+.fx-tile p{font-size:16px;margin:0}
 .fx-photo{padding:0;overflow:hidden;position:relative;min-height:280px;justify-content:flex-end;border:0}
 .fx-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .fx-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,0) 60%);z-index:1}
 .fx-photo div{position:relative;z-index:2;padding:22px 24px}
 .fx-photo h3{color:#fff;margin-top:0}.fx-photo p{color:#e6e6e6}
 .fx-wide{grid-column:span 2}
+/* Fordeler som liste (variant B) */
+.fx-benefits{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+.fx-ben-txt h2{font-size:42px;line-height:1.1;margin-bottom:24px}
+.fx-ben{list-style:none;margin:0;padding:0}
+.fx-ben li{padding:16px 0;border-top:1px solid var(--line)}
+.fx-ben h3{font-size:22px;margin-bottom:4px}
+.fx-ben p{margin:0;font-size:16px}
+.fx-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:560px;position:sticky;top:24px}
+.fx-photos img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.fx-light .fx-dates{margin-top:24px}
+.fx-light .fx-date{background:#fff;border-color:var(--line)}
+.fx-light .fx-date span{color:var(--ink3)}
+.fx-light .fx-date b{color:var(--ink)}
 /* Turer */
 .fx-trips{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
 .fx-trips h2{font-size:42px;line-height:1.1;margin-bottom:12px}
 .fx-dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
-.fx-date{border:1px solid #2a2a2a;border-radius:14px;padding:16px 18px;background:#141414}
+.fx-date{border:1px solid #2a2a2a;border-radius:16px;padding:16px 18px;background:#141414}
 .fx-date svg{width:20px;height:20px;fill:none;stroke:var(--accent);stroke-width:2;margin-bottom:8px}
 .fx-date span{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#999}
 .fx-date b{font:600 22px Afacad,sans-serif;color:#fff}
 .fx-mosaic{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:420px}
-.fx-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.fx-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:16px}
 .fx-mosaic img:first-child{grid-row:span 2}
 /* Medlemmer */
 .fx-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.fx-face{position:relative;display:block;border-radius:14px;overflow:hidden;aspect-ratio:4/5;text-decoration:none}
+.fx-face{position:relative;display:block;border-radius:16px;overflow:hidden;aspect-ratio:4/5;text-decoration:none}
 .fx-face img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .fx-face:hover img{transform:scale(1.05)}
 .fx-face::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0) 50%)}
@@ -166,11 +189,11 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
 .fx-acc summary::-webkit-details-marker{display:none}
 .fx-acc summary::after{content:"+";color:var(--accent);font-size:24px;line-height:1}
 .fx-acc details[open] summary::after{content:"−"}
-.fx-acc p{padding:0 0 18px;font-size:15px}
+.fx-acc p{padding:0 0 18px;font-size:16px}
 .fx-final{text-align:center;border-top:1px solid #262626;margin-top:72px;padding-top:64px}
 .fx-final h2{font-size:34px;line-height:1.15;max-width:720px;margin:0 auto 12px}
 .fx-final p{margin-bottom:24px}
-.fx-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:72px;padding-top:24px;border-top:1px solid #1e1e1e;font-size:13px;color:#888}
+.fx-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:72px;padding-top:24px;border-top:1px solid #1e1e1e;font-size:14px;color:#999}
 .fx-foot span:last-child{display:flex;gap:18px}
 
 /* Mobil: styres av bredden paa rammen, saa «Mobil»-bryteren gir ekte mobillayout */
@@ -186,20 +209,25 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
   .fx-hero-img{position:relative;aspect-ratio:4/3}
   .fx-hero-img::after{background:linear-gradient(to top,#000 0%,rgba(0,0,0,0) 40%)}
   .fx-hero-txt{padding:4px 20px 40px}
-  .fx-hero h1{font-size:34px}
+  .fx-hero h1{font-size:30px}
+  .fx-hero-img{aspect-ratio:16/9}
+  .fx-proof{grid-template-columns:1fr 1fr;gap:14px 20px}
+  .fx-proof b{font-size:26px}
   .fx-lead{font-size:16px}
   .fx-ctas .fx-btn{flex:1 1 100%}
   .fx-intro,.fx-story,.fx-trips,.fx-faq{grid-template-columns:1fr;gap:32px}
-  .fx-quote{font-size:22px}
+  .fx-quote{font-size:24px}
   .fx-fit{grid-template-columns:1fr}
   .fx-fit>div{padding:22px}
   .fx-fit>div+div{border-left:0;border-top:1px solid #262626}
   .fx-story blockquote{font-size:27px}
   .fx-portrait{aspect-ratio:1/1}
   .fx-steps{grid-template-columns:1fr;gap:22px;margin-bottom:36px}
-  .fx-steps::before{left:20px;right:auto;top:20px;bottom:20px;width:1px;height:auto}
-  .fx-steps li{display:grid;grid-template-columns:40px 1fr;column-gap:16px}
-  .fx-n{grid-row:span 2;margin:0}
+  .fx-steps-a::before{left:20px;right:auto;top:20px;bottom:20px;width:1px;height:auto}
+  .fx-steps-a li{display:grid;grid-template-columns:40px 1fr;column-gap:16px}
+  .fx-steps-a .fx-n{grid-row:span 2;margin:0}
+  .fx-steps-b li{display:grid;grid-template-columns:64px 1fr;column-gap:12px}
+  .fx-steps-b .fx-n{grid-row:span 2;font-size:44px;margin:0}
   .fx-steps h3{font-size:21px}
   .fx-bento{grid-template-columns:1fr;gap:12px}
   .fx-wide{grid-column:auto}
@@ -207,8 +235,11 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
   .fx-tile{padding:22px}
   .fx-mosaic{height:300px}
   .fx-dates{grid-template-columns:1fr 1fr}
-  .fx-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
-  .fx-face{flex:0 0 44%;scroll-snap-align:start}
+  .fx-strip{grid-template-columns:1fr 1fr;gap:12px}
+  .frame .fx-center .fx-btn{flex:1 1 100%}
+  .fx-benefits{grid-template-columns:1fr;gap:28px}
+  .fx-photos{order:-1;height:260px}
+  .fx-ben-txt h2{font-size:30px}
   .fx-final h2{font-size:26px}
   .fx-foot{flex-direction:column}
 }
@@ -217,25 +248,29 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
 <header class="top"><div class="in">
   <p class="kicker">Founder Impact × Fjordigital · november 2026</p>
   <h1>Forsiden, forslag per seksjon</h1>
-  <p>Åtte seksjoner, i samme rekkefølge som på siden. Hver har det vi ser i dag og hva forslaget endrer. Bytt mellom
-  «Forslag» og «Nå», og mellom desktop og mobil. Forslagene bruker Founder Impacts egen tekst og egne bilder.</p>
+  <p>Seksjonene står i samme rekkefølge som på siden. Hver har det vi ser i dag og hva forslaget endrer. Bytt mellom
+  forslaget og «Nå», og mellom desktop og mobil. To seksjoner har to forslag, A og B. Forslagene bruker Founder Impacts
+  egen tekst og egne bilder.</p>
+  <p>Forslagene er sjekket mot WCAG-kontrast (minst 4,5:1 på tekst og knapper), én H1, minst 16 px brødtekst og
+  48 px knapper på mobil, og mot byråets byggesjekkliste for Divi-sider.</p>
   <p>Fire ting går igjen på hele siden:</p>
   <div class="glob"><div><b>Sju fonter, skal være to</b><span>Siden bruker Afacad, Afacad Flux, ADLaM Display, Abyssinica SIL, Alexandria, Inter og Open Sans. Forslagene bruker bare Afacad til overskrifter og Open Sans til tekst.</span></div><div><b>Sju H1, skal være én</b><span>Prosesstegene og flere seksjonstitler er satt som H1. Søkemotorer og skjermlesere bør bare finne én, overskriften i toppen.</span></div><div><b>Tre ulike knapper</b><span>Hvit pille, svart pille med hvit kant, og grå pille. Forslaget har én knapp i merkevarefargen (crimson) og én sekundær.</span></div><div><b>Merkevarefargen brukes nesten ikke</b><span>Crimson finnes bare i mobilmenyen og på «Home». Forslagene bruker den på knapper, hake, nummer og datoer.</span></div></div>
 </div></header>
-<nav class="toc" aria-label="Seksjoner"><div class="in"><a href="#s-hero"><span class="n">1</span>Meny og toppseksjon</a><a href="#s-intro"><span class="n">2</span>Hva det er, og hvem det er for</a><a href="#s-hanne"><span class="n">3</span>Hvorfor Hanne startet Founder Impact</a><a href="#s-prosess"><span class="n">4</span>Prosessen og første «Apply»</a><a href="#s-fordeler"><span class="n">5</span>Hva du får som medlem</a><a href="#s-turer"><span class="n">6</span>Turer og samlinger</a><a href="#s-medlemmer"><span class="n">7</span>Medlemmene på forsiden</a><a href="#s-faq"><span class="n">8</span>FAQ, siste «Apply» og bunn</a></div></nav>
+<nav class="toc" aria-label="Seksjoner"><div class="in"><a href="#s-hero"><span class="n">1</span>Meny og toppseksjon</a><a href="#s-intro"><span class="n">2</span>Hva det er, og hvem det er for</a><a href="#s-hanne"><span class="n">3</span>Hvorfor Hanne startet Founder Impact</a><a href="#s-prosess"><span class="n">4</span>Prosessen og første «Apply»</a><a href="#s-fordeler"><span class="n">5</span>Hva du får som medlem, og turene</a><a href="#s-medlemmer"><span class="n">6</span>Medlemmene på forsiden</a><a href="#s-faq"><span class="n">7</span>FAQ, siste «Apply» og bunn</a></div></nav>
 
 <section class="sec" id="s-hero"><div class="sec-in">
-  <h2 class="t"><small>1 av 8</small>Meny og toppseksjon</h2>
+  <h2 class="t"><small>1 av 7</small>Meny og toppseksjon</h2>
   <div class="notes">
     <div class="bad"><h3>Nå</h3><ul><li>Overskriften står midt over ansiktene i bildet, og teksten trenger skygge for å kunne leses.</li><li>På mobil er toppen bare 315 px høy. Bildet kuttes og knappen blir liten.</li><li>«Home» i menyen har en egen rød, forskjøvet ramme som ikke ligner noe annet på siden.</li><li>Det står ingenting om hvem dette er for eller hva det koster før man har scrollet langt.</li></ul></div>
     <div class="good"><h3>Forslaget</h3><ul><li>Teksten flyttes til venstre over en mørk overgang, så ansiktene synes. På mobil står teksten under bildet.</li><li>Én tydelig knapp i merkevarefargen, og «Meet the founders» som sekundærvalg.</li><li>En linje med fakta under knappen: 40+ founders, weekly calls, quarterly meetups, NOK 150 per month.</li><li>Menyen blir vanlige tekstlenker pluss en «Apply»-knapp som alltid er synlig.</li></ul></div>
   </div>
+  
   <div class="bar">
-    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="forslag" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
     <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
   </div>
   <div class="stage">
-    <div class="frame"><header class="fx-nav"><span class="fx-logo"><i>Founder</i> Impact</span><nav><a>Home</a><a>Members</a><a>Blog</a></nav><a class="fx-btn fx-btn-sm" href="#apply">Apply</a><span class="fx-burger" aria-hidden="true"><b></b><b></b><b></b></span></header>
+    <div class="frame" data-v="v0"><header class="fx-nav"><span class="fx-logo"><i>Founder</i> Impact</span><nav><a>Home</a><a>Members</a><a>Blog</a></nav><a class="fx-btn fx-btn-sm" href="#apply">Apply</a><span class="fx-burger" aria-hidden="true"><b></b><b></b><b></b></span></header>
 <section class="fx-hero">
   <div class="fx-hero-img"><img src="img/hero.jpg" alt="Founder Impact members at a meetup"></div>
   <div class="fx-hero-txt">
@@ -243,24 +278,25 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
     <h1>Build your company alongside founders who push you forward</h1>
     <p class="fx-lead">Weekly calls, honest feedback, quarterly meetups, and founders helping each other build better businesses.</p>
     <div class="fx-ctas"><a class="fx-btn" href="#apply">Apply to join</a><a class="fx-btn fx-ghost" href="#members">Meet the founders</a></div>
-    <ul class="fx-proof"><li><b>40+</b> founders</li><li><b>Weekly</b> calls</li><li><b>Quarterly</b> meetups</li><li><b>NOK 150</b> per month</li></ul>
+    <ul class="fx-proof"><li><b>40+</b><span>founders</span></li><li><b>Weekly</b><span>calls</span></li><li><b>Quarterly</b><span>meetups</span></li><li><b>NOK 150</b><span>per month</span></li></ul>
   </div>
 </section></div>
     <div class="naa"><img class="d-only" src="naa/hero-desktop.jpg" alt="Slik ser seksjonen ut på desktop i dag" loading="lazy"><img class="m-only" src="naa/hero-mobil.jpg" alt="Slik ser seksjonen ut på mobil i dag" loading="lazy"></div>
   </div>
 </div></section>
 <section class="sec" id="s-intro"><div class="sec-in">
-  <h2 class="t"><small>2 av 8</small>Hva det er, og hvem det er for</h2>
+  <h2 class="t"><small>2 av 7</small>Hva det er, og hvem det er for</h2>
   <div class="notes">
     <div class="bad"><h3>Nå</h3><ul><li>Tre hvite kort på svart bakgrunn med samme vekt. Ingenting skiller «for» fra «ikke for».</li><li>Listene har verken hake eller kryss, så de leses som vanlig tekst.</li><li>På mobil blir det tre lange kort etter hverandre, over 1 000 px.</li></ul></div>
     <div class="good"><h3>Forslaget</h3><ul><li>Introen til venstre, og «Building alone is hard» løftet fram som sitat.</li><li>«Who it's for» og «Not for everyone» side om side i ett kort, med hake og kryss.</li><li>Hele teksten er beholdt, bare «People who give not just take» har fått komma.</li></ul></div>
   </div>
+  
   <div class="bar">
-    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="forslag" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
     <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
   </div>
   <div class="stage">
-    <div class="frame">
+    <div class="frame" data-v="v0">
 <section class="fx-dark fx-pad">
   <div class="fx-wrap fx-intro">
     <div>
@@ -282,17 +318,18 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
   </div>
 </div></section>
 <section class="sec" id="s-hanne"><div class="sec-in">
-  <h2 class="t"><small>3 av 8</small>Hvorfor Hanne startet Founder Impact</h2>
+  <h2 class="t"><small>3 av 7</small>Hvorfor Hanne startet Founder Impact</h2>
   <div class="notes">
     <div class="bad"><h3>Nå</h3><ul><li>Tolv korte avsnitt på rad, og på mobil er seksjonen 1 300 px høy.</li><li>Navnet og tittelen står inne i bildet med liten kontrast, og kan ikke leses av skjermlesere eller søkemotorer.</li><li>Historien fortelles nesten likt i FAQ-en («Why does Founder Impact exist?»).</li></ul></div>
     <div class="good"><h3>Forslaget</h3><ul><li>Den sterkeste setningen som sitat øverst, deretter to korte avsnitt.</li><li>Resten ligger bak «Read the full story». Ingen tekst er fjernet.</li><li>Navnet som ekte tekst under historien. Vi trenger et portrett av Hanne uten tekst i bildet.</li><li>Spørsmålet «Why does Founder Impact exist?» tas ut av FAQ-en, fordi svaret står her.</li></ul></div>
   </div>
+  
   <div class="bar">
-    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="forslag" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
     <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
   </div>
   <div class="stage">
-    <div class="frame">
+    <div class="frame" data-v="v0">
 <section class="fx-light fx-pad">
   <div class="fx-wrap fx-story">
     <figure class="fx-portrait"><img src="img/hanne.jpg" alt="Hanne G, founder of Founder Impact"></figure>
@@ -313,21 +350,30 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
   </div>
 </div></section>
 <section class="sec" id="s-prosess"><div class="sec-in">
-  <h2 class="t"><small>4 av 8</small>Prosessen og første «Apply»</h2>
+  <h2 class="t"><small>4 av 7</small>Prosessen og første «Apply»</h2>
   <div class="notes">
     <div class="bad"><h3>Nå</h3><ul><li>Tallene 01 til 04 er store og grå og tar mest oppmerksomhet. De er også satt som overskrifter (H1).</li><li>Prisen står bare i FAQ-en nederst. 150 kr i måneden er en lav terskel som bør stå ved knappen.</li><li>«Spots are limited» er liten tekst under knappen.</li></ul></div>
-    <div class="good"><h3>Forslaget</h3><ul><li>Små nummer i merkevarefargen, koblet med en linje. På mobil blir det en loddrett tidslinje.</li><li>Pris og «Spots are limited» rett under knappen.</li></ul></div>
+    <div class="good"><h3>Forslaget</h3><ul><li>Tallene beholdes store, men i merkevarefargen og som vanlig tekst, ikke som overskrifter.</li><li>Pris og «Spots are limited» rett under knappen.</li></ul></div>
   </div>
+  <ul class="vnote"><li data-v="v0">A: små nummer i sirkler, koblet med en linje. Rolig, men tallene blir lette å overse.</li><li data-v="v1" class="on">B: store tall i merkevarefargen. Byråets gjennomgang av 370 maler viser at store prosesstall leses raskere enn ikoner.</li></ul>
   <div class="bar">
-    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="forslag" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="false">Forslag A</button><button type="button" data-view="v1" aria-pressed="true">Forslag B</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
     <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
   </div>
   <div class="stage">
-    <div class="frame">
+    <div class="frame" data-v="v0" hidden>
 <section class="fx-dark fx-pad" id="apply">
   <div class="fx-wrap">
     <div class="fx-head"><h2>Simple process. High standards.</h2><p>We keep it simple for you.</p></div>
-    <ol class="fx-steps"><li><span class="fx-n">01</span><h3>Apply</h3><p>Tell us what you're building</p></li><li><span class="fx-n">02</span><h3>We review</h3><p>We carefully select who gets in</p></li><li><span class="fx-n">03</span><h3>Short call</h3><p>A quick call to see if we're a good fit</p></li><li><span class="fx-n">04</span><h3>You're in</h3><p>Start building alongside other founders</p></li></ol>
+    <ol class="fx-steps fx-steps-a"><li><span class="fx-n">01</span><h3>Apply</h3><p>Tell us what you're building</p></li><li><span class="fx-n">02</span><h3>We review</h3><p>We carefully select who gets in</p></li><li><span class="fx-n">03</span><h3>Short call</h3><p>A quick call to see if we're a good fit</p></li><li><span class="fx-n">04</span><h3>You're in</h3><p>Start building alongside other founders</p></li></ol>
+    <div class="fx-cta-box"><a class="fx-btn" href="#apply">Apply to join Founder Impact</a>
+      <p><b>NOK 150 per month.</b> Spots are limited to keep the quality high.</p></div>
+  </div>
+</section></div><div class="frame" data-v="v1">
+<section class="fx-dark fx-pad" id="apply">
+  <div class="fx-wrap">
+    <div class="fx-head"><h2>Simple process. High standards.</h2><p>We keep it simple for you.</p></div>
+    <ol class="fx-steps fx-steps-b"><li><span class="fx-n">01</span><h3>Apply</h3><p>Tell us what you're building</p></li><li><span class="fx-n">02</span><h3>We review</h3><p>We carefully select who gets in</p></li><li><span class="fx-n">03</span><h3>Short call</h3><p>A quick call to see if we're a good fit</p></li><li><span class="fx-n">04</span><h3>You're in</h3><p>Start building alongside other founders</p></li></ol>
     <div class="fx-cta-box"><a class="fx-btn" href="#apply">Apply to join Founder Impact</a>
       <p><b>NOK 150 per month.</b> Spots are limited to keep the quality high.</p></div>
   </div>
@@ -336,20 +382,21 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
   </div>
 </div></section>
 <section class="sec" id="s-fordeler"><div class="sec-in">
-  <h2 class="t"><small>5 av 8</small>Hva du får som medlem</h2>
+  <h2 class="t"><small>5 av 7</small>Hva du får som medlem, og turene</h2>
   <div class="notes">
-    <div class="bad"><h3>Nå</h3><ul><li>Seks like blokker med lang tekst. På mobil er seksjonen over 3 000 px.</li><li>To av bildene er skjermbilder av Zoom og Discord som er uleselige i den størrelsen.</li><li>Titlene har ulik font og vekt («In-Person Meetups» skiller seg ut).</li></ul></div>
-    <div class="good"><h3>Forslaget</h3><ul><li>Et rutenett med ulike størrelser: bildene der de er sterke, ikoner der bildet var et skjermbilde.</li><li>Én eller to setninger per fordel. Teksten er kortet ned fra dagens, ikke skrevet ny.</li><li>«Womens, chat &amp; calls» er rettet til «Women's chat &amp; calls».</li></ul></div>
+    <div class="bad"><h3>Nå</h3><ul><li>Seks like blokker med lang tekst. På mobil er seksjonen over 3 000 px.</li><li>To av bildene er skjermbilder av Zoom og Discord som er uleselige i den størrelsen.</li><li>Titlene har ulik font og vekt («In-Person Meetups» skiller seg ut).</li><li>Turene er en egen seksjon med en tredje font (Abyssinica SIL), og «Next Meetup» har Divis standardblå.</li></ul></div>
+    <div class="good"><h3>Forslaget</h3><ul><li>Fordelene som en liste ved siden av fire bilder. Lister leses raskere enn seks kort, særlig på mobil.</li><li>Turene slås inn her, med neste samling og neste tur som to tydelige datoer. Forsiden går fra åtte til sju seksjoner.</li><li>Skjermbildene av Zoom og Discord er byttet med bilder fra samlinger og turer.</li><li>Teksten er kortet ned fra dagens, ikke skrevet ny. «Womens, chat &amp; calls» er rettet til «Women's chat &amp; calls».</li></ul></div>
   </div>
+  <ul class="vnote"><li data-v="v0">A: rutenett med bilder og ikoner, og turene som egen seksjon (åtte seksjoner på forsiden).</li><li data-v="v1" class="on">B: fordelene som liste ved siden av fire bilder, og turene slått inn (sju seksjoner). Kortere på mobil.</li></ul>
   <div class="bar">
-    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="forslag" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="false">Forslag A</button><button type="button" data-view="v1" aria-pressed="true">Forslag B</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
     <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
   </div>
   <div class="stage">
-    <div class="frame">
+    <div class="frame" data-v="v0" hidden>
 <section class="fx-light fx-pad">
   <div class="fx-wrap">
-    <div class="fx-head"><h2>What you get as a member</h2><p>Online every week, in person every quarter.</p></div>
+    <div class="fx-head"><h2>What you get as a member</h2></div>
     <div class="fx-bento">
       <article class="fx-tile fx-photo fx-wide"><img src="img/meetup.jpg" alt=""><div><h3>In-person meetups</h3><p>Build real relationships, not just digital ones. Meetups, workshops and trips around the world.</p></div></article>
       <article class="fx-tile"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg><h3>Weekly calls &amp; feedback</h3><p>Community calls, sales training, masterminds and hangout calls. A place to stay accountable to what you said you'd do.</p></article>
@@ -359,77 +406,77 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
       <article class="fx-tile fx-photo"><img src="img/women.jpg" alt=""><div><h3>Women's chat &amp; calls</h3><p>Your own chat and calls for female founders. No agenda.</p></div></article>
     </div>
   </div>
-</section></div>
-    <div class="naa"><img class="d-only" src="naa/fordeler-desktop.jpg" alt="Slik ser seksjonen ut på desktop i dag" loading="lazy"><img class="m-only" src="naa/fordeler-mobil.jpg" alt="Slik ser seksjonen ut på mobil i dag" loading="lazy"></div>
-  </div>
-</div></section>
-<section class="sec" id="s-turer"><div class="sec-in">
-  <h2 class="t"><small>6 av 8</small>Turer og samlinger</h2>
-  <div class="notes">
-    <div class="bad"><h3>Nå</h3><ul><li>Overskriften har en tredje font (Abyssinica SIL), og «Next Meetup» har Divis standardblå.</li><li>Datoene står som tekst med emoji, og er lette å overse.</li></ul></div>
-    <div class="good"><h3>Forslaget</h3><ul><li>Datoene som to små kort, i merkevarens farger og fonter.</li><li>Bildene i en mosaikk ved siden av teksten, ikke under.</li></ul></div>
-  </div>
-  <div class="bar">
-    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="forslag" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
-    <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
-  </div>
-  <div class="stage">
-    <div class="frame">
+</section>
 <section class="fx-dark fx-pad">
   <div class="fx-wrap fx-trips">
     <div>
       <h2>Founder Impact Trips</h2>
       <p>Build real friendships while exploring the world with other founders.</p>
       <div class="fx-dates">
-        <div class="fx-date"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Next meetup</span><b>November 2026</b></div>
-        <div class="fx-date"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Next trip</span><b>May 2027</b></div>
+        <div class="fx-date"><span>Next meetup</span><b>November 2026</b></div>
+        <div class="fx-date"><span>Next trip</span><b>May 2027</b></div>
       </div>
     </div>
     <div class="fx-mosaic"><img src="img/trip2.jpg" alt=""><img src="img/trip1.jpg" alt=""><img src="img/trip3.jpg" alt=""></div>
   </div>
+</section></div><div class="frame" data-v="v1">
+<section class="fx-light fx-pad">
+  <div class="fx-wrap fx-benefits">
+    <div class="fx-ben-txt">
+      <h2>What you get as a Founder Impact member</h2>
+      <ul class="fx-ben"><li><h3>Weekly calls &amp; feedback</h3><p>Community calls, sales training, masterminds and hangout calls. A place to talk when things get hard, and stay accountable to what you said you'd do.</p></li><li><h3>In-person meetups &amp; trips</h3><p>Build real relationships, not just digital ones. Meetups, workshops and trips around the world, with founders you already know from the calls.</p></li><li><h3>Live chat 24/7</h3><p>A Discord community where you can ask anything, anytime. Get honest feedback whether it's 11pm or 5am.</p></li><li><h3>Growth &amp; learning</h3><p>Access to founders who have built and run their own companies. Learn from those ahead of you, and be that person for someone else.</p></li><li><h3>A network that has your back</h3><p>Being a founder can be lonely. Here you have people who understand the journey and the sacrifice it takes.</p></li><li><h3>Women's chat &amp; calls</h3><p>A growing group of female founders, with their own chat and their own calls. No agenda.</p></li></ul>
+      <div class="fx-dates">
+        <div class="fx-date"><span>Next meetup</span><b>November 2026</b></div>
+        <div class="fx-date"><span>Next trip</span><b>May 2027</b></div>
+      </div>
+    </div>
+    <div class="fx-photos"><img src="img/trip2.jpg" alt="Members in Founder Impact t-shirts on a trip"><img src="img/meetup.jpg" alt="Members at a meetup"><img src="img/women.jpg" alt="Female founders at a meetup"><img src="img/trip1.jpg" alt="Members having dinner together"></div>
+  </div>
 </section></div>
-    <div class="naa"><img class="d-only" src="naa/turer-desktop.jpg" alt="Slik ser seksjonen ut på desktop i dag" loading="lazy"><img class="m-only" src="naa/turer-mobil.jpg" alt="Slik ser seksjonen ut på mobil i dag" loading="lazy"></div>
+    <div class="naa"><img class="d-only" src="naa/fordeler-desktop.jpg" alt="Slik ser seksjonen ut på desktop i dag" loading="lazy"><img class="m-only" src="naa/fordeler-mobil.jpg" alt="Slik ser seksjonen ut på mobil i dag" loading="lazy"></div>
   </div>
 </div></section>
 <section class="sec" id="s-medlemmer"><div class="sec-in">
-  <h2 class="t"><small>7 av 8</small>Medlemmene på forsiden</h2>
+  <h2 class="t"><small>6 av 7</small>Medlemmene på forsiden</h2>
   <div class="notes">
     <div class="bad"><h3>Nå</h3><ul><li>Alle tolv medlemmer står med full tekst. På mobil er seksjonen 5 353 px, over en tredjedel av hele siden.</li><li>Nå finnes det en egen medlemsside med søk, filter og profilvindu. Forsiden trenger ikke gjenta den.</li></ul></div>
-    <div class="good"><h3>Forslaget</h3><ul><li>Seks ansikter med navn og land, i samme stil som medlemssiden.</li><li>«Meet all 40+ founders →» lenker til /medlemmer/.</li><li>Mobilen blar ansiktene sidelengs i stedet for å stable tolv profiler.</li></ul></div>
+    <div class="good"><h3>Forslaget</h3><ul><li>Seks ansikter med navn og land, i samme stil som medlemssiden.</li><li>«Meet all 40+ founders →» lenker til /medlemmer/.</li><li>På mobil står ansiktene to og to i stedet for tolv profiler under hverandre.</li><li>En «Apply»-knapp rett etter ansiktene, der besøkende har sett hvem de blir med.</li></ul></div>
   </div>
+  
   <div class="bar">
-    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="forslag" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
     <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
   </div>
   <div class="stage">
-    <div class="frame">
+    <div class="frame" data-v="v0">
 <section class="fx-light fx-pad" id="members">
   <div class="fx-wrap">
     <div class="fx-head"><h2>Meet the founders inside Founder Impact</h2>
       <p>40+ founders across Norway, Sweden &amp; Denmark. From landing their first client to building 8-figure businesses.</p></div>
     <div class="fx-strip"><a class="fx-face" href="#members"><img src="img/emelie-solming.jpg" alt="Emelie Solming"><span><b>Emelie Solming</b>Sweden</span></a><a class="fx-face" href="#members"><img src="img/david-michelsen.jpg" alt="David Michelsen"><span><b>David Michelsen</b>Denmark</span></a><a class="fx-face" href="#members"><img src="img/malin-kristine-moen.jpg" alt="Malin Kristine Moen"><span><b>Malin Kristine Moen</b>Norway</span></a><a class="fx-face" href="#members"><img src="img/patrick-leth.jpg" alt="Patrick Leth"><span><b>Patrick Leth</b>Denmark</span></a><a class="fx-face" href="#members"><img src="img/simen-liadal.jpg" alt="Simen Liadal"><span><b>Simen Liadal</b>Norway</span></a><a class="fx-face" href="#members"><img src="img/ellen-marie-vigrestad.jpg" alt="Ellen Marie Vigrestad"><span><b>Ellen Marie Vigrestad</b>Norway</span></a></div>
-    <p class="fx-center"><a class="fx-btn fx-ghost-dark" href="#members">Meet all 40+ founders →</a></p>
+    <p class="fx-center"><a class="fx-btn" href="#apply">Apply to join Founder Impact</a><a class="fx-btn fx-ghost-dark" href="#members">Meet all 40+ founders →</a></p>
   </div>
 </section></div>
     <div class="naa"><img class="d-only" src="naa/medlemmer-desktop.jpg" alt="Slik ser seksjonen ut på desktop i dag" loading="lazy"><img class="m-only" src="naa/medlemmer-mobil.jpg" alt="Slik ser seksjonen ut på mobil i dag" loading="lazy"></div>
   </div>
 </div></section>
 <section class="sec" id="s-faq"><div class="sec-in">
-  <h2 class="t"><small>8 av 8</small>FAQ, siste «Apply» og bunn</h2>
+  <h2 class="t"><small>7 av 7</small>FAQ, siste «Apply» og bunn</h2>
   <div class="notes">
     <div class="bad"><h3>Nå</h3><ul><li>FAQ-en har en fjerde og femte font (Alexandria og Inter), og ligger i et hvitt kort på svart.</li><li>Sist på siden står «Cancel Your Founder Impact Membership» i kursiv, rett der nye besøkende bestemmer seg.</li><li>Bunnteksten er sentrert i mange korte linjer.</li></ul></div>
     <div class="good"><h3>Forslaget</h3><ul><li>FAQ-en i to kolonner med sidens fonter, og prisen som første spørsmål.</li><li>«Why does Founder Impact exist?» og «What's the vision?» er tatt ut, fordi Hannes historie dekker dem.</li><li>Avslutningen blir en tydelig siste oppfordring.</li><li>«Cancel membership» flyttes til Terms eller medlemsområdet. Bunnen blir én linje.</li></ul></div>
   </div>
+  
   <div class="bar">
-    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="forslag" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
+    <div class="seg" role="group" aria-label="Visning"><button type="button" data-view="v0" aria-pressed="true">Forslag</button><button type="button" data-view="naa" aria-pressed="false">Nå</button></div>
     <div class="seg" role="group" aria-label="Skjerm"><button type="button" data-dev="d" aria-pressed="true">Desktop</button><button type="button" data-dev="m" aria-pressed="false">Mobil</button></div>
   </div>
   <div class="stage">
-    <div class="frame">
+    <div class="frame" data-v="v0">
 <section class="fx-dark fx-pad">
   <div class="fx-wrap fx-faq">
     <div class="fx-faq-side">
-      <h2>Questions</h2>
+      <h2>Frequently asked questions</h2>
       <p>Can't find what you're looking for? <a href="mailto:kontakt@founderimpact.no">kontakt@founderimpact.no</a></p>
     </div>
     <div class="fx-acc"><details open><summary>How much does it cost?</summary><p>Membership costs NOK 150 per month, invoiced on the 15th of each month for the following month. VAT is not currently charged. Once Founder Impact reaches the Norwegian VAT registration threshold, VAT will be added to the fee.</p></details><details><summary>Who is it for?</summary><p>Founders actively building a company who want to connect with other entrepreneurs, travel, and are willing to share their experiences and be active members.</p></details><details><summary>How do I join?</summary><p>Apply and tell us what you're building. We review every application, have a short call to see if it's a good fit, and then you're in.</p></details><details><summary>How often do members meet?</summary><p>We host digital calls every week, along with quarterly in-person meetups and trips abroad.</p></details><details><summary>What happens in the calls?</summary><p>Members share real challenges from their businesses and get direct feedback, ideas and perspectives from others. There are also networking calls, and calls made just for the women in the community.</p></details><details><summary>Is this a course or mentorship program?</summary><p>No. Founder Impact is a community built around shared experiences and honest conversations, where founders help each other build better businesses.</p></details><details><summary>Do I need to be based in Scandinavia to join?</summary><p>The community is focused on Scandinavian founders, but you can be based and work from anywhere in the world.</p></details></div>
@@ -453,6 +500,9 @@ body{margin:0;background:#f2f2f0;color:var(--ink2);font:15px/1.6 "Open Sans",sys
   og kan bygges inn én og én.</p>
   <p><b>Dette trenger vi uansett:</b> et portrett av Hanne uten tekst i bildet, og bekreftelse på at prisen kan stå
   synlig i toppen og ved knappen.</p>
+  <p><b>Det som ville løftet siden mest videre:</b> to eller tre korte sitater fra medlemmer, med navn og bilde. Siden
+  har ingen i dag, og det er det malene og konkurrentene oftest mangler. Vi lager ingen sitater selv, de må komme fra
+  medlemmene.</p>
 </div></section>
 <script>
 document.querySelectorAll('.sec').forEach(function (sec) {
@@ -461,7 +511,11 @@ document.querySelectorAll('.sec').forEach(function (sec) {
     b.addEventListener('click', function () {
       var g = b.parentNode;
       g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      if (b.dataset.view) stage.classList.toggle('show-naa', b.dataset.view === 'naa');
+      if (b.dataset.view) {
+        stage.classList.toggle('show-naa', b.dataset.view === 'naa');
+        stage.querySelectorAll('.frame').forEach(function (f) { f.hidden = f.dataset.v !== b.dataset.view; });
+        sec.querySelectorAll('.vnote li').forEach(function (li) { li.classList.toggle('on', li.dataset.v === b.dataset.view); });
+      }
       if (b.dataset.dev) stage.classList.toggle('m', b.dataset.dev === 'm');
     });
   });
