@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Sidekart til godkjenning | Norsk Bassetklubb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gron-900:#00352b; --gron-800:#0a4739; --gron-700:#125c4a; --gron-600:#1c7a63; --gron-050:#e8f0ec;
+  --rav:#b4661f; --rav-600:#a15a1a; --rav-300:#e0a15e; --rav-050:#fdf3e7;
+  --krem:#fbf7f0; --sand:#f3ece1; --sand-2:#e9dfd0;
+  --blekk:#17211e; --blekk-2:#47534f; --blekk-3:#5f6a66; --linje:#e2d9cb;
+  --r-s:6px; --r-m:10px; --r-l:16px;
+  --sk-1:0 1px 2px rgba(23,33,30,.06),0 2px 8px rgba(23,33,30,.05);
+  --sk-2:0 10px 24px rgba(23,33,30,.09),0 2px 6px rgba(23,33,30,.05);
+  --sk-3:0 22px 50px rgba(23,33,30,.16),0 6px 14px rgba(23,33,30,.07);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--krem);color:var(--blekk);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--rav);outline-offset:2px;border-radius:3px}
+[hidden]{display:none!important}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.14;margin:0;letter-spacing:-.012em}
+p{margin:0 0 1em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rav-600);margin:0 0 12px}
+.eyebrow--lys{color:var(--rav-300)}
+.sec{padding:88px 0}
+.sec--sand{background:var(--sand)}
+.sec--gron{background:var(--gron-900);color:#eef4f1}
+.sec__title{font-size:clamp(28px,3.2vw,42px);margin:0 0 14px}
+.sec--gron .sec__title{color:#fff}
+.sec__lead{font-size:18.5px;color:var(--blekk-2);max-width:62ch}
+.sec--gron .sec__lead{color:rgba(255,255,255,.78)}
+.sec__head{margin-bottom:40px}
+
+/* Topplinje */
+.top{position:sticky;top:0;z-index:50;background:rgba(251,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linje)}
+.top__inner{display:flex;align-items:center;gap:24px;height:72px}
+.top__logo img{height:40px;width:auto}
+.top__nav{display:flex;gap:4px;margin-left:auto}
+.top__nav a{text-decoration:none;font-size:14.5px;font-weight:500;padding:8px 12px;border-radius:var(--r-s);color:var(--blekk-2)}
+.top__nav a:hover{background:var(--sand);color:var(--blekk)}
+.merknadsknapp{display:inline-flex;align-items:center;gap:8px;background:var(--rav);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14.5px;cursor:pointer;text-decoration:none;transition:background .18s}
+.merknadsknapp:hover{background:var(--rav-600)}
+.merknadsknapp .teller{background:#fff;color:var(--rav-600);border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12.5px;padding:0 6px}
+
+/* Hero */
+.hero{background:var(--gron-900);color:#fff;padding:84px 0 92px;position:relative;overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(36px,5vw,62px);color:#fff;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--rav-300);font-weight:500}
+.hero__lead{font-size:19.5px;color:rgba(255,255,255,.82);max-width:54ch;margin-bottom:30px}
+.status{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 16px 7px 12px;font-size:14px;margin-bottom:26px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--rav-300);box-shadow:0 0 0 4px rgba(224,161,94,.22)}
+.hero__bilde{border-radius:var(--r-l);overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);background:var(--krem)}
+.hero__bilde img{width:100%;height:auto}
+.hero__knapper{display:flex;gap:12px;flex-wrap:wrap}
+.knapp{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:13px 22px;font-weight:600;font-size:15.5px;text-decoration:none;cursor:pointer;border:0;transition:background .18s,transform .18s}
+.knapp--rav{background:var(--rav);color:#fff}
+.knapp--rav:hover{background:var(--rav-600)}
+.knapp--strek{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.knapp--strek:hover{background:rgba(255,255,255,.08)}
+
+/* Tall */
+.tall{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linje);border:1px solid var(--linje);border-radius:var(--r-l);overflow:hidden;margin-top:-46px;position:relative;z-index:2;box-shadow:var(--sk-2)}
+.tall div{background:#fff;padding:26px 26px 24px}
+.tall b{display:block;font-family:var(--serif);font-size:40px;line-height:1;color:var(--gron-900);font-weight:600;margin-bottom:8px}
+.tall b s{color:var(--blekk-3);font-weight:500;font-size:28px;text-decoration-thickness:2px}
+.tall span{font-size:14.5px;color:var(--blekk-2);line-height:1.45;display:block}
+
+/* Slik leser du */
+.steg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.steg li{list-style:none;background:#fff;border:1px solid var(--linje);border-radius:var(--r-l);padding:28px;box-shadow:var(--sk-1);counter-increment:s;position:relative}
+.steg li::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:15px;font-weight:600;color:var(--rav-600);display:block;margin-bottom:12px}
+.steg h3{font-size:21px;margin-bottom:8px}
+.steg p{margin:0;color:var(--blekk-2);font-size:16px}
+.steg{padding:0;margin:0}
+
+/* Menydemo */
+.demo{background:#fff;border-radius:var(--r-l);box-shadow:var(--sk-3);overflow:visible;border:1px solid var(--linje)}
+.demo__bar{display:flex;gap:6px;padding:12px 16px;border-bottom:1px solid var(--linje);background:var(--sand);border-radius:var(--r-l) var(--r-l) 0 0}
+.demo__bar i{width:11px;height:11px;border-radius:50%;background:var(--sand-2)}
+.demo__bar span{margin-left:12px;font-size:13px;color:var(--blekk-3);font-family:ui-monospace,Menlo,Consolas,monospace}
+.demo__head{display:flex;align-items:center;gap:18px;padding:18px 24px;position:relative}
+.demo__head img{height:34px;width:auto}
+.demo__menu{display:flex;gap:2px;margin:0 0 0 auto;padding:0;list-style:none;flex-wrap:wrap}
+.demo__menu > li{position:relative}
+.demo__menu > li > button{background:none;border:0;padding:9px 11px;border-radius:var(--r-s);font-size:14.5px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:5px;color:var(--blekk)}
+.demo__menu > li > button:hover,.demo__menu > li > button[aria-expanded="true"]{background:var(--gron-050);color:var(--gron-900)}
+.demo__menu svg{width:10px;height:10px;transition:transform .2s}
+.demo__menu button[aria-expanded="true"] svg{transform:rotate(180deg)}
+.demo__menu .cta{background:var(--rav);color:#fff}
+.demo__menu .cta:hover{background:var(--rav-600)!important;color:#fff!important}
+.demo__drop{position:absolute;top:calc(100% + 8px);left:0;min-width:270px;background:#fff;border:1px solid var(--linje);border-radius:var(--r-m);box-shadow:var(--sk-3);padding:8px;z-index:20}
+.demo__drop button{display:block;width:100%;text-align:left;background:none;border:0;padding:10px 12px;border-radius:var(--r-s);font-size:15px;cursor:pointer}
+.demo__drop button:hover{background:var(--sand)}
+.demo__drop .over{font-weight:600;border-bottom:1px solid var(--linje);border-radius:var(--r-s) var(--r-s) 0 0;margin-bottom:4px}
+.demo__fot{padding:14px 24px;border-top:1px solid var(--linje);font-size:14px;color:var(--blekk-2);background:var(--krem);border-radius:0 0 var(--r-l) var(--r-l)}
+.demo__fot b{color:var(--blekk)}
+.hint{display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--blekk-2);margin-top:16px}
+.hint b{color:var(--rav-600)}
+
+/* Forklaring */
+.forkl{display:flex;flex-wrap:wrap;gap:10px 22px;margin:0 0 28px;padding:0;list-style:none;font-size:14.5px;color:var(--blekk-2)}
+.forkl li{display:flex;align-items:center;gap:8px}
+.merke{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.02em;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.merke--samlet{background:var(--gron-050);color:var(--gron-700)}
+.merke--idag{background:var(--sand);color:var(--blekk-2)}
+.merke--ny{background:var(--rav-050);color:var(--rav-600)}
+.merke--tillegg{background:#fff;color:var(--blekk-2);border:1px dashed #b9ad9b}
+
+/* Kartet */
+.kart{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.gren{background:#fff;border:1px solid var(--linje);border-radius:var(--r-l);box-shadow:var(--sk-1);overflow:hidden;display:flex;flex-direction:column}
+.gren__topp{padding:22px 22px 16px;border-bottom:1px solid var(--linje);background:linear-gradient(180deg,#fff, var(--krem))}
+.gren__nr{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blekk-3)}
+.gren h3{font-size:23px;margin-top:4px}
+.gren__antall{font-size:14px;color:var(--blekk-2);margin-top:4px}
+.gren ul{list-style:none;margin:0;padding:8px}
+.side{width:100%;display:flex;align-items:center;gap:10px;text-align:left;background:none;border:0;border-radius:var(--r-m);padding:10px 12px;cursor:pointer;transition:background .15s}
+.side:hover{background:var(--sand)}
+.side.er-hoved{font-weight:600}
+.side.er-under{padding-left:28px;position:relative}
+.side.er-under::before{content:"";position:absolute;left:15px;top:50%;width:8px;height:1.5px;background:var(--sand-2)}
+.side__navn{flex:1;font-size:15.5px;line-height:1.35}
+.side__fra{font-size:12.5px;color:var(--blekk-3);white-space:nowrap}
+.side .prikk{width:8px;height:8px;border-radius:50%;flex:none}
+.prikk--samlet{background:var(--gron-600)}
+.prikk--idag{background:#b9ad9b}
+.prikk--ny{background:var(--rav)}
+.side.har-merknad .side__navn::after{content:"  ✎";color:var(--rav)}
+.gren--utenfor{grid-column:1/-1}
+.gren--utenfor ul{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+
+/* Raseside */
+.rase{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.rasevelger{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px}
+.rasevelger button{border:2px solid transparent;border-radius:var(--r-m);padding:0;overflow:hidden;cursor:pointer;background:var(--sand);text-align:left}
+.rasevelger button[aria-pressed="true"]{border-color:var(--rav)}
+.rasevelger img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.rasevelger span{display:block;font-size:12.5px;font-weight:600;padding:7px 9px;line-height:1.3}
+.skisse{background:#fff;border:1px solid var(--linje);border-radius:var(--r-l);box-shadow:var(--sk-2);overflow:hidden}
+.skisse__topp{position:relative}
+.skisse__topp img{aspect-ratio:16/8;object-fit:cover;width:100%}
+.skisse__topp h4{position:absolute;left:20px;bottom:16px;color:#fff;font-size:24px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.skisse__topp::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,53,43,.75),transparent 60%)}
+.skisse__topp h4{z-index:1}
+.ankre{display:flex;gap:6px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--linje)}
+.ankre span{font-size:13px;font-weight:600;background:var(--gron-050);color:var(--gron-700);padding:5px 11px;border-radius:999px}
+.ankre span.mangler{background:var(--sand);color:var(--blekk-3);font-weight:500;text-decoration:line-through}
+.seksjoner{padding:8px 18px 18px}
+.seksjoner div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--linje);font-size:15px}
+.seksjoner div:last-child{border:0}
+.seksjoner small{color:var(--blekk-3);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;text-align:right}
+
+/* Finn gammel side */
+.finn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-l);padding:28px}
+.finn label{display:block;font-weight:600;margin-bottom:10px;color:#fff}
+.finn__felt{display:flex;align-items:center;background:#fff;border-radius:var(--r-m);padding:0 16px;gap:10px}
+.finn__felt span{color:var(--blekk-3);font-size:15px;white-space:nowrap}
+.finn input{flex:1;border:0;outline:0;padding:15px 0;font:inherit;font-size:17px;color:var(--blekk);background:transparent;min-width:0}
+.treff{list-style:none;margin:18px 0 0;padding:0;max-height:420px;overflow:auto}
+.treff li{display:grid;grid-template-columns:1fr 24px 1.3fr;gap:12px;align-items:center;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.1);font-size:15px}
+.treff code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;color:rgba(255,255,255,.7);word-break:break-all}
+.treff b{color:#fff;font-weight:600}
+.treff small{display:block;color:var(--rav-300);font-size:13px}
+.treff .pil{color:var(--rav-300)}
+.finn__tom{color:rgba(255,255,255,.7);margin:16px 0 0}
+
+/* Avklaringer */
+.valg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.valg article{background:#fff;border:1px solid var(--linje);border-radius:var(--r-l);padding:26px;box-shadow:var(--sk-1);display:flex;flex-direction:column}
+.valg h3{font-size:20px;margin-bottom:10px}
+.valg p{color:var(--blekk-2);font-size:15.5px}
+.valg .svar{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
+.valg .svar button{border:1.5px solid var(--linje);background:var(--krem);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:500;cursor:pointer}
+.valg .svar button[aria-pressed="true"]{background:var(--gron-900);border-color:var(--gron-900);color:#fff}
+
+.ikkemed{margin-top:40px;background:var(--rav-050);border:1px solid #efd9bd;border-radius:var(--r-l);padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:18px}
+.ikkemed h3{font-size:20px;margin-bottom:6px}
+.ikkemed p{margin:0;color:var(--blekk-2);font-size:15.5px}
+.ikkemed .merke{margin-top:4px}
+
+/* Godkjenning */
+.godkj{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.godkj ol{margin:0;padding:0;list-style:none;counter-reset:g}
+.godkj ol li{counter-increment:g;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.godkj ol li::before{content:counter(g);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-weight:600;color:var(--rav-300)}
+.godkj ol b{color:#fff;display:block}
+.godkj ol span{color:rgba(255,255,255,.75);font-size:15.5px}
+.svarkort{background:var(--krem);color:var(--blekk);border-radius:var(--r-l);padding:28px;box-shadow:var(--sk-3)}
+.svarkort h3{font-size:22px;margin-bottom:8px}
+.svarkort p{color:var(--blekk-2);font-size:15.5px}
+.svarliste{list-style:none;margin:0 0 18px;padding:0;font-size:14.5px;max-height:220px;overflow:auto}
+.svarliste li{padding:8px 0;border-bottom:1px solid var(--linje)}
+.svarliste li b{display:block;font-size:13px;color:var(--blekk-3);font-weight:600}
+.svarkort .knapp{width:100%;justify-content:center}
+.svarkort .sekundaer{display:block;text-align:center;margin-top:12px;font-size:14px;color:var(--blekk-2);background:none;border:0;cursor:pointer;text-decoration:underline;width:100%}
+
+/* Detaljpanel */
+.slor{position:fixed;inset:0;background:rgba(10,20,17,.45);z-index:90;opacity:0;pointer-events:none;transition:opacity .25s}
+.slor.apen{opacity:1;pointer-events:auto}
+.panel{position:fixed;top:0;right:0;bottom:0;width:min(480px,100%);background:var(--krem);z-index:100;transform:translateX(100%);transition:transform .32s var(--ease);display:flex;flex-direction:column;box-shadow:var(--sk-3)}
+.panel{visibility:hidden;transition:transform .32s var(--ease),visibility 0s linear .32s}
+.panel.apen{transform:none;visibility:visible;transition:transform .32s var(--ease)}
+html,body{overflow-x:clip}
+.panel__topp{padding:22px 26px 18px;border-bottom:1px solid var(--linje);background:#fff;display:flex;gap:14px;align-items:flex-start}
+.panel__topp h3{font-size:27px;margin:4px 0 8px}
+.panel__url{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:var(--blekk-3)}
+.lukk{margin-left:auto;background:var(--sand);border:0;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;flex:none}
+.panel__kropp{padding:22px 26px;overflow:auto;flex:1}
+.panel__kropp h4{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blekk-3);margin:24px 0 10px}
+.panel__kropp h4:first-child{margin-top:0}
+.panel__kropp ul{margin:0;padding:0;list-style:none}
+.panel__kropp ul.innhold li{padding:7px 0 7px 22px;position:relative;font-size:15.5px}
+.panel__kropp ul.innhold li::before{content:"";position:absolute;left:4px;top:16px;width:7px;height:7px;border-radius:50%;background:var(--gron-600)}
+.panel__kropp ul.gamle li{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;padding:6px 10px;background:#fff;border:1px solid var(--linje);border-radius:var(--r-s);margin-bottom:6px;display:flex;justify-content:space-between;gap:10px}
+.panel__kropp ul.gamle li small{font-family:var(--sans);color:var(--blekk-3)}
+.notis{background:var(--rav-050);border:1px solid #efd9bd;border-radius:var(--r-m);padding:12px 14px;font-size:14.5px;color:var(--blekk-2)}
+.panel__fot{padding:18px 26px 22px;border-top:1px solid var(--linje);background:#fff}
+.panel__fot label{font-weight:600;font-size:14.5px;display:block;margin-bottom:8px}
+.panel__fot textarea{width:100%;min-height:84px;border:1.5px solid var(--linje);border-radius:var(--r-m);padding:10px 12px;font:inherit;font-size:15px;resize:vertical;background:var(--krem)}
+.panel__fot textarea:focus{outline:0;border-color:var(--gron-600)}
+.panel__fot small{display:block;color:var(--blekk-3);font-size:13px;margin-top:6px}
+
+footer{background:#00261f;color:rgba(255,255,255,.62);font-size:13.5px;padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer a{color:rgba(255,255,255,.8)}
+.kreditt{font-size:12px;color:rgba(255,255,255,.45);margin-top:10px;max-width:90ch}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--gron-900);color:#fff;padding:12px 20px;border-radius:999px;font-size:14.5px;z-index:200;transition:transform .3s var(--ease);box-shadow:var(--sk-3)}
+.toast.vis{transform:translate(-50%,0)}
+
+@media (max-width:1000px){
+  .hero__grid,.rase,.godkj{grid-template-columns:1fr}
+  .kart{grid-template-columns:1fr 1fr}
+  .valg,.steg{grid-template-columns:1fr}
+  .tall{grid-template-columns:1fr 1fr}
+  .gren--utenfor ul{grid-template-columns:1fr 1fr}
+  .top__nav{display:none}
+  .top__inner .merknadsknapp{margin-left:auto}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .sec{padding:56px 0}
+  .hero{padding:52px 0 80px}
+  .kart{grid-template-columns:1fr}
+  .gren--utenfor ul{grid-template-columns:1fr}
+  .tall div{padding:18px}
+  .tall b{font-size:32px}
+  .demo__menu{margin:12px 0 0;width:100%}
+  .demo__head{flex-wrap:wrap}
+  .demo__drop{min-width:230px}
+  .rasevelger{grid-template-columns:repeat(2,1fr)}
+  .treff li{grid-template-columns:1fr;gap:2px}
+  .treff .pil{display:none}
+  .top__logo img{height:32px}
+  .merknadsknapp .tekst{display:none}
+  .ikkemed{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="top__logo" href="#topp" aria-label="Til toppen"><img src="bilder/260912_NBaK_logo.png" alt="Norsk Bassetklubb"></a>
+    <nav class="top__nav" aria-label="Innhold på denne siden">
+      <a href="#menyen">Menyen</a>
+      <a href="#kartet">Alle 35 sider</a>
+      <a href="#rasene">Rasesidene</a>
+      <a href="#gammel">Finn gammel side</a>
+      <a href="#godkjenning">Godkjenning</a>
+    </nav>
+    <a class="merknadsknapp" href="#godkjenning"><span class="tekst">Mine merknader</span><span class="teller" id="teller">0</span></a>
+  </div>
+</header>
+
+<main id="topp">
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <div class="status"><i></i>Forslag til godkjenning, november 2026</div>
+      <h1>Sidekartet for den <em>nye</em> nettsiden</h1>
+      <p class="hero__lead">Dette er listen over sidene den nye nettsiden skal ha, og hvordan menyen blir bygd opp. Når styret har godkjent den, starter designet. Klikk deg rundt: alt på denne siden kan prøves.</p>
+      <div class="hero__knapper">
+        <a class="knapp knapp--rav" href="#menyen">Prøv den nye menyen</a>
+        <a class="knapp knapp--strek" href="#gammel">Hvor havner min gamle side?</a>
+      </div>
+    </div>
+    <div class="hero__bilde"><img src="bilder/260912_NBaK_hero-jubileum.jpg" alt="Klubbens jubileumsbilde med de seks bassetrasene, 1986 til 2026"></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="tall" role="list">
+    <div role="listitem"><b><s>92</s> 35</b><span>sider. Tomme og doble sider slås sammen</span></div>
+    <div role="listitem"><b><s>4</s> 2</b><span>nivåer i menyen. Ingen side er mer enn to klikk unna</span></div>
+    <div role="listitem"><b>94 / 94</b><span>gamle adresser sender videre til riktig ny side</span></div>
+    <div role="listitem"><b>3</b><span>virkedager har styret på å svare, etter avtalen § 7</span></div>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow">Slik bruker du denne siden</p>
+      <h2 class="sec__title">Tre ting å gjøre før dere svarer</h2>
+    </div>
+    <ol class="steg">
+      <li><h3>Prøv menyen</h3><p>Åpne menypunktene slik et medlem vil gjøre. Finner du det du leter etter der du forventer det?</p></li>
+      <li><h3>Klikk på en side</h3><p>Hver side i kartet viser hva den skal inneholde, og hvilke av dagens sider som slås sammen i den. Skriv en merknad der hvis noe bør endres.</p></li>
+      <li><h3>Send svaret</h3><p>Nederst samles merknadene deres i én e-post. Godkjenner dere uten merknader, er det like enkelt.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec sec--sand" id="menyen">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow">Hovedmenyen</p>
+      <h2 class="sec__title">Sju menypunkter og en knapp for å bli medlem</h2>
+      <p class="sec__lead">I dag har menyen fire nivåer, og mange av sidene nederst er tomme. Den nye menyen har to nivåer. Klikk på et menypunkt for å se hva som ligger under.</p>
+    </div>
+    <div class="demo">
+      <div class="demo__bar" aria-hidden="true"><i></i><i></i><i></i><span>norskbassetklubb.no</span></div>
+      <div class="demo__head">
+        <img src="bilder/260912_NBaK_logo.png" alt="">
+        <ul class="demo__menu" id="demomeny"></ul>
+      </div>
+      <div class="demo__fot" id="demofot"><b>Tips:</b> Søk, kontakt og nyheter ligger ikke i menyen, men nås fra forsiden, søkeikonet og bunnen av hver side.</div>
+    </div>
+    <p class="hint">Velger du en side i menyen, åpnes beskrivelsen av den. <b>Alt her er et forslag.</b> Rekkefølge og navn kan endres.</p>
+  </div>
+</section>
+
+<section class="sec" id="kartet">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow">Hele sidekartet</p>
+      <h2 class="sec__title">Alle 35 sider, og hvor de kommer fra</h2>
+      <p class="sec__lead">Tallet til høyre viser hvor mange av dagens sider som er samlet i den nye. Klikk på en side for å se innholdet og skrive en merknad.</p>
+    </div>
+    <ul class="forkl">
+      <li><span style="width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--gron-600)"></span>Flere sider samlet i én</li>
+      <li><span style="width:10px;height:10px;border-radius:50%;display:inline-block;background:#b9ad9b"></span>Samme side som i dag, i ny drakt</li>
+      <li><span style="width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--rav)"></span>Ny side</li>
+      <li><span class="merke merke--tillegg">Tillegg</span>Funksjonen kan bestilles senere</li>
+    </ul>
+    <div class="kart" id="kart"></div>
+  </div>
+</section>
+
+<section class="sec sec--sand" id="rasene">
+  <div class="wrap rase">
+    <div>
+      <p class="eyebrow">Rasesidene</p>
+      <h2 class="sec__title">Én side per rase i stedet for fem</h2>
+      <p class="sec__lead">I dag har hver rase egne undersider for RAS, rasestandard, helse og pelsstell. Mange av dem har bare en overskrift. Nå samles alt på én side per rase, med snarveier øverst rett til hver del.</p>
+      <p style="color:var(--blekk-2)">Det gjør også at alle seks rasene ser like ut i menyen, selv om bare tre av dem har egen pelsstell-del i dag. Velg en rase for å se oppsettet.</p>
+    </div>
+    <div>
+      <div class="rasevelger" id="rasevelger" role="group" aria-label="Velg rase"></div>
+      <div class="skisse" aria-live="polite">
+        <div class="skisse__topp"><img id="raseBilde" src="" alt=""><h4 id="raseNavn"></h4></div>
+        <div class="ankre" id="raseAnkre"></div>
+        <div class="seksjoner" id="raseSeksjoner"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--gron" id="gammel">
+  <div class="wrap godkj">
+    <div>
+      <p class="eyebrow eyebrow--lys">Ingen lenker brytes</p>
+      <h2 class="sec__title">Hvor havner min gamle side?</h2>
+      <p class="sec__lead">Alle 94 adressene på dagens nettside sender automatisk videre til riktig sted på den nye. Bokmerker, lenker fra NKK og treff i Google fortsetter å virke.</p>
+      <p style="color:rgba(255,255,255,.7);font-size:15.5px">Skriv en del av adressen eller sidenavnet, for eksempel <em>spor</em>, <em>valper</em> eller <em>lover</em>.</p>
+    </div>
+    <div class="finn">
+      <label for="sok">Søk i dagens adresser</label>
+      <div class="finn__felt"><span>norskbassetklubb.no/</span><input id="sok" type="search" placeholder="terminliste" autocomplete="off"></div>
+      <ul class="treff" id="treff"></ul>
+      <p class="finn__tom" id="tom" hidden>Ingen treff. Prøv et kortere ord.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="avklaringer">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow">Tre spørsmål til styret</p>
+      <h2 class="sec__title">Dette trenger vi svar på sammen med godkjenningen</h2>
+      <p class="sec__lead">Svarene tas med i e-posten nederst. Er dere usikre, la det stå åpent, så tar vi det i neste runde.</p>
+    </div>
+    <div class="valg" id="valg">
+      <article data-sporsmal="Grasrotandelen">
+        <h3>Grasrotandelen i bunnen av siden?</h3>
+        <p>I dag ligger Grasrotandelen midt på forsiden. Forslaget er å flytte den til bunnen av hver side, der den er synlig overalt uten å ta plass fra nyheter og kalender.</p>
+        <div class="svar"><button aria-pressed="false">Ja, flytt den</button><button aria-pressed="false">Nei, behold på forsiden</button></div>
+      </article>
+      <article data-sporsmal="Om klubben på forsiden">
+        <h3>En kort «om klubben» på forsiden?</h3>
+        <p>Dagens forside sier ingen steder hva klubben er. Forslaget er to eller tre setninger om klubben, med lenke videre til «Om klubben», for nye besøkende og valpekjøpere.</p>
+        <div class="svar"><button aria-pressed="false">Ja</button><button aria-pressed="false">Nei</button></div>
+      </article>
+      <article data-sporsmal="Menynavnene">
+        <h3>Er menynavnene riktige?</h3>
+        <p>Navnene i menyen bør være de ordene medlemmene selv bruker. Er det for eksempel «Aktiviteter» eller «Prøver og utstilling» dere sier i klubben?</p>
+        <div class="svar"><button aria-pressed="false">Navnene er gode</button><button aria-pressed="false">Se merknadene våre</button></div>
+      </article>
+    </div>
+    <div class="ikkemed">
+      <span class="merke merke--tillegg">Tillegg</span>
+      <div>
+        <h3>Noen sider har plass til mer enn det som bygges nå</h3>
+        <p>Sidekartet setter av plass til medlemsområde, nettbutikk og lister over oppdrettere og valper med filter. Selve funksjonene er ikke med i fastprisen (avtalen § 6), men kan bestilles senere uten å endre menyen. Fram til da viser sidene innholdet slik det er i dag.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--gron" id="godkjenning">
+  <div class="wrap godkj">
+    <div>
+      <p class="eyebrow eyebrow--lys">Godkjenning</p>
+      <h2 class="sec__title">Slik godkjenner dere sidekartet</h2>
+      <ol>
+        <li><div><b>Gå gjennom menyen og kartet</b><span>Skriv merknader direkte på sidene dere vil endre. De lagres i denne nettleseren til dere sender.</span></div></li>
+        <li><div><b>Svar på de tre spørsmålene</b><span>Over denne delen. Det er greit å la ett stå åpent.</span></div></li>
+        <li><div><b>Send én samlet e-post</b><span>Knappen lager e-posten med alle merknadene. Kontaktpersonen sender den på vegne av styret.</span></div></li>
+        <li><div><b>Designet starter</b><span>Når sidekartet er godkjent, går vi videre til designet, med utgangspunkt i demoen dere har sett.</span></div></li>
+      </ol>
+    </div>
+    <div class="svarkort">
+      <h3>Svaret deres</h3>
+      <p id="svarIngress">Ingen merknader ennå. Sender dere nå, godkjenner dere sidekartet slik det står.</p>
+      <ul class="svarliste" id="svarliste"></ul>
+      <a class="knapp knapp--rav" id="sendKnapp" href="#">Lag e-post til Fjordigital</a>
+      <button class="sekundaer" id="kopier" type="button">Kopier teksten i stedet</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Sidekart for ny nettside, Norsk Bassetklubb. Utarbeidet av Fjordigital. Versjon 1, november 2026.
+      <p class="kreditt">Rasebilder fra Wikimedia Commons: Pets Adviser (CC BY 2.0), Томасина (CC BY-SA 3.0), Sagaciousphil (CC BY-SA 3.0), Canarian (CC BY-SA 4.0), Abujoy (CC BY 4.0), Svenska Mässan (CC BY 2.0). Bildene er midlertidige og byttes med klubbens egne.</p>
+    </div>
+    <div><a href="mailto:tobias@fjordigital.no">tobias@fjordigital.no</a></div>
+  </div>
+</footer>
+
+<div class="slor" id="slor"></div>
+<aside class="panel" id="panel" aria-hidden="true" role="dialog" aria-labelledby="pNavn">
+  <div class="panel__topp">
+    <div>
+      <span id="pMerke"></span>
+      <h3 id="pNavn"></h3>
+      <div class="panel__url" id="pUrl"></div>
+    </div>
+    <button class="lukk" id="lukk" aria-label="Lukk">×</button>
+  </div>
+  <div class="panel__kropp" id="pKropp"></div>
+  <div class="panel__fot">
+    <label for="pMerknad">Merknad til denne siden</label>
+    <textarea id="pMerknad" placeholder="For eksempel: Bør hete «Prøver» i stedet. Eller: Vi trenger også en side om …"></textarea>
+    <small>Lagres automatisk. Kommer med i e-posten nederst.</small>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const RASER = {
+  "basset-hound":"Basset Hound",
+  "petit-basset-griffon-vendeen":"Petit Basset Griffon Vendéen",
+  "grand-basset-griffon-vendeen":"Grand Basset Griffon Vendéen",
+  "basset-fauve-de-bretagne":"Basset Fauve de Bretagne",
+  "basset-bleu-de-gascogne":"Basset Bleu de Gascogne",
+  "basset-artesien-normand":"Basset Artésien Normand"
+};
+const KORT = {hound:"basset-hound","basset-hound":"basset-hound",petit:"petit-basset-griffon-vendeen",grand:"grand-basset-griffon-vendeen",fauve:"basset-fauve-de-bretagne",bleu:"basset-bleu-de-gascogne",ban:"basset-artesien-normand"};
+const PELSSTELL = ["petit-basset-griffon-vendeen","grand-basset-griffon-vendeen","basset-fauve-de-bretagne"];
+
+/* Sidene. g = gruppe, h = hovedside i gruppen, ny/tillegg = merknader */
+const SIDER = [
+ {id:"/",n:"Forside",g:"forside",h:1,inn:["Neste arrangementer fra kalenderen","Siste nyheter","De seks rasene","Snarvei til å bli medlem og til NKKs påmelding"]},
+ {id:"/om-klubben/",n:"Om klubben",g:"om",h:1,inn:["Hva klubben er og gjør","Klubbens historie siden 1986"]},
+ {id:"/om-klubben/styret/",n:"Styret",g:"om",inn:["Styrets medlemmer med kontaktinformasjon","Presentasjon av styret","Valgkomiteen"]},
+ {id:"/om-klubben/arsmote/",n:"Årsmøte",g:"om",inn:["Om årsmøtet","Årsmøtepapirer"]},
+ {id:"/om-klubben/dokumenter/",n:"Dokumenter",g:"om",inn:["Klubbens lover","NKKs lover","Styrereferater"],obs:"Dokumentene som i dag ligger i SharePoint, flyttes inn på nettsiden."},
+ {id:"/om-klubben/aeresmedlemmer/",n:"Æresmedlemmer",g:"om",inn:["Klubbens æresmedlemmer"]},
+ {id:"/raser/",n:"Raser",g:"raser",h:1,inn:["Oversikt over de seks rasene, med bilde og lenke til hver"]},
+ ...Object.entries(RASER).map(([k,v])=>({id:"/raser/"+k+"/",n:v,g:"raser",rase:k,inn:["Presentasjon av rasen","RAS (rasespesifikk avlsstrategi)","Rasestandard","Helse"].concat(PELSSTELL.includes(k)?["Pelsstell"]:[])})),
+ {id:"/avl-og-oppdrett/",n:"Avl og oppdrett",g:"avl",h:1,inn:["Inngang til raseråd, oppdrettere, valper og priser"]},
+ {id:"/avl-og-oppdrett/raserad/",n:"Raseråd",g:"avl",inn:["Instruks for raserådene","Ett avsnitt per rase"]},
+ {id:"/avl-og-oppdrett/oppdrettere/",n:"Oppdrettere",g:"avl",inn:["Kriterier for å stå på listen","Oppdrettere, ett avsnitt per rase"],tillegg:"Liste med filter på rase kan bestilles som tillegg. Til da står oppdretterne per rase, slik som i dag."},
+ {id:"/avl-og-oppdrett/valper/",n:"Valper",g:"avl",inn:["Kriterier for valpeannonser","Valpekull, ett avsnitt per rase"],tillegg:"Liste med filter på rase kan bestilles som tillegg. Til da står kullene per rase, slik som i dag."},
+ {id:"/avl-og-oppdrett/priser/",n:"Avls- og oppdretterpriser",g:"avl",inn:["Klubbens avls- og oppdretterpriser"]},
+ {id:"/aktiviteter/",n:"Aktiviteter",g:"akt",h:1,inn:["Inngang til drevprøve, sporprøve og utstilling","Neste arrangementer fra kalenderen"]},
+ {id:"/aktiviteter/drevprove/",n:"Drevprøve",g:"akt",inn:["Om drevprøve","Regler","Lenke til påmelding hos NKK","Neste drevprøver"]},
+ {id:"/aktiviteter/sporprove/",n:"Sporprøve",g:"akt",inn:["Om blod- og fersksporprøve","Regler","Lenke til påmelding hos NKK","Neste sporprøver"]},
+ {id:"/aktiviteter/utstilling/",n:"Utstilling",g:"akt",inn:["Om utstilling","Ny i ringen","Neste utstillinger"]},
+ {id:"/aktiviteter/arets-hund/",n:"Årets hund",g:"akt",inn:["Årets hund"]},
+ {id:"/aktiviteter/championatregler/",n:"Championatregler",g:"akt",inn:["Championatregler"]},
+ {id:"/kalender/",n:"Kalender",g:"kal",h:1,ny:"Ny funksjon: klubbens prøver hentes automatisk fra NKKs terminliste hver dag, med lenke til påmelding.",inn:["Månedsvisning og listevisning","Drevprøver, sporprøver, utstillinger og klubbens egne arrangementer","Erstatter dagens tre terminlister"]},
+ {id:"/bassetposten/",n:"Bassetposten",g:"bp",h:1,inn:["Om klubbladet, som kommer fire ganger i året","Utgavene som i dag ligger i SharePoint"],tillegg:"Arkiv med forsidebilder for hver utgave kan bestilles som tillegg."},
+ {id:"/nettbutikk/",n:"Nettbutikk",g:"butikk",h:1,inn:["Klubbens varer og hvordan de bestilles"],tillegg:"Butikk med handlekurv og betaling kan bestilles som tillegg. Dagens side har bare plassholdertekst."},
+ {id:"/bli-medlem/",n:"Bli medlem",g:"medlem",h:1,inn:["Medlemsfordeler","Hovedmedlemskap 400 kr og familiemedlem 125 kr per år","Innmelding via NKK, eller e-post til klubben"]},
+ {id:"/nyheter/",n:"Nyheter",g:"utenfor",ny:"Ny funksjon: sakene sorteres etter kategori og år, i stedet for én lang liste.",inn:["Alle nyhetssaker fra dagens nettside","Kategorier og årsarkiv"],via:"Forsiden og bunnen av hver side"},
+ {id:"/resultater/",n:"Resultater",g:"utenfor",inn:["Resultater fra drevprøver","Resultater fra sporprøver"],via:"Aktivitetssidene"},
+ {id:"/pamelding/",n:"Påmelding",g:"utenfor",inn:["Hvordan man melder seg på hos NKK","Lenker til NKKs påmelding for drev og spor"],via:"Kalenderen og aktivitetssidene"},
+ {id:"/kontakt/",n:"Kontakt",g:"utenfor",inn:["Hvem man kontakter om hva","E-post og telefon"],obs:"Dagens kontaktside er tom og ikke lenket fra menyen.",via:"Bunnen av hver side"},
+ {id:"/ressurser/",n:"Ressurser",g:"utenfor",inn:["Nyttige lenker (dagens «Linker»)"],via:"Bunnen av hver side"},
+ {id:"/medlem/",n:"Medlemsområde",g:"utenfor",inn:["Plass reservert"],tillegg:"Innlogging for medlemmer kan bestilles som tillegg. Hvilke fordeler som skal ligge bak innlogging, bestemmer styret.",via:"Bunnen av hver side, når det er bygd"},
+ {id:"/sok/",n:"Søk",g:"utenfor",ny:"Ny funksjon: dagens nettside har ikke søk.",inn:["Søk i sider, nyheter og dokumenter"],via:"Søkeikonet øverst på hver side"}
+];
+
+const GRUPPER = [
+ {g:"forside",n:"Forside"},{g:"om",n:"Om klubben"},{g:"raser",n:"Raser"},{g:"avl",n:"Avl og oppdrett"},{g:"akt",n:"Aktiviteter"},
+ {g:"kal",n:"Kalender"},{g:"bp",n:"Bassetposten"},{g:"butikk",n:"Nettbutikk"},{g:"medlem",n:"Bli medlem"}
+];
+
+/* 301-kartet: alle 94 adresser på dagens nettside */
+const KART = `/;/
+/nyheter/;/nyheter/
+/om-nbak/;/om-klubben/
+/presentasjon-av-styret/;/om-klubben/styret/
+/styrereferater/;/om-klubben/dokumenter/
+/arsmote/;/om-klubben/arsmote/
+/arsmotepapirer/;/om-klubben/arsmote/
+/lover-for-nbak/;/om-klubben/dokumenter/
+/lover-for-norsk-kennel-klubb/;/om-klubben/dokumenter/
+/valgkomite/;/om-klubben/styret/
+/historie/;/om-klubben/
+/raser/;/raser/
+/basset-artesien-normand/;/raser/basset-artesien-normand/
+/basset-bleu-de-gascogne/;/raser/basset-bleu-de-gascogne/
+/basset-fauve-de-bretagne/;/raser/basset-fauve-de-bretagne/
+/basset-hound/;/raser/basset-hound/
+/grand-basset-griffon-vendeen/;/raser/grand-basset-griffon-vendeen/
+/petit-basset-griffon-vendeen/;/raser/petit-basset-griffon-vendeen/
+/ras-hound/;/raser/basset-hound/#ras
+/ras-petit/;/raser/petit-basset-griffon-vendeen/#ras
+/ras-grand/;/raser/grand-basset-griffon-vendeen/#ras
+/ras-fauve/;/raser/basset-fauve-de-bretagne/#ras
+/ras-bleu/;/raser/basset-bleu-de-gascogne/#ras
+/ras-ban/;/raser/basset-artesien-normand/#ras
+/rasestandard-hound/;/raser/basset-hound/#rasestandard
+/rasestandard-petit/;/raser/petit-basset-griffon-vendeen/#rasestandard
+/rasestandard-fauve/;/raser/basset-fauve-de-bretagne/#rasestandard
+/rasestandard-bleu/;/raser/basset-bleu-de-gascogne/#rasestandard
+/rasestandard-ban/;/raser/basset-artesien-normand/#rasestandard
+/rasestandard-grand/;/raser/grand-basset-griffon-vendeen/#rasestandard
+/avl-oppdrett/;/avl-og-oppdrett/
+/jakt-spor-utstilling/;/aktiviteter/
+/bassetposten/;/bassetposten/
+/nettbutikk/;/nettbutikk/
+/kontakt/;/kontakt/
+/helse-hound/;/raser/basset-hound/#helse
+/helse-petit/;/raser/petit-basset-griffon-vendeen/#helse
+/helse-fauve/;/raser/basset-fauve-de-bretagne/#helse
+/helse-bleu/;/raser/basset-bleu-de-gascogne/#helse
+/helse-ban/;/raser/basset-artesien-normand/#helse
+/helse-grand/;/raser/grand-basset-griffon-vendeen/#helse
+/pelsstell-fauve/;/raser/basset-fauve-de-bretagne/#pelsstell
+/pelsstell-grand/;/raser/grand-basset-griffon-vendeen/#pelsstell
+/pelsstell-petit/;/raser/petit-basset-griffon-vendeen/#pelsstell
+/raserad/;/avl-og-oppdrett/raserad/
+/instruks-for-raserad/;/avl-og-oppdrett/raserad/#instruks
+/raserad-ban/;/avl-og-oppdrett/raserad/#ban
+/raserad-bleu/;/avl-og-oppdrett/raserad/#bleu
+/raserad-fauve/;/avl-og-oppdrett/raserad/#fauve
+/raserad-grand/;/avl-og-oppdrett/raserad/#grand
+/raserad-hound/;/avl-og-oppdrett/raserad/#basset-hound
+/raserad-petit/;/avl-og-oppdrett/raserad/#petit
+/oppdrettere/;/avl-og-oppdrett/oppdrettere/
+/oppdretter-kriterier/;/avl-og-oppdrett/oppdrettere/#kriterier
+/oppdrettere-bleu/;/avl-og-oppdrett/oppdrettere/#bleu
+/oppdrettere-fauve/;/avl-og-oppdrett/oppdrettere/#fauve
+/oppdrettere-grand/;/avl-og-oppdrett/oppdrettere/#grand
+/oppdrettere-petit/;/avl-og-oppdrett/oppdrettere/#petit
+/kriterier-for-valpeannonser/;/avl-og-oppdrett/valper/#kriterier
+/valper-ban/;/avl-og-oppdrett/valper/#ban
+/valper-bleu/;/avl-og-oppdrett/valper/#bleu
+/valper-grand/;/avl-og-oppdrett/valper/#grand
+/valper-petit/;/avl-og-oppdrett/valper/#petit
+/valper-fauve/;/avl-og-oppdrett/valper/#fauve
+/valper-hound/;/avl-og-oppdrett/valper/#basset-hound
+/valper/;/avl-og-oppdrett/valper/
+/drev/;/aktiviteter/drevprove/
+/spor/;/aktiviteter/sporprove/
+/utstilling/;/aktiviteter/utstilling/
+/om-drevprove/;/aktiviteter/drevprove/
+/regler-drev/;/aktiviteter/drevprove/#regler
+/terminliste/;/kalender/#drevprove
+/pamelding-drevprove/;/pamelding/#drevprove
+/resultater-drevprover/;/resultater/#drevprove
+/om-blod-og-fersksporprove/;/aktiviteter/sporprove/
+/regler-spor/;/aktiviteter/sporprove/#regler
+/terminliste2/;/kalender/#sporprove
+/pamelding-sporprove/;/pamelding/#sporprove
+/resultater-sporprover/;/resultater/#sporprove
+/0m-utstilling/;/aktiviteter/utstilling/
+/ny-i-ringen/;/aktiviteter/utstilling/#ny-i-ringen
+/terminliste3/;/kalender/#utstilling
+/arets-hund/;/aktiviteter/arets-hund/
+/linker/;/ressurser/
+/styret/;/om-klubben/styret/
+/oppdrettere-hound/;/avl-og-oppdrett/oppdrettere/#basset-hound
+/avl-og-oppdrettpriser/;/avl-og-oppdrett/priser/
+/championatregler/;/aktiviteter/championatregler/
+/aeresmedlemmer/;/om-klubben/aeresmedlemmer/
+/oppdrettere-ban/;/avl-og-oppdrett/oppdrettere/#ban
+/bli-medlem/;/bli-medlem/
+/lover/;/om-klubben/dokumenter/
+/start/;/nyheter/
+/copy-of-styret/;/om-klubben/styret/`.split("\n").map(l=>{const [g,n]=l.split(";");const [s,a]=n.split("#");return {gml:g,side:s,anker:a||""}});
+
+const ANKERNAVN = {ras:"RAS",rasestandard:"Rasestandard",helse:"Helse",pelsstell:"Pelsstell",regler:"Regler","ny-i-ringen":"Ny i ringen",kriterier:"Kriterier",instruks:"Instruks",drevprove:"Drevprøve",sporprove:"Sporprøve",utstilling:"Utstilling"};
+const ankerTekst = a => !a ? "" : (ANKERNAVN[a] || (KORT[a] ? RASER[KORT[a]] : a));
+
+const sideAv = id => SIDER.find(s=>s.id===id);
+SIDER.forEach(s=>{ s.gamle = KART.filter(k=>k.side===s.id); s.type = s.gamle.length>1?"samlet":s.gamle.length===1?"idag":"ny"; });
+const TYPENAVN = {samlet:"Samlet fra flere sider",idag:"Som i dag, i ny drakt",ny:"Ny side"};
+
+/* Merknader, lagret lokalt */
+let merk = {};
+try{ merk = JSON.parse(localStorage.getItem("nbak-sidekart-merk")||"{}"); }catch(e){}
+const lagre = ()=>{ try{ localStorage.setItem("nbak-sidekart-merk",JSON.stringify(merk)); }catch(e){} oppdaterSvar(); };
+
+/* Kartet */
+function sideKnapp(s,hoved){
+  const fra = s.gamle.length>1 ? `<span class="side__fra">${s.gamle.length} sider</span>` : s.type==="ny" ? `<span class="side__fra">ny</span>` : "";
+  return `<li><button class="side ${hoved?"er-hoved":"er-under"} ${merk.sider&&merk.sider[s.id]?"har-merknad":""}" data-id="${s.id}"><span class="prikk prikk--${s.type}"></span><span class="side__navn">${s.n}</span>${s.tillegg?'<span class="merke merke--tillegg">Tillegg</span>':""}${fra}</button></li>`;
+}
+function tegnKart(){
+  let html = "";
+  const hovedgr = GRUPPER.filter(g=>["om","raser","avl","akt"].includes(g.g));
+  const enkle = GRUPPER.filter(g=>!["om","raser","avl","akt"].includes(g.g));
+  hovedgr.forEach((g,i)=>{
+    const ss = SIDER.filter(s=>s.g===g.g);
+    html += `<div class="gren"><div class="gren__topp"><span class="gren__nr">Menypunkt</span><h3>${g.n}</h3><div class="gren__antall">${ss.length} sider</div></div><ul>${ss.map(s=>sideKnapp(s,s.h)).join("")}</ul></div>`;
+  });
+  const es = SIDER.filter(s=>enkle.some(g=>g.g===s.g));
+  html += `<div class="gren"><div class="gren__topp"><span class="gren__nr">Enkeltsider i menyen</span><h3>Forside og fem til</h3><div class="gren__antall">${es.length} sider</div></div><ul>${es.map(s=>sideKnapp(s,1)).join("")}</ul></div>`;
+  const us = SIDER.filter(s=>s.g==="utenfor");
+  html += `<div class="gren"><div class="gren__topp"><span class="gren__nr">Utenfor menyen</span><h3>Nås fra forsiden, søk og bunnen av siden</h3><div class="gren__antall">${us.length} sider</div></div><ul>${us.map(s=>sideKnapp(s,1)).join("")}</ul></div>`;
+  document.getElementById("kart").innerHTML = html;
+}
+
+/* Menydemo */
+const pil = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+function tegnMeny(){
+  const ul = document.getElementById("demomeny");
+  ul.innerHTML = GRUPPER.filter(g=>g.g!=="forside").map(g=>{
+    const ss = SIDER.filter(s=>s.g===g.g);
+    if(g.g==="medlem") return `<li><button class="cta" data-id="/bli-medlem/">Bli medlem</button></li>`;
+    if(ss.length===1) return `<li><button data-id="${ss[0].id}">${g.n}</button></li>`;
+    const over = ss.find(s=>s.h);
+    return `<li><button aria-expanded="false" data-drop="${g.g}">${g.n}${pil}</button><div class="demo__drop" hidden id="drop-${g.g}"><button class="over" data-id="${over.id}">${over.n}: oversikt</button>${ss.filter(s=>!s.h).map(s=>`<button data-id="${s.id}">${s.n}</button>`).join("")}</div></li>`;
+  }).join("");
+}
+function lukkDrops(unntak){
+  document.querySelectorAll("[data-drop]").forEach(b=>{ if(b!==unntak){ b.setAttribute("aria-expanded","false"); document.getElementById("drop-"+b.dataset.drop).hidden=true; }});
+}
+
+/* Panel */
+let aktiv = null;
+const panel = document.getElementById("panel"), slor = document.getElementById("slor");
+function apne(id){
+  const s = sideAv(id); if(!s) return;
+  aktiv = s;
+  document.getElementById("pMerke").innerHTML = `<span class="merke merke--${s.type}">${TYPENAVN[s.type]}</span>`;
+  document.getElementById("pNavn").textContent = s.n;
+  document.getElementById("pUrl").textContent = "norskbassetklubb.no"+s.id;
+  let h = "";
+  if(s.ny) h += `<div class="notis" style="background:var(--gron-050);border-color:#cfe0d7">${s.ny}</div><h4>Innhold</h4>`; else h += `<h4>Innhold</h4>`;
+  h += `<ul class="innhold">${s.inn.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+  if(s.tillegg) h += `<h4>Kan bygges ut senere</h4><div class="notis">${s.tillegg}</div>`;
+  if(s.obs) h += `<h4>Merk</h4><div class="notis">${s.obs}</div>`;
+  if(s.via) h += `<h4>Hvordan man finner den</h4><p style="font-size:15.5px;margin:0">${s.via}</p>`;
+  h += `<h4>Dagens sider som havner her (${s.gamle.length})</h4>`;
+  h += s.gamle.length ? `<ul class="gamle">${s.gamle.map(k=>`<li>${k.gml}${k.anker?`<small>${ankerTekst(k.anker)}</small>`:""}</li>`).join("")}</ul>` : `<p style="font-size:15.5px;margin:0;color:var(--blekk-2)">Ingen. Dette er en ny side.</p>`;
+  document.getElementById("pKropp").innerHTML = h;
+  document.getElementById("pMerknad").value = (merk.sider&&merk.sider[s.id])||"";
+  panel.classList.add("apen"); slor.classList.add("apen"); panel.setAttribute("aria-hidden","false");
+  setTimeout(()=>document.getElementById("lukk").focus(),50);
+}
+function lukk(){ panel.classList.remove("apen"); slor.classList.remove("apen"); panel.setAttribute("aria-hidden","true"); aktiv=null; tegnKart(); }
+document.getElementById("lukk").onclick = lukk;
+slor.onclick = lukk;
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ if(aktiv) lukk(); lukkDrops(); }});
+document.getElementById("pMerknad").addEventListener("input",e=>{
+  if(!aktiv) return; merk.sider = merk.sider||{};
+  const v = e.target.value.trim(); if(v) merk.sider[aktiv.id]=e.target.value; else delete merk.sider[aktiv.id];
+  lagre();
+});
+
+document.addEventListener("click",e=>{
+  const d = e.target.closest("[data-drop]");
+  if(d){ const apen = d.getAttribute("aria-expanded")==="true"; lukkDrops(d); d.setAttribute("aria-expanded",String(!apen)); document.getElementById("drop-"+d.dataset.drop).hidden=apen; return; }
+  const b = e.target.closest("[data-id]");
+  if(b){ lukkDrops(); apne(b.dataset.id); return; }
+  if(!e.target.closest(".demo__menu")) lukkDrops();
+});
+
+/* Rasesidene */
+function velgRase(k){
+  document.querySelectorAll("#rasevelger button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.rase===k)));
+  const img = document.getElementById("raseBilde"); img.src = "bilder/"+k+".jpg"; img.alt = RASER[k];
+  document.getElementById("raseNavn").textContent = RASER[k];
+  const har = PELSSTELL.includes(k);
+  document.getElementById("raseAnkre").innerHTML = ["Om rasen","RAS","Rasestandard","Helse","Pelsstell"].map(a=>`<span class="${a==="Pelsstell"&&!har?"mangler":""}">${a}</span>`).join("");
+  const gamle = KART.filter(x=>x.side==="/raser/"+k+"/");
+  document.getElementById("raseSeksjoner").innerHTML = gamle.map(x=>`<div><span>${x.anker?ankerTekst(x.anker):"Om rasen"}</span><small>i dag: ${x.gml}</small></div>`).join("");
+}
+document.getElementById("rasevelger").innerHTML = Object.entries(RASER).map(([k,v])=>`<button data-rase="${k}" aria-pressed="false"><img src="bilder/${k}.jpg" alt="" loading="lazy"><span>${v}</span></button>`).join("");
+document.getElementById("rasevelger").addEventListener("click",e=>{ const b=e.target.closest("button"); if(b) velgRase(b.dataset.rase); });
+
+/* Finn gammel side */
+const sokFelt = document.getElementById("sok");
+function sok(){
+  const q = sokFelt.value.trim().toLowerCase().replace(/^https?:\/\/(www\.)?norskbassetklubb\.no/,"");
+  const liste = KART.filter(k=>{ const s=sideAv(k.side); return !q || k.gml.includes(q) || (s&&s.n.toLowerCase().includes(q)); });
+  document.getElementById("treff").innerHTML = liste.map(k=>{ const s=sideAv(k.side); return `<li><code>${k.gml}</code><span class="pil">→</span><span><b>${s?s.n:k.side}</b>${k.anker?`<small>${ankerTekst(k.anker)}</small>`:""}</span></li>`; }).join("");
+  document.getElementById("tom").hidden = liste.length>0;
+}
+sokFelt.addEventListener("input",sok);
+
+/* Spørsmål */
+document.querySelectorAll("#valg article").forEach(a=>{
+  const sp = a.dataset.sporsmal;
+  a.querySelectorAll("button").forEach(b=>{
+    if(merk.valg&&merk.valg[sp]===b.textContent) b.setAttribute("aria-pressed","true");
+    b.onclick=()=>{
+      merk.valg = merk.valg||{};
+      const var_ = b.getAttribute("aria-pressed")==="true";
+      a.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false"));
+      if(var_) delete merk.valg[sp]; else { b.setAttribute("aria-pressed","true"); merk.valg[sp]=b.textContent; }
+      lagre();
+    };
+  });
+});
+
+/* Svar */
+function svarTekst(){
+  const s = merk.sider||{}, v = merk.valg||{};
+  let t = "Hei Tobias,\n\n";
+  const n = Object.keys(s).length;
+  t += n ? "Styret har gått gjennom sidekartet og har disse merknadene:\n\n" : "Styret godkjenner sidekartet slik det står.\n\n";
+  SIDER.filter(x=>s[x.id]).forEach(x=>{ t += `${x.n} (${x.id}):\n${s[x.id].trim()}\n\n`; });
+  if(Object.keys(v).length){ t += "Svar på spørsmålene:\n"; Object.entries(v).forEach(([k,x])=>{ t += `- ${k}: ${x}\n`; }); t += "\n"; }
+  if(n) t += "Resten av sidekartet godkjennes slik det står.\n\n";
+  return t + "Hilsen\n";
+}
+function oppdaterSvar(){
+  const s = merk.sider||{}, v = merk.valg||{};
+  const n = Object.keys(s).length + Object.keys(v).length;
+  document.getElementById("teller").textContent = n;
+  document.getElementById("svarIngress").textContent = Object.keys(s).length ? `${Object.keys(s).length} merknad${Object.keys(s).length>1?"er":""} på sider. Resten av kartet regnes som godkjent.` : "Ingen merknader på sider ennå. Sender dere nå, godkjenner dere sidekartet slik det står.";
+  document.getElementById("svarliste").innerHTML =
+    SIDER.filter(x=>s[x.id]).map(x=>`<li><b>${x.n}</b>${s[x.id].replace(/</g,"&lt;")}</li>`).join("") +
+    Object.entries(v).map(([k,x])=>`<li><b>${k}</b>${x}</li>`).join("");
+  document.getElementById("sendKnapp").href = "mailto:tobias@fjordigital.no?subject="+encodeURIComponent("Sidekart for ny nettside: svar fra styret")+"&body="+encodeURIComponent(svarTekst());
+}
+const toast = m=>{ const t=document.getElementById("toast"); t.textContent=m; t.classList.add("vis"); setTimeout(()=>t.classList.remove("vis"),2400); };
+document.getElementById("kopier").onclick = async()=>{ try{ await navigator.clipboard.writeText(svarTekst()); toast("Teksten er kopiert. Lim den inn i en e-post."); }catch(e){ toast("Kunne ikke kopiere. Bruk knappen over."); } };
+
+tegnKart(); tegnMeny(); velgRase("basset-hound"); sok(); oppdaterSvar();
+</script>
+</body>
+</html>
