@@ -207,6 +207,8 @@ p{margin:0 0 1em}
 .svarliste li{padding:8px 0;border-bottom:1px solid var(--linje)}
 .svarliste li b{display:block;font-size:13px;color:var(--blekk-3);font-weight:600}
 .svarkort .knapp{width:100%;justify-content:center}
+.lagring{background:var(--gron-050);border-radius:var(--r-m);padding:12px 14px;font-size:14px;color:var(--blekk-2);margin:0 0 18px;line-height:1.5}
+.lagring b{display:block;color:var(--gron-900);font-size:14.5px;margin-bottom:2px}
 .svarkort .sekundaer{display:block;text-align:center;margin-top:12px;font-size:14px;color:var(--blekk-2);background:none;border:0;cursor:pointer;text-decoration:underline;width:100%}
 
 /* Detaljpanel */
@@ -451,6 +453,10 @@ footer a{color:rgba(255,255,255,.8)}
       <h3>Svaret deres</h3>
       <p id="svarIngress">Ingen merknader ennå. Sender dere nå, godkjenner dere sidekartet slik det står.</p>
       <ul class="svarliste" id="svarliste"></ul>
+      <div class="lagring">
+        <b>Merknadene lagres mens dere skriver</b>
+        Kommer dere tilbake senere på samme PC eller telefon og i samme nettleser, ligger alt her fortsatt. På en annen enhet eller i et privat vindu er de ikke med. Skal flere i styret bidra, er det enklest at én person samler merknadene og sender.
+      </div>
       <a class="knapp knapp--rav" id="sendKnapp" href="#">Lag e-post til Fjordigital</a>
       <button class="sekundaer" id="kopier" type="button">Kopier teksten i stedet</button>
     </div>
@@ -482,7 +488,7 @@ footer a{color:rgba(255,255,255,.8)}
   <div class="panel__fot">
     <label for="pMerknad">Merknad til denne siden</label>
     <textarea id="pMerknad" placeholder="For eksempel: Bør hete «Prøver» i stedet. Eller: Vi trenger også en side om …"></textarea>
-    <small>Lagres automatisk. Kommer med i e-posten nederst.</small>
+    <small>Lagres automatisk i denne nettleseren, så den ligger her når dere kommer tilbake. Kommer med i e-posten nederst.</small>
   </div>
 </aside>
 
