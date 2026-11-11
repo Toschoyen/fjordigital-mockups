@@ -15,137 +15,158 @@
     --line: #dddfe2;
     --page: #f3f5f8;
     --card: #ffffff;
-    --fb-bg: #f0f2f5;
+    --fb: #1877f2;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--page);
-    color: var(--ink);
-    line-height: 1.5;
+    background: var(--page); color: var(--ink); line-height: 1.5;
   }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  .wrap { max-width: 1640px; margin: 0 auto; padding: 0 16px; }
 
   header.top { background: var(--card); border-bottom: 4px solid var(--blue); }
   header.top .wrap { padding-top: 28px; padding-bottom: 24px; }
   .eyebrow { font-size: 13px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: .4px; }
   header h1 { font-size: 28px; line-height: 1.2; margin-top: 4px; }
-  header p { color: var(--muted); margin-top: 8px; max-width: 720px; }
+  header p { color: var(--muted); margin-top: 8px; max-width: 760px; }
 
   .intro { padding: 28px 0 8px; }
-  .intro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .intro-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1200px; }
   .panel { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
   .panel h2 { font-size: 15px; margin-bottom: 6px; }
   .panel p { font-size: 15px; color: #3a3b3c; }
 
-  section.ad { padding: 32px 0 8px; }
+  section.ad, section.form-section { padding: 36px 0 8px; }
   .ad-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 6px; }
   .ad-head h2 { font-size: 22px; }
   .tag { font-size: 13px; font-weight: 600; background: #e7f0fb; color: var(--blue-dark); padding: 2px 10px; border-radius: 999px; }
-  .ad-lead { color: #3a3b3c; max-width: 760px; margin-bottom: 18px; }
-
-  .switch { display: inline-flex; background: #e4e6eb; border-radius: 8px; padding: 3px; margin-bottom: 18px; flex-wrap: wrap; }
+  .ad-lead { color: #3a3b3c; max-width: 760px; margin-bottom: 16px; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 18px; }
+  .switch { display: inline-flex; background: #e4e6eb; border-radius: 8px; padding: 3px; }
   .switch button {
     font: inherit; font-size: 14px; font-weight: 600; border: 0; background: transparent; color: var(--muted);
     padding: 8px 14px; border-radius: 6px; cursor: pointer; min-height: 40px;
   }
   .switch button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+  .controls small { color: var(--muted); font-size: 13px; }
 
-  .formats { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 300px); gap: 32px; align-items: start; }
-  .label { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 8px; }
+  /* Plasseringer */
+  .placements { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px 16px; align-items: start; }
+  .pl-label { display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #3a3b3c; }
+  .pl-label svg { flex-shrink: 0; }
+  .card { background: var(--card); border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.18); overflow: hidden; font-size: 13px; position: relative; }
+  .card > img.media { display: block; width: 100%; height: auto; }
+  .av { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: #ddd; }
+  .av.sm { width: 28px; height: 28px; }
+  .av.ig { border: 1px solid #dbdbdb; background: #fff; }
+  button.cta { border: 0; font: inherit; cursor: pointer; }
 
   /* Facebook-feed */
-  .feed { background: var(--fb-bg); padding: 12px; border-radius: 10px; }
-  .post { background: var(--card); border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.2); overflow: hidden; }
-  .post-top { display: flex; gap: 8px; align-items: center; padding: 12px 12px 0; }
-  .avatar {
-    width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: #fff; flex-shrink: 0;
-    display: grid; place-items: center; font-weight: 700; font-size: 15px;
-  }
-  .who b { display: block; font-size: 15px; line-height: 1.25; }
-  .who span { font-size: 13px; color: var(--muted); }
-  .msg { padding: 10px 12px 12px; font-size: 15px; white-space: pre-line; }
-  .msg .more { color: var(--muted); font-weight: 600; background: none; border: 0; font: inherit; cursor: pointer; padding: 0; }
-  .post img { display: block; width: 100%; height: auto; }
-  .cta-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #f0f2f5; }
-  .cta-row .txt { flex: 1; min-width: 0; }
-  .cta-row .dom { font-size: 12px; color: var(--muted); text-transform: uppercase; }
-  .cta-row .title { font-size: 16px; font-weight: 600; line-height: 1.25; }
-  .cta-row .desc { font-size: 14px; color: var(--muted); }
-  .btn { background: #e4e6eb; border-radius: 6px; padding: 8px 12px; font-size: 15px; font-weight: 600; white-space: nowrap; }
-  .reacts { display: flex; justify-content: space-around; border-top: 1px solid var(--line); margin: 0 12px; padding: 6px 0; color: var(--muted); font-size: 14px; font-weight: 600; }
+  .fbf-top { display: flex; gap: 8px; align-items: center; padding: 10px 10px 0; }
+  .fbf-top .who { flex: 1; min-width: 0; }
+  .fbf-top b { display: block; font-size: 13px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .fbf-top span { font-size: 11px; color: var(--muted); }
+  .icons-tr { display: flex; gap: 10px; color: #444; font-size: 15px; align-self: flex-start; }
+  .msg { position: relative; padding: 8px 10px 10px; white-space: pre-line; font-size: 13px; line-height: 1.4; }
+  .msg.clamped .body { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .more { color: var(--muted); font-weight: 600; background: none; border: 0; font: inherit; font-size: 13px; cursor: pointer; padding: 0; }
+  .msg.clamped .more { position: absolute; right: 10px; bottom: 10px; background: linear-gradient(90deg, rgba(255,255,255,0), #fff 35%); padding-left: 26px; }
+  .msg:not(.clamped) .more { display: block; margin-top: 2px; }
+  .fbf-cta { display: flex; align-items: center; gap: 10px; padding: 10px; background: #f0f2f5; }
+  .fbf-cta .title { flex: 1; min-width: 0; font-weight: 600; font-size: 13px; line-height: 1.3; }
+  .fbf-cta .cta { background: #e4e6eb; border-radius: 6px; padding: 7px 10px; font-size: 13px; font-weight: 600; white-space: nowrap; color: var(--ink); min-height: 34px; }
+  .fbf-cta .cta:hover { background: #d8dadf; }
+  .fbf-react { display: flex; justify-content: space-around; border-top: 1px solid var(--line); margin: 0 10px; padding: 6px 0 8px; color: var(--muted); font-size: 12px; font-weight: 600; }
+  .fbf-react span { display: inline-flex; align-items: center; gap: 5px; }
 
-  /* Story */
-  .story {
-    position: relative; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: #000;
-    box-shadow: 0 2px 10px rgba(0,0,0,.25);
-  }
-  .story img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .story .bar { position: absolute; top: 8px; left: 10px; right: 10px; height: 3px; border-radius: 2px; background: rgba(255,255,255,.4); }
-  .story .bar::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 35%; background: #fff; border-radius: 2px; }
-  .story .s-top { position: absolute; top: 18px; left: 10px; right: 10px; display: flex; align-items: center; gap: 8px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
-  .story .s-top .avatar { width: 32px; height: 32px; font-size: 13px; }
-  .story .s-top b { font-size: 14px; }
-  .story .s-top span { font-size: 12px; opacity: .9; }
-  .story .s-bottom {
-    position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 14px 16px;
-    background: linear-gradient(transparent, rgba(0,0,0,.65)); color: #fff; text-align: center;
-  }
-  .story .s-bottom p { font-size: 14px; font-weight: 600; margin-bottom: 10px; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
-  .story .s-btn { display: inline-block; background: #fff; color: var(--ink); font-weight: 700; font-size: 14px; padding: 9px 18px; border-radius: 999px; }
+  /* Instagram-feed */
+  .igf-top { display: flex; align-items: center; gap: 8px; padding: 8px 10px; }
+  .igf-top .who { flex: 1; min-width: 0; line-height: 1.25; }
+  .igf-top b { display: block; font-size: 13px; }
+  .igf-top span { font-size: 11px; color: var(--ink); }
+  .igf-cta { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 10px; border-bottom: 1px solid #efefef; background: #fff; font-size: 13px; font-weight: 600; color: var(--ink); text-align: left; min-height: 40px; }
+  .igf-cta:hover { background: #fafafa; }
+  .igf-icons { display: flex; align-items: center; gap: 12px; padding: 10px 10px 4px; }
+  .igf-icons .sp { flex: 1; }
+  .igf-cap { padding: 0 10px 12px; font-size: 13px; line-height: 1.35; }
+  .igf-cap .c { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .igf-cap .m { color: var(--muted); }
 
-  img.avatar { object-fit: cover; padding: 0; background: #ccc; }
-  .post img.avatar { display: block; width: 40px; height: 40px; position: static; }
-  .story img.avatar { position: static; inset: auto; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,.7); }
-  button.btn, .story button.s-btn { border: 0; font: inherit; font-weight: 700; cursor: pointer; min-height: 40px; }
-  button.btn { font-weight: 600; font-size: 15px; color: var(--ink); }
-  button.btn:hover { background: #d8dadf; }
-  .story button.s-btn { font-size: 14px; color: var(--ink); }
-  .hint { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  /* 9:16-flater */
+  .tall { position: relative; aspect-ratio: 9 / 16; background: #000; color: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.25); font-size: 12px; }
+  .tall > img.media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tall .shade-top { position: absolute; left: 0; right: 0; top: 0; height: 90px; background: linear-gradient(rgba(0,0,0,.45), transparent); }
+  .tall .shade-bot { position: absolute; left: 0; right: 0; bottom: 0; height: 55%; background: linear-gradient(transparent, rgba(0,0,0,.7)); }
+  .tall .bar { position: absolute; top: 7px; left: 8px; right: 8px; height: 2px; border-radius: 2px; background: rgba(255,255,255,.4); }
+  .tall .bar::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 30%; background: #fff; border-radius: 2px; }
+  .tall .head { position: absolute; top: 15px; left: 8px; right: 8px; display: flex; align-items: center; gap: 7px; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+  .tall .head .who { flex: 1; min-width: 0; line-height: 1.2; }
+  .tall .head b { display: block; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tall .head span { font-size: 10px; opacity: .9; }
+  .tall .head .x { font-size: 14px; display: flex; gap: 10px; }
+  .igs-box { position: absolute; left: 8px; right: 8px; bottom: 12px; background: rgba(30,30,30,.82); border-radius: 8px; padding: 10px; }
+  .igs-box p { font-size: 11px; line-height: 1.35; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 8px; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--ink); font-weight: 700; font-size: 13px; padding: 8px 16px; border-radius: 999px; min-height: 36px; }
+  .igs-box .pill { width: 100%; justify-content: center; }
+  .fbs-cta { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; }
+  .fbs-cta .pill { border-radius: 8px; padding: 9px 22px; }
+  .reels-title { position: absolute; top: 12px; left: 10px; right: 10px; display: flex; justify-content: space-between; font-weight: 700; font-size: 15px; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+  .side { position: absolute; right: 8px; bottom: 70px; display: flex; flex-direction: column; gap: 14px; align-items: center; filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); }
+  .reel-info { position: absolute; left: 10px; right: 46px; bottom: 12px; }
+  .reel-info .row { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-weight: 600; font-size: 12px; min-width: 0; }
+  .reel-info .row span:first-of-type { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .reel-info .follow { border: 1px solid rgba(255,255,255,.8); border-radius: 6px; padding: 0 6px; font-size: 10px; flex-shrink: 0; }
+  .reel-info p { font-size: 11px; line-height: 1.35; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .reel-info .bar-cta { display: block; width: 100%; text-align: center; background: rgba(255,255,255,.22); color: #fff; font-weight: 700; font-size: 12px; padding: 7px; border-radius: 6px; margin-bottom: 6px; min-height: 32px; }
+  .reel-info .bar-cta.fbblue { background: rgba(70,90,160,.85); }
+  .reel-info .ann { font-size: 10px; opacity: .9; }
 
-  /* Hurtigskjema */
+  /* Skjema */
   .lf-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 50; }
   .lf-backdrop.open { display: flex; }
   .lf {
     width: 100%; max-width: 360px; height: min(640px, calc(100vh - 32px)); background: #e9ebee; border-radius: 14px;
     display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,.35);
   }
-  .lf-bar { display: flex; justify-content: space-between; align-items: center; height: 48px; padding: 0 8px; flex-shrink: 0; }
-  .lf-bar button { width: 40px; height: 40px; border: 0; background: none; font-size: 22px; line-height: 1; cursor: pointer; color: #1c1e21; border-radius: 50%; }
+  .lf.static { height: 580px; max-width: none; box-shadow: 0 1px 3px rgba(0,0,0,.18); border-radius: 10px; }
+  .lf-bar { display: flex; justify-content: space-between; align-items: center; height: 44px; padding: 0 8px; flex-shrink: 0; }
+  .lf-bar button, .lf-bar span { width: 36px; height: 36px; border: 0; background: none; font-size: 20px; line-height: 36px; text-align: center; cursor: pointer; color: #1c1e21; border-radius: 50%; }
+  .lf-bar span { cursor: default; }
   .lf-bar button:hover { background: rgba(0,0,0,.06); }
-  .lf-bar button[hidden] { visibility: hidden; display: block; }
-  .lf-body { flex: 1; overflow-y: auto; padding: 8px 16px 16px; }
-  .lf-card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
-  .lf-card.center { text-align: center; position: relative; margin-top: 32px; padding-top: 44px; }
+  .lf-bar .hide { visibility: hidden; }
+  .lf-body { flex: 1; overflow-y: auto; padding: 8px 14px 14px; }
+  .lf-card { background: #fff; border-radius: 8px; padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,.15); font-size: 14px; }
+  .lf-card.center { text-align: center; position: relative; margin-top: 32px; padding-top: 42px; }
   .lf-card .lf-av { position: absolute; top: -32px; left: 50%; transform: translateX(-50%); width: 64px; height: 64px; border-radius: 50%; border: 3px solid #fff; object-fit: cover; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
-  .lf-page { color: var(--muted); font-size: 15px; }
-  .lf-card h3 { font-size: 18px; margin: 14px 0 12px; }
-  .lf-card p { font-size: 15px; line-height: 1.6; white-space: pre-line; }
-  .lf-card.left { text-align: left; }
-  .lf-card.left p { white-space: pre-line; text-align: left; }
-  .lf-field { margin-top: 14px; }
-  .lf-field label { display: block; font-size: 13px; color: var(--muted); }
-  .lf-field input { width: 100%; border: 0; border-bottom: 1px solid #bec3c9; font: inherit; font-size: 16px; padding: 8px 0; background: transparent; }
+  .lf-page { color: var(--muted); font-size: 14px; }
+  .lf-card h3 { font-size: 17px; margin: 12px 0 10px; }
+  .lf-card p { line-height: 1.55; white-space: pre-line; }
+  .lf-field { margin-top: 12px; }
+  .lf-field label { display: block; font-size: 12px; color: var(--muted); }
+  .lf-field input { width: 100%; border: 0; border-bottom: 1px solid #bec3c9; font: inherit; font-size: 15px; padding: 7px 0; background: transparent; }
   .lf-field input:focus { outline: none; border-bottom-color: var(--blue); }
-  .lf-field small { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
-  .lf-sent { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 10px; font-size: 12px; color: var(--muted); }
-  .lf-legal { font-size: 14px; color: var(--muted); }
+  .lf-field small { display: block; font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .lf-sent { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 10px; font-size: 12px; color: var(--muted); }
+  .lf-legal { font-size: 13px; color: var(--muted); }
   .lf-legal b { display: block; color: var(--ink); font-weight: 500; margin-bottom: 8px; }
   .lf-legal a { color: #216fdb; font-weight: 600; text-decoration: none; display: block; }
-  .lf-foot { background: #fff; padding: 10px 16px 14px; flex-shrink: 0; border-top: 1px solid var(--line); }
+  .lf-foot { background: #fff; padding: 10px 14px 14px; flex-shrink: 0; border-top: 1px solid var(--line); }
   .lf-progress { height: 4px; background: #1a7f4b; border-radius: 2px; margin-bottom: 10px; }
-  .lf-progress[hidden] { display: none; }
-  .lf-next { width: 100%; min-height: 44px; border: 0; border-radius: 6px; background: #1877f2; color: #fff; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer; }
-  .lf-next.pill { width: auto; padding: 0 28px; border-radius: 999px; display: block; margin: 0 auto; }
+  .lf-next { width: 100%; min-height: 42px; border: 0; border-radius: 6px; background: var(--fb); color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .lf-next.pill2 { width: auto; padding: 0 26px; border-radius: 999px; display: block; margin: 0 auto; }
   .lf-next:hover { background: #166fe5; }
   .lf-next:focus:not(:focus-visible) { outline: none; }
+  .lf.static .lf-next { cursor: default; }
+  .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; max-width: 1400px; }
+  .step-label { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #3a3b3c; }
 
   footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; }
 
-  @media (max-width: 820px) {
-    .intro-grid { grid-template-columns: 1fr; }
-    .formats { grid-template-columns: 1fr; }
-    .story { max-width: 300px; }
+  @media (max-width: 1100px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 820px) { .intro-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) {
+    .steps { grid-template-columns: 1fr; max-width: 340px; }
+    .placements { grid-template-columns: 1fr; max-width: 340px; }
   }
 </style>
 </head>
@@ -155,7 +176,7 @@
   <div class="wrap">
     <div class="eyebrow">Forslag til nye annonser · november 2026</div>
     <h1>Jørgen Ask Familiekiropraktor</h1>
-    <p>Slik vil de to nye annonsene se ut på Facebook og Instagram, med bildene fra fotograferingen. Bytt mellom tittelvariantene for å se begge, og trykk «Finn ut mer» for å se skjemaet pasienten fyller ut.</p>
+    <p>Slik vil de to nye annonsene se ut på Facebook og Instagram, med bildene fra fotograferingen. Under hver annonse ser du alle seks plasseringene. Nederst ser du skjemaet pasienten fyller ut når de trykker «Finn ut mer».</p>
   </div>
 </header>
 
@@ -179,47 +200,35 @@
     </div>
 
     <section class="ad" data-ad="a">
-      <div class="ad-head">
-        <h2>Annonse A: Behandleren</h2>
-        <span class="tag">Tillit</span>
-      </div>
+      <div class="ad-head"><h2>Annonse A: Behandleren</h2><span class="tag">Tillit</span></div>
       <p class="ad-lead">Portrettet viser hvem pasienten kommer til. Det senker terskelen for dem som aldri har vært hos kiropraktor før.</p>
-      <div class="switch" role="group" aria-label="Tittel for annonse A">
-        <button type="button" aria-pressed="true" data-title="0">Tittel 1</button>
-        <button type="button" aria-pressed="false" data-title="1">Tittel 2</button>
-      </div>
-      <div class="formats">
-        <div>
-          <div class="label">Facebook og Instagram feed</div>
-          <div class="feed"></div>
+      <div class="controls">
+        <div class="switch" role="group" aria-label="Tittel for annonse A">
+          <button type="button" aria-pressed="true" data-title="0">Tittel 1</button>
+          <button type="button" aria-pressed="false" data-title="1">Tittel 2</button>
         </div>
-        <div>
-          <div class="label">Stories og Reels</div>
-          <div class="story-slot"></div>
-        </div>
+        <small>Tittelen vises under bildet i Facebook-feeden.</small>
       </div>
+      <div class="placements"></div>
     </section>
 
     <section class="ad" data-ad="b">
-      <div class="ad-head">
-        <h2>Annonse B: Ryggraden</h2>
-        <span class="tag">Forklaring</span>
-      </div>
+      <div class="ad-head"><h2>Annonse B: Ryggraden</h2><span class="tag">Forklaring</span></div>
       <p class="ad-lead">Ryggmodellen gjør problemet konkret og viser fagkunnskapen. Den treffer dem som allerede kjenner på smerte og vil forstå hvorfor.</p>
-      <div class="switch" role="group" aria-label="Tittel for annonse B">
-        <button type="button" aria-pressed="true" data-title="0">Tittel 1</button>
-        <button type="button" aria-pressed="false" data-title="1">Tittel 2</button>
-      </div>
-      <div class="formats">
-        <div>
-          <div class="label">Facebook og Instagram feed</div>
-          <div class="feed"></div>
+      <div class="controls">
+        <div class="switch" role="group" aria-label="Tittel for annonse B">
+          <button type="button" aria-pressed="true" data-title="0">Tittel 1</button>
+          <button type="button" aria-pressed="false" data-title="1">Tittel 2</button>
         </div>
-        <div>
-          <div class="label">Stories og Reels</div>
-          <div class="story-slot"></div>
-        </div>
+        <small>Tittelen vises under bildet i Facebook-feeden.</small>
       </div>
+      <div class="placements"></div>
+    </section>
+
+    <section class="form-section">
+      <div class="ad-head"><h2>Skjemaet pasienten fyller ut</h2><span class="tag">Etter «Finn ut mer»</span></div>
+      <p class="ad-lead">Når noen trykker «Finn ut mer» på en av annonsene, åpnes dette skjemaet rett i Facebook eller Instagram. De trenger ikke forlate appen, og navn, e-post og telefon fylles som regel ut automatisk. Du kan også prøve det selv ved å trykke «Finn ut mer» på en av annonsene over.</p>
+      <div class="steps" id="steps"></div>
     </section>
   </div>
 </main>
@@ -231,10 +240,7 @@
       <button type="button" id="lf-close" aria-label="Lukk">&#215;</button>
     </div>
     <div class="lf-body" id="lf-body"></div>
-    <div class="lf-foot">
-      <div class="lf-progress" id="lf-progress" hidden></div>
-      <button type="button" class="lf-next" id="lf-next">Fortsett</button>
-    </div>
+    <div class="lf-foot" id="lf-foot"></div>
   </div>
 </div>
 
@@ -244,89 +250,141 @@
 
 <script>
   var BODY = "Oslo!👋🏼\nDenne måneden tilbyr jeg 30 nye pasienter en eksklusiv behandlingspakke for å lindre smerte og stivhet i kroppen.\n\nInkludert i behandlingspakken: En gratis holdningsanalyse (verdi 500 kr) som kan avdekke ubalanser, forebygge skader og danne grunnlag for en skreddersydd behandling som gir bedre bevegelse og mindre smerter.\n\nDu får:\n✅ Grundig konsultasjon\n✅ Omfattende undersøkelse\n✅ Holdningsanalyse (inkludert)\n✅ Påbegynnende behandling\n✅ Verktøy for selvhjelp\n\nBegrenset antall plasser på grunn av høy pågang, trykk på \"Finn ut mer\" for å sikre deg en time hos meg. 👇";
-  var SHORT = "Oslo!👋🏼\nDenne måneden tilbyr jeg 30 nye pasienter en eksklusiv behandlingspakke for å lindre smerte og stivhet i kroppen";
+  var ONE_LINE = "Oslo!👋🏼 Denne måneden tilbyr jeg 30 nye pasienter en eksklusiv behandlingspakke for å lindre smerte og stivhet i kroppen.";
   var TITLES = ["Bli kvitt smerte og stivhet!", "Holdningsanalyse - 30 plasser"];
-  var DESC = "⭐️⭐️⭐️⭐️⭐️ (5/5)";
   var PAGE = "Jørgen Ask Familiekiropraktor";
+  var IG = "jorgen.ask.kiropraktor";
+  var AV_FB = "assets/avatar-fb.jpg", AV_IG = "assets/avatar-ig.jpg";
 
   function esc(s) { return s.replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+  function svg(d, size) {
+    return '<svg width="' + (size || 18) + '" height="' + (size || 18) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+  }
+  var P = {
+    like: '<path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4-7a2 2 0 0 1 3 2l-1 4h5.5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.3 20H7"/>',
+    comment: '<path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.4A8 8 0 1 1 21 12z"/>',
+    share: '<path d="M14 5l7 7-7 7v-4c-5 0-8 1.5-11 5 1-5 4-9 11-10V5z"/>',
+    heart: '<path d="M12 20s-7-4.4-9-9a4.7 4.7 0 0 1 9-3 4.7 4.7 0 0 1 9 3c-2 4.6-9 9-9 9z"/>',
+    send: '<path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/>',
+    save: '<path d="M6 3h12v18l-6-5-6 5z"/>',
+    camera: '<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
+    link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>'
+  };
+  var LOGO_FB = '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1877f2"/><path d="M13.2 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.1 1.2-1.1h1.2V6a16 16 0 0 0-1.8-.1c-1.8 0-3 1.1-3 3.1v1.6H8.8V13h2V19z" fill="#fff"/></svg>';
+  var LOGO_IG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1c1e21" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="#1c1e21" stroke="none"/></svg>';
 
-  function render(sec, t) {
-    var id = sec.getAttribute("data-ad");
-    var alt = id === "a" ? "Jørgen Ask i blå kiropraktorskjorte" : "Jørgen Ask viser på en ryggmodell";
-    sec.querySelector(".feed").innerHTML =
-      '<article class="post">' +
-        '<div class="post-top"><img class="avatar" src="assets/avatar.jpg" alt="" width="40" height="40">' +
-        '<div class="who"><b>' + PAGE + '</b><span>Sponset · 🌐</span></div></div>' +
-        '<div class="msg"><span class="body">' + esc(SHORT) + '</span>… <button type="button" class="more">Se mer</button></div>' +
-        '<img src="assets/' + id + '-1x1.jpg" alt="' + alt + '" width="1080" height="1080">' +
-        '<div class="cta-row"><div class="txt"><div class="dom">Skjema på Facebook</div>' +
-        '<div class="title">' + esc(TITLES[t]) + '</div><div class="desc">' + DESC + '</div></div>' +
-        '<button type="button" class="btn lf-open">Finn ut mer</button></div>' +
-        '<div class="reacts"><span>Lik</span><span>Kommenter</span><span>Del</span></div>' +
-      '</article>';
-    sec.querySelector(".story-slot").innerHTML =
-      '<div class="story">' +
-        '<img src="assets/' + id + '-9x16.jpg" alt="' + alt + '" width="1080" height="1920">' +
-        '<div class="bar"></div>' +
-        '<div class="s-top"><img class="avatar" src="assets/avatar.jpg" alt="" width="32" height="32"><div><b>' + PAGE + '</b><br><span>Sponset</span></div></div>' +
-        '<div class="s-bottom"><p>' + esc(TITLES[t]) + '</p><button type="button" class="s-btn lf-open">Finn ut mer</button></div>' +
-      '</div>';
-    sec.querySelectorAll(".lf-open").forEach(function (b) { b.addEventListener("click", function () { openForm(b); }); });
-    var more = sec.querySelector(".more");
-    more.addEventListener("click", function () {
-      var msg = more.parentNode;
-      var open = more.getAttribute("data-open") === "1";
-      msg.querySelector(".body").textContent = open ? SHORT : BODY;
-      msg.childNodes[1].textContent = open ? "… " : " ";
-      more.textContent = open ? "Se mer" : "Se mindre";
-      more.setAttribute("data-open", open ? "0" : "1");
-    });
+  function label(logo, name) { return '<div class="pl-label">' + logo + '<span>' + name + '</span></div>'; }
+
+  function placements(id, t, alt) {
+    var sq = 'assets/' + id + '-1x1.jpg', tall = 'assets/' + id + '-9x16.jpg';
+    var out = [];
+    out.push(label(LOGO_FB, "Facebook-feed") +
+      '<article class="card">' +
+        '<div class="fbf-top"><img class="av" src="' + AV_FB + '" alt=""><div class="who"><b>' + PAGE + '</b><span>Annonse · 🌐</span></div><div class="icons-tr" aria-hidden="true"><span>···</span><span>✕</span></div></div>' +
+        '<div class="msg clamped"><span class="body">' + esc(BODY) + '</span><button type="button" class="more">… Se mer</button></div>' +
+        '<img class="media" src="' + sq + '" alt="' + alt + '" width="1080" height="1080">' +
+        '<div class="fbf-cta"><div class="title">' + esc(TITLES[t]) + '</div><button type="button" class="cta lf-open">Finn ut mer</button></div>' +
+        '<div class="fbf-react"><span>' + svg(P.like, 16) + 'Liker</span><span>' + svg(P.comment, 16) + 'Kommenter</span><span>' + svg(P.share, 16) + 'Del</span></div>' +
+      '</article>');
+    out.push(label(LOGO_IG, "Instagram-feed") +
+      '<article class="card">' +
+        '<div class="igf-top"><img class="av sm ig" src="' + AV_IG + '" alt=""><div class="who"><b>' + IG + '</b><span>Annonse</span></div><span aria-hidden="true">···</span></div>' +
+        '<img class="media" src="' + sq + '" alt="' + alt + '" width="1080" height="1080">' +
+        '<button type="button" class="cta igf-cta lf-open"><span>Finn ut mer</span><span aria-hidden="true">›</span></button>' +
+        '<div class="igf-icons">' + svg(P.heart, 22) + svg(P.comment, 22) + svg(P.send, 22) + '<span class="sp"></span>' + svg(P.save, 22) + '</div>' +
+        '<div class="igf-cap"><div class="c"><b>' + IG + '</b> ' + esc(ONE_LINE) + '</div><span class="m">mer</span></div>' +
+      '</article>');
+    out.push(label(LOGO_IG, "Instagram Stories") +
+      '<div class="tall"><img class="media" src="' + tall + '" alt="' + alt + '" width="1080" height="1920"><div class="shade-top"></div>' +
+        '<div class="bar"></div><div class="head"><img class="av sm ig" src="' + AV_IG + '" alt=""><div class="who"><b>' + IG + '</b><span>Annonse</span></div><div class="x" aria-hidden="true"><span>···</span><span>✕</span></div></div>' +
+        '<div class="igs-box"><p>' + esc(ONE_LINE) + '</p><button type="button" class="cta pill lf-open">' + svg(P.link, 15) + 'Finn ut mer</button></div>' +
+      '</div>');
+    out.push(label(LOGO_FB, "Facebook Stories") +
+      '<div class="tall"><img class="media" src="' + tall + '" alt="' + alt + '" width="1080" height="1920"><div class="shade-top"></div>' +
+        '<div class="bar"></div><div class="head"><img class="av sm" src="' + AV_FB + '" alt=""><div class="who"><b>' + PAGE + '</b><span>Annonse</span></div><div class="x" aria-hidden="true"><span>···</span><span>✕</span></div></div>' +
+        '<div class="fbs-cta"><button type="button" class="cta pill lf-open">' + svg(P.link, 15) + 'Finn ut mer</button></div>' +
+      '</div>');
+    out.push(label(LOGO_IG, "Instagram Reels") +
+      '<div class="tall"><img class="media" src="' + tall + '" alt="' + alt + '" width="1080" height="1920"><div class="shade-top"></div><div class="shade-bot"></div>' +
+        '<div class="reels-title"><span>Reels</span>' + svg(P.camera, 20) + '</div>' +
+        '<div class="side">' + svg(P.heart, 22) + svg(P.comment, 22) + svg(P.send, 22) + '<span>···</span></div>' +
+        '<div class="reel-info"><div class="row"><img class="av sm ig" src="' + AV_IG + '" alt=""><span>' + IG + '</span><span class="follow">Følg</span></div>' +
+          '<p>' + esc(ONE_LINE) + '</p><button type="button" class="cta bar-cta lf-open">Finn ut mer</button><div class="ann">Annonse</div></div>' +
+      '</div>');
+    out.push(label(LOGO_FB, "Facebook Reels") +
+      '<div class="tall"><img class="media" src="' + tall + '" alt="' + alt + '" width="1080" height="1920"><div class="shade-bot"></div>' +
+        '<div class="side">' + svg(P.like, 22) + svg(P.comment, 22) + svg(P.share, 22) + '</div>' +
+        '<div class="reel-info"><div class="row"><img class="av sm" src="' + AV_FB + '" alt=""><span>' + PAGE + '</span></div>' +
+          '<p>' + esc(ONE_LINE) + '</p><button type="button" class="cta bar-cta fbblue lf-open">Finn ut mer</button><div class="ann">Annonse</div></div>' +
+      '</div>');
+    return out.map(function (h) { return '<div>' + h + '</div>'; }).join("");
   }
 
-
+  /* Skjema */
   var LF_STEPS = [
-    { btn: "Fortsett", pill: true, html:
-      '<div class="lf-card center"><img class="lf-av" src="assets/avatar.jpg" alt="">' +
-      '<div class="lf-page">Jørgen Ask Familiekiropraktor</div><h3>30 antall plasser!</h3>' +
+    { name: "1. Intro", btn: "Fortsett  →", pill: true, html:
+      '<div class="lf-card center"><img class="lf-av" src="' + AV_FB + '" alt="">' +
+      '<div class="lf-page">' + PAGE + '</div><h3>30 antall plasser!</h3>' +
       '<p>Inkludert i pakken er:\n✅ Omfattende konsultasjon\n✅ Undersøkelse\n✅ Behandling\n✅ Tilpasset treningsplan\n✅ Selvstyringsråd\n✅ Gratis holdningsanalyse\n\nFor bare 590kr\n(Total verdi 1350kr)\n\nBegrenset antall plasser\nTrykk på "Neste" for å sikre deg plass.</p></div>' },
-    { btn: "Fortsett", progress: true, html:
+    { name: "2. Kontaktinformasjon", btn: "Fortsett", progress: true, html:
       '<div class="lf-card"><h3 style="margin-top:0">Kontaktinformasjon ⓘ</h3>' +
-      '<p style="font-size:14px">Jeg vil bruke informasjonen for å kunne kontakte deg angående din reservasjon.</p>' +
-      '<div class="lf-field"><label for="lf-n">Fullt navn</label><input id="lf-n" placeholder="Skriv inn svaret ditt." autocomplete="off"></div>' +
-      '<div class="lf-field"><label for="lf-e">E-post</label><input id="lf-e" placeholder="Skriv inn svaret ditt." autocomplete="off"><small>Jørgen Ask Familiekiropraktor kan kontakte deg for oppfølging.</small></div>' +
-      '<div class="lf-field"><label for="lf-t">Telefonnummer</label><input id="lf-t" placeholder="Skriv inn svaret ditt." autocomplete="off"><small>Jørgen Ask Familiekiropraktor kan kontakte deg for oppfølging.</small></div></div>' },
-    { btn: "Send inn", html:
-      '<div class="lf-card lf-legal" style="margin-top:48px"><b>Retningslinjer for personvern</b>' +
-      'Når du klikker på Send inn, godtar du at informasjonen din sendes til Jørgen Ask Familiekiropraktor som samtykker i å bruke den i samsvar med sine retningslinjer for personvern. Facebook vil også bruke informasjonen din i henhold til sine retningslinjer for data, også ved automatisk utfylling av skjemaer for annonser.' +
+      '<p style="font-size:13px">Jeg vil bruke informasjonen for å kunne kontakte deg angående din reservasjon.</p>' +
+      '<div class="lf-field"><label>Fullt navn</label><input placeholder="Skriv inn svaret ditt." autocomplete="off" aria-label="Fullt navn"></div>' +
+      '<div class="lf-field"><label>E-post</label><input placeholder="Skriv inn svaret ditt." autocomplete="off" aria-label="E-post"><small>' + PAGE + ' kan kontakte deg for oppfølging.</small></div>' +
+      '<div class="lf-field"><label>Telefonnummer</label><input placeholder="Skriv inn svaret ditt." autocomplete="off" aria-label="Telefonnummer"><small>' + PAGE + ' kan kontakte deg for oppfølging.</small></div></div>' },
+    { name: "3. Personvern", btn: "Send inn", html:
+      '<div class="lf-card lf-legal" style="margin-top:40px"><b>Retningslinjer for personvern</b>' +
+      'Når du klikker på Send inn, godtar du at informasjonen din sendes til ' + PAGE + ' som samtykker i å bruke den i samsvar med sine retningslinjer for personvern. Facebook vil også bruke informasjonen din i henhold til sine retningslinjer for data, også ved automatisk utfylling av skjemaer for annonser.' +
       '<a href="#" onclick="return false">Se Facebooks retningslinjer for data.</a><a href="#" onclick="return false">Personvernerklæring</a></div>' },
-    { btn: "Book timen din nå!", last: true, html:
-      '<div class="lf-card center"><img class="lf-av" src="assets/avatar.jpg" alt="">' +
-      '<div class="lf-page">Jørgen Ask Familiekiropraktor</div><h3>Takk, da er alt klart.</h3>' +
+    { name: "4. Takk", btn: "Book timen din nå!", last: true, html:
+      '<div class="lf-card center"><img class="lf-av" src="' + AV_FB + '" alt="">' +
+      '<div class="lf-page">' + PAGE + '</div><h3>Takk, da er alt klart.</h3>' +
       '<p style="text-align:left">En veldig varm velkomst!\nDu finner meg i Bogstadveien 50, 0366 Oslo\n\nJeg vil ringe deg innen en virkedag for å avtale en avtale med deg. Du kan også velge et tidspunkt i kalenderen min nedenfor akkurat nå!</p>' +
       '<div class="lf-sent">ⓘ Svarene dine er sendt inn.</div></div>' }
   ];
+  function footHtml(st, interactive) {
+    return (st.progress ? '<div class="lf-progress"></div>' : '') +
+      '<button type="button" class="lf-next' + (st.pill ? ' pill2' : '') + '"' + (interactive ? ' id="lf-next"' : ' tabindex="-1" aria-hidden="true"') + '>' + st.btn + '</button>';
+  }
+
+  document.getElementById("steps").innerHTML = LF_STEPS.map(function (st, i) {
+    return '<div><div class="step-label">' + st.name + '</div><div class="lf static">' +
+      '<div class="lf-bar"><span class="' + (i === 0 || st.last ? 'hide' : '') + '" aria-hidden="true">&#8249;</span><span aria-hidden="true">&#215;</span></div>' +
+      '<div class="lf-body">' + st.html + '</div><div class="lf-foot">' + footHtml(st, false) + '</div></div></div>';
+  }).join("");
+  document.querySelectorAll("#steps input").forEach(function (inp) { inp.tabIndex = -1; inp.readOnly = true; });
+
   var lf = document.getElementById("lf"), lfStep = 0, lfOpener = null;
   function lfShow() {
     var st = LF_STEPS[lfStep];
     document.getElementById("lf-body").innerHTML = st.html;
     document.getElementById("lf-body").scrollTop = 0;
-    var next = document.getElementById("lf-next");
-    next.textContent = st.btn + (st.pill ? "  →" : "");
-    next.classList.toggle("pill", !!st.pill);
-    document.getElementById("lf-progress").hidden = !st.progress;
-    document.getElementById("lf-back").hidden = (lfStep === 0 || st.last);
+    document.getElementById("lf-foot").innerHTML = footHtml(st, true);
+    document.getElementById("lf-back").classList.toggle("hide", lfStep === 0 || !!st.last);
+    document.getElementById("lf-next").addEventListener("click", function () {
+      if (LF_STEPS[lfStep].last) { closeForm(); return; }
+      lfStep++; lfShow(); document.getElementById("lf-next").focus();
+    });
   }
   function openForm(b) { lfOpener = b; lfStep = 0; lfShow(); lf.classList.add("open"); document.getElementById("lf-next").focus(); }
   function closeForm() { lf.classList.remove("open"); if (lfOpener) lfOpener.focus(); }
-  document.getElementById("lf-next").addEventListener("click", function () {
-    if (LF_STEPS[lfStep].last) { closeForm(); return; }
-    lfStep++; lfShow();
-  });
   document.getElementById("lf-back").addEventListener("click", function () { if (lfStep > 0) { lfStep--; lfShow(); } });
   document.getElementById("lf-close").addEventListener("click", closeForm);
   lf.addEventListener("click", function (e) { if (e.target === lf) closeForm(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lf.classList.contains("open")) closeForm(); });
+
+  function render(sec, t) {
+    var id = sec.getAttribute("data-ad");
+    var alt = id === "a" ? "Jørgen Ask i blå kiropraktorskjorte" : "Jørgen Ask viser på en ryggmodell";
+    var box = sec.querySelector(".placements");
+    box.innerHTML = placements(id, t, alt);
+    box.querySelectorAll(".lf-open").forEach(function (b) { b.addEventListener("click", function () { openForm(b); }); });
+    var more = box.querySelector(".more");
+    more.addEventListener("click", function () {
+      var clamped = more.parentNode.classList.toggle("clamped");
+      more.textContent = clamped ? "… Se mer" : "Se mindre";
+    });
+  }
 
   document.querySelectorAll("section.ad").forEach(function (sec) {
     render(sec, 0);
