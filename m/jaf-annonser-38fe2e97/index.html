@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Nye annonser: Jørgen Ask Familiekiropraktor</title>
+<style>
+  :root {
+    --blue: #1d5fa8;
+    --blue-dark: #134177;
+    --ink: #1c1e21;
+    --muted: #65676b;
+    --line: #dddfe2;
+    --page: #f3f5f8;
+    --card: #ffffff;
+    --fb-bg: #f0f2f5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--page);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  header.top { background: var(--card); border-bottom: 4px solid var(--blue); }
+  header.top .wrap { padding-top: 28px; padding-bottom: 24px; }
+  .eyebrow { font-size: 13px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: .4px; }
+  header h1 { font-size: 28px; line-height: 1.2; margin-top: 4px; }
+  header p { color: var(--muted); margin-top: 8px; max-width: 720px; }
+
+  .intro { padding: 28px 0 8px; }
+  .intro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+  .panel h2 { font-size: 15px; margin-bottom: 6px; }
+  .panel p { font-size: 15px; color: #3a3b3c; }
+
+  section.ad { padding: 32px 0 8px; }
+  .ad-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 6px; }
+  .ad-head h2 { font-size: 22px; }
+  .tag { font-size: 13px; font-weight: 600; background: #e7f0fb; color: var(--blue-dark); padding: 2px 10px; border-radius: 999px; }
+  .ad-lead { color: #3a3b3c; max-width: 760px; margin-bottom: 18px; }
+
+  .switch { display: inline-flex; background: #e4e6eb; border-radius: 8px; padding: 3px; margin-bottom: 18px; flex-wrap: wrap; }
+  .switch button {
+    font: inherit; font-size: 14px; font-weight: 600; border: 0; background: transparent; color: var(--muted);
+    padding: 8px 14px; border-radius: 6px; cursor: pointer; min-height: 40px;
+  }
+  .switch button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+
+  .formats { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 300px); gap: 32px; align-items: start; }
+  .label { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 8px; }
+
+  /* Facebook-feed */
+  .feed { background: var(--fb-bg); padding: 12px; border-radius: 10px; }
+  .post { background: var(--card); border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.2); overflow: hidden; }
+  .post-top { display: flex; gap: 8px; align-items: center; padding: 12px 12px 0; }
+  .avatar {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: #fff; flex-shrink: 0;
+    display: grid; place-items: center; font-weight: 700; font-size: 15px;
+  }
+  .who b { display: block; font-size: 15px; line-height: 1.25; }
+  .who span { font-size: 13px; color: var(--muted); }
+  .msg { padding: 10px 12px 12px; font-size: 15px; white-space: pre-line; }
+  .msg .more { color: var(--muted); font-weight: 600; background: none; border: 0; font: inherit; cursor: pointer; padding: 0; }
+  .post img { display: block; width: 100%; height: auto; }
+  .cta-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #f0f2f5; }
+  .cta-row .txt { flex: 1; min-width: 0; }
+  .cta-row .dom { font-size: 12px; color: var(--muted); text-transform: uppercase; }
+  .cta-row .title { font-size: 16px; font-weight: 600; line-height: 1.25; }
+  .cta-row .desc { font-size: 14px; color: var(--muted); }
+  .btn { background: #e4e6eb; border-radius: 6px; padding: 8px 12px; font-size: 15px; font-weight: 600; white-space: nowrap; }
+  .reacts { display: flex; justify-content: space-around; border-top: 1px solid var(--line); margin: 0 12px; padding: 6px 0; color: var(--muted); font-size: 14px; font-weight: 600; }
+
+  /* Story */
+  .story {
+    position: relative; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: #000;
+    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  }
+  .story img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .story .bar { position: absolute; top: 8px; left: 10px; right: 10px; height: 3px; border-radius: 2px; background: rgba(255,255,255,.4); }
+  .story .bar::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 35%; background: #fff; border-radius: 2px; }
+  .story .s-top { position: absolute; top: 18px; left: 10px; right: 10px; display: flex; align-items: center; gap: 8px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+  .story .s-top .avatar { width: 32px; height: 32px; font-size: 13px; }
+  .story .s-top b { font-size: 14px; }
+  .story .s-top span { font-size: 12px; opacity: .9; }
+  .story .s-bottom {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 14px 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,.65)); color: #fff; text-align: center;
+  }
+  .story .s-bottom p { font-size: 14px; font-weight: 600; margin-bottom: 10px; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+  .story .s-btn { display: inline-block; background: #fff; color: var(--ink); font-weight: 700; font-size: 14px; padding: 9px 18px; border-radius: 999px; }
+
+  footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; }
+
+  @media (max-width: 820px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .formats { grid-template-columns: 1fr; }
+    .story { max-width: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">Forslag til nye annonser · november 2026</div>
+    <h1>Jørgen Ask Familiekiropraktor</h1>
+    <p>Slik vil de to nye annonsene se ut på Facebook og Instagram, med bildene fra fotograferingen. Bytt mellom tittelvariantene for å se begge.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro-grid">
+        <div class="panel">
+          <h2>To bilder, to innganger</h2>
+          <p>Annonse A viser deg som behandler og bygger tillit. Annonse B viser ryggraden og forklarer hva som skjer i kroppen. Ulike bilder når ulike mennesker.</p>
+        </div>
+        <div class="panel">
+          <h2>Teksten som har virket best</h2>
+          <p>Hovedteksten med 30 plasser og gratis holdningsanalyse er den som har gitt flest henvendelser hittil, så den beholdes på begge annonsene.</p>
+        </div>
+        <div class="panel">
+          <h2>Riktig format overalt</h2>
+          <p>Kvadratisk bilde i feeden og stående bilde i Stories og Reels, så ingenting blir beskåret feil på mobilen.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="ad" data-ad="a">
+      <div class="ad-head">
+        <h2>Annonse A: Behandleren</h2>
+        <span class="tag">Tillit</span>
+      </div>
+      <p class="ad-lead">Portrettet viser hvem pasienten kommer til. Det senker terskelen for dem som aldri har vært hos kiropraktor før.</p>
+      <div class="switch" role="group" aria-label="Tittel for annonse A">
+        <button type="button" aria-pressed="true" data-title="0">Tittel 1</button>
+        <button type="button" aria-pressed="false" data-title="1">Tittel 2</button>
+      </div>
+      <div class="formats">
+        <div>
+          <div class="label">Facebook og Instagram feed</div>
+          <div class="feed"></div>
+        </div>
+        <div>
+          <div class="label">Stories og Reels</div>
+          <div class="story-slot"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ad" data-ad="b">
+      <div class="ad-head">
+        <h2>Annonse B: Ryggraden</h2>
+        <span class="tag">Forklaring</span>
+      </div>
+      <p class="ad-lead">Ryggmodellen gjør problemet konkret og viser fagkunnskapen. Den treffer dem som allerede kjenner på smerte og vil forstå hvorfor.</p>
+      <div class="switch" role="group" aria-label="Tittel for annonse B">
+        <button type="button" aria-pressed="true" data-title="0">Tittel 1</button>
+        <button type="button" aria-pressed="false" data-title="1">Tittel 2</button>
+      </div>
+      <div class="formats">
+        <div>
+          <div class="label">Facebook og Instagram feed</div>
+          <div class="feed"></div>
+        </div>
+        <div>
+          <div class="label">Stories og Reels</div>
+          <div class="story-slot"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Forhåndsvisning laget av Fjordigital. Annonsene vises slik de omtrent vil se ut. Meta kan justere utseendet litt fra plassering til plassering.</div>
+</footer>
+
+<script>
+  var BODY = "Oslo!👋🏼\nDenne måneden tilbyr jeg 30 nye pasienter en eksklusiv behandlingspakke for å lindre smerte og stivhet i kroppen.\n\nInkludert i behandlingspakken: En gratis holdningsanalyse (verdi 500 kr) som kan avdekke ubalanser, forebygge skader og danne grunnlag for en skreddersydd behandling som gir bedre bevegelse og mindre smerter.\n\nDu får:\n✅ Grundig konsultasjon\n✅ Omfattende undersøkelse\n✅ Holdningsanalyse (inkludert)\n✅ Påbegynnende behandling\n✅ Verktøy for selvhjelp\n\nBegrenset antall plasser på grunn av høy pågang, trykk på \"Finn ut mer\" for å sikre deg en time hos meg. 👇";
+  var SHORT = "Oslo!👋🏼\nDenne måneden tilbyr jeg 30 nye pasienter en eksklusiv behandlingspakke for å lindre smerte og stivhet i kroppen";
+  var TITLES = ["Bli kvitt smerte og stivhet!", "Holdningsanalyse - 30 plasser"];
+  var DESC = "⭐️⭐️⭐️⭐️⭐️ (5/5)";
+  var PAGE = "Jørgen Ask Familiekiropraktor";
+
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+
+  function render(sec, t) {
+    var id = sec.getAttribute("data-ad");
+    var alt = id === "a" ? "Jørgen Ask i blå kiropraktorskjorte" : "Jørgen Ask viser på en ryggmodell";
+    sec.querySelector(".feed").innerHTML =
+      '<article class="post">' +
+        '<div class="post-top"><div class="avatar" aria-hidden="true">JA</div>' +
+        '<div class="who"><b>' + PAGE + '</b><span>Sponset · 🌐</span></div></div>' +
+        '<div class="msg"><span class="body">' + esc(SHORT) + '</span>… <button type="button" class="more">Se mer</button></div>' +
+        '<img src="assets/' + id + '-1x1.jpg" alt="' + alt + '" width="1080" height="1080">' +
+        '<div class="cta-row"><div class="txt"><div class="dom">Skjema på Facebook</div>' +
+        '<div class="title">' + esc(TITLES[t]) + '</div><div class="desc">' + DESC + '</div></div>' +
+        '<div class="btn">Finn ut mer</div></div>' +
+        '<div class="reacts"><span>Lik</span><span>Kommenter</span><span>Del</span></div>' +
+      '</article>';
+    sec.querySelector(".story-slot").innerHTML =
+      '<div class="story">' +
+        '<img src="assets/' + id + '-9x16.jpg" alt="' + alt + '" width="1080" height="1920">' +
+        '<div class="bar"></div>' +
+        '<div class="s-top"><div class="avatar" aria-hidden="true">JA</div><div><b>' + PAGE + '</b><br><span>Sponset</span></div></div>' +
+        '<div class="s-bottom"><p>' + esc(TITLES[t]) + '</p><span class="s-btn">Finn ut mer</span></div>' +
+      '</div>';
+    var more = sec.querySelector(".more");
+    more.addEventListener("click", function () {
+      var msg = more.parentNode;
+      var open = more.getAttribute("data-open") === "1";
+      msg.querySelector(".body").textContent = open ? SHORT : BODY;
+      msg.childNodes[1].textContent = open ? "… " : " ";
+      more.textContent = open ? "Se mer" : "Se mindre";
+      more.setAttribute("data-open", open ? "0" : "1");
+    });
+  }
+
+  document.querySelectorAll("section.ad").forEach(function (sec) {
+    render(sec, 0);
+    sec.querySelectorAll(".switch button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        sec.querySelectorAll(".switch button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        render(sec, +b.getAttribute("data-title"));
+      });
+    });
+  });
+</script>
+</body>
+</html>
