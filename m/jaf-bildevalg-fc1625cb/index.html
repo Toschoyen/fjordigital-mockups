@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Bildevalg: Jørgen Ask Familiekiropraktor</title>
+<style>
+  :root { --blue: #1d5fa8; --blue-dark: #134177; --ink: #1c1e21; --muted: #65676b; --line: #dddfe2; --page: #f3f5f8; --card: #fff; --ok: #1a7f4b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--page); color: var(--ink); line-height: 1.5; padding-bottom: 96px; }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 0 16px; }
+  header { background: var(--card); border-bottom: 4px solid var(--blue); }
+  header .wrap { padding-top: 28px; padding-bottom: 24px; }
+  .eyebrow { font-size: 13px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: .4px; }
+  h1 { font-size: 28px; line-height: 1.2; margin-top: 4px; }
+  header p { color: #3a3b3c; margin-top: 10px; max-width: 760px; }
+  .how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 18px; max-width: 900px; }
+  .how div { background: var(--page); border-radius: 8px; padding: 12px 14px; font-size: 14px; }
+  .how b { display: block; color: var(--blue-dark); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; padding: 28px 0; }
+  .item { background: var(--card); border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.15); border: 3px solid transparent; transition: border-color 150ms; display: flex; flex-direction: column; }
+  .item.valgt { border-color: var(--ok); }
+  .item button.zoom { border: 0; padding: 0; background: #ddd; cursor: zoom-in; display: block; aspect-ratio: 1848 / 4000; overflow: hidden; }
+  .item img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .meta { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .name { font-weight: 700; font-size: 16px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .badge { font-size: 12px; font-weight: 600; border-radius: 999px; padding: 1px 9px; }
+  .badge.ok { background: #e3f4ea; color: #145c37; }
+  .badge.now { background: #fdf0e1; color: #8a4b0b; }
+  .pick { font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; border-radius: 8px; border: 1px solid #c9ccd1; background: #fff; color: var(--ink); cursor: pointer; }
+  .pick:hover { background: #f2f3f5; }
+  .item.valgt .pick { background: var(--ok); border-color: var(--ok); color: #fff; }
+
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; background: #fff; border-top: 1px solid var(--line); box-shadow: 0 -2px 10px rgba(0,0,0,.08); z-index: 10; }
+  .bar .wrap { display: flex; align-items: center; gap: 12px; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; }
+  .bar .count { flex: 1; min-width: 200px; font-size: 15px; }
+  .bar .count b { color: var(--ok); }
+  .bar a, .bar button { font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 18px; border-radius: 8px; display: inline-flex; align-items: center; text-decoration: none; cursor: pointer; }
+  .bar a { background: var(--blue); color: #fff; border: 0; }
+  .bar a[aria-disabled="true"] { background: #b7c6d8; pointer-events: none; }
+  .bar button { background: #fff; border: 1px solid #c9ccd1; color: var(--ink); }
+
+  .lb { position: fixed; inset: 0; background: rgba(0,0,0,.9); display: none; align-items: center; justify-content: center; z-index: 20; padding: 16px; }
+  .lb.open { display: flex; }
+  .lb img { max-width: 100%; max-height: calc(100vh - 110px); border-radius: 6px; }
+  .lb .lb-top { position: absolute; top: 12px; left: 16px; right: 16px; display: flex; justify-content: space-between; align-items: center; color: #fff; font-weight: 700; font-size: 18px; }
+  .lb button { font: inherit; border: 0; cursor: pointer; }
+  .lb .x { background: rgba(255,255,255,.15); color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 22px; }
+  .lb .nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.15); color: #fff; width: 48px; height: 48px; border-radius: 50%; font-size: 26px; }
+  .lb .prev { left: 12px; } .lb .next { right: 12px; }
+  .lb .lb-pick { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); min-height: 44px; padding: 0 22px; border-radius: 8px; font-weight: 600; font-size: 15px; background: #fff; color: var(--ink); }
+  .lb .lb-pick.on { background: var(--ok); color: #fff; }
+
+  footer { padding: 8px 0 32px; color: var(--muted); font-size: 14px; }
+  @media (max-width: 700px) { .how { grid-template-columns: 1fr; } .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .name { font-size: 15px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Bildevalg til annonsene · november 2026</div>
+    <h1>Jørgen Ask Familiekiropraktor</h1>
+    <p>Her er de beste bildene fra fotograferingen i september. Velg de du liker best, så redigerer jeg dem til annonsene. Ryggrad-bildet (IMG-206) er allerede valgt. Nå trenger vi et nytt bilde i stedet for portrettet ved vinduet (IMG-031).</p>
+    <div class="how">
+      <div><b>1. Se på bildene</b>Trykk på et bilde for å se det større.</div>
+      <div><b>2. Trykk «Velg»</b>på de du liker. Du kan velge så mange du vil.</div>
+      <div><b>3. Send valget</b>med knappen nederst, så får jeg numrene på e-post.</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+</main>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="count" id="count" aria-live="polite">Ingen bilder valgt ennå.</div>
+    <button type="button" id="copy">Kopier numrene</button>
+    <a id="mail" href="#" aria-disabled="true">Send valget til Tobias</a>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Bilde i stort format">
+  <div class="lb-top"><span id="lb-name"></span><button type="button" class="x" id="lb-x" aria-label="Lukk">&#215;</button></div>
+  <button type="button" class="nav prev" id="lb-prev" aria-label="Forrige bilde">&#8249;</button>
+  <img id="lb-img" alt="">
+  <button type="button" class="nav next" id="lb-next" aria-label="Neste bilde">&#8250;</button>
+  <button type="button" class="lb-pick" id="lb-pick">Velg</button>
+</div>
+
+<footer><div class="wrap">Laget av Fjordigital. Bildene er bare til visning og er ikke ferdig redigert.</div></footer>
+
+<script>
+  var IMGS = ["005","012","023","027","031","034","042","044","069","089","092","109","117","165","182","199","200","206","208","213","216","233","238"];
+  var NOTE = { "206": ["ok", "Valgt"], "031": ["now", "Brukt nå, byttes ut"] };
+  var KEY = "jaf-bildevalg";
+  var valgt = {};
+  try { valgt = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { valgt = {}; }
+  function lagre() { try { localStorage.setItem(KEY, JSON.stringify(valgt)); } catch (e) {} }
+
+  var grid = document.getElementById("grid");
+  grid.innerHTML = IMGS.map(function (n, i) {
+    var note = NOTE[n] ? '<span class="badge ' + NOTE[n][0] + '">' + NOTE[n][1] + '</span>' : '';
+    return '<div class="item" data-n="' + n + '">' +
+      '<button type="button" class="zoom" data-i="' + i + '" aria-label="Vis IMG-' + n + ' større">' +
+      '<img src="img/IMG-' + n + '.jpg" alt="IMG-' + n + '" loading="lazy" width="554" height="1200"></button>' +
+      '<div class="meta"><div class="name">IMG-' + n + note + '</div>' +
+      '<button type="button" class="pick" aria-pressed="false">Velg</button></div></div>';
+  }).join("");
+
+  function liste() { return IMGS.filter(function (n) { return valgt[n]; }).map(function (n) { return "IMG-" + n; }); }
+  function oppdater() {
+    document.querySelectorAll(".item").forEach(function (el) {
+      var on = !!valgt[el.getAttribute("data-n")];
+      el.classList.toggle("valgt", on);
+      var b = el.querySelector(".pick");
+      b.textContent = on ? "✓ Valgt" : "Velg";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    var l = liste();
+    document.getElementById("count").innerHTML = l.length ? "Du har valgt <b>" + l.length + "</b>: " + l.join(", ") : "Ingen bilder valgt ennå.";
+    var mail = document.getElementById("mail");
+    if (l.length) {
+      var body = "Hei Tobias!\n\nDette er bildene jeg liker best:\n" + l.join("\n") + "\n\nHilsen Jørgen";
+      mail.href = "mailto:tobias@fjordigital.no?subject=" + encodeURIComponent("Bildevalg til annonsene") + "&body=" + encodeURIComponent(body);
+      mail.setAttribute("aria-disabled", "false");
+    } else {
+      mail.href = "#"; mail.setAttribute("aria-disabled", "true");
+    }
+    if (lbI >= 0) visLb(lbI);
+    lagre();
+  }
+  function bytt(n) { if (valgt[n]) delete valgt[n]; else valgt[n] = true; oppdater(); }
+
+  grid.addEventListener("click", function (e) {
+    var p = e.target.closest(".pick");
+    if (p) { bytt(p.closest(".item").getAttribute("data-n")); return; }
+    var z = e.target.closest(".zoom");
+    if (z) { apneLb(+z.getAttribute("data-i"), z); }
+  });
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var t = liste().join(", ") || "Ingen bilder valgt";
+    var btn = this;
+    function ok() { btn.textContent = "Kopiert!"; setTimeout(function () { btn.textContent = "Kopier numrene"; }, 1500); }
+    try { navigator.clipboard.writeText(t).then(ok, function () { window.prompt("Kopier numrene:", t); }); }
+    catch (e) { window.prompt("Kopier numrene:", t); }
+  });
+
+  var lb = document.getElementById("lb"), lbI = -1, lbFra = null;
+  function visLb(i) {
+    lbI = i; var n = IMGS[i];
+    document.getElementById("lb-img").src = "img/IMG-" + n + ".jpg";
+    document.getElementById("lb-img").alt = "IMG-" + n;
+    document.getElementById("lb-name").textContent = "IMG-" + n + "  (" + (i + 1) + " av " + IMGS.length + ")";
+    var p = document.getElementById("lb-pick");
+    p.textContent = valgt[n] ? "✓ Valgt" : "Velg dette bildet";
+    p.classList.toggle("on", !!valgt[n]);
+  }
+  function apneLb(i, fra) { lbFra = fra; visLb(i); lb.classList.add("open"); document.getElementById("lb-x").focus(); }
+  function lukkLb() { lb.classList.remove("open"); lbI = -1; if (lbFra) lbFra.focus(); }
+  document.getElementById("lb-x").addEventListener("click", lukkLb);
+  document.getElementById("lb-prev").addEventListener("click", function () { visLb((lbI - 1 + IMGS.length) % IMGS.length); });
+  document.getElementById("lb-next").addEventListener("click", function () { visLb((lbI + 1) % IMGS.length); });
+  document.getElementById("lb-pick").addEventListener("click", function () { bytt(IMGS[lbI]); });
+  lb.addEventListener("click", function (e) { if (e.target === lb) lukkLb(); });
+  document.addEventListener("keydown", function (e) {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") lukkLb();
+    if (e.key === "ArrowLeft") visLb((lbI - 1 + IMGS.length) % IMGS.length);
+    if (e.key === "ArrowRight") visLb((lbI + 1) % IMGS.length);
+  });
+
+  oppdater();
+</script>
+</body>
+</html>
