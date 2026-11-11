@@ -249,12 +249,12 @@
 </footer>
 
 <script>
-  var BODY = "Oslo!👋🏼\nFrem til jul tilbyr jeg 30 nye pasienter en eksklusiv behandlingspakke for å lindre smerte og stivhet i kroppen.\n\nInkludert i behandlingspakken: En gratis holdningsanalyse (verdi 500 kr) som kan avdekke ubalanser, forebygge skader og danne grunnlag for en skreddersydd behandling som gir bedre bevegelse og mindre smerter.\n\nDu får:\n✅ Grundig konsultasjon\n✅ Omfattende undersøkelse\n✅ Holdningsanalyse (inkludert)\n✅ Påbegynnende behandling\n✅ Verktøy for selvhjelp\n\nBegrenset antall plasser på grunn av høy pågang, trykk på \"Finn ut mer\" for å sikre deg en time hos meg. 👇";
+  var BODY = "Oslo!👋🏼\nFrem til jul tilbyr jeg 30 nye pasienter en eksklusiv behandlingspakke for å lindre smerte og stivhet i kroppen.\n\nJeg har noen metoder som virkelig hjelper. Inkludert i behandlingspakken: En gratis holdningsanalyse (verdi 500 kr) som kan avdekke ubalanser, forebygge skader og danne grunnlag for en skreddersydd behandling som gir bedre bevegelse og mindre smerter.\n\nDu får:\n✅ Grundig konsultasjon\n✅ Omfattende undersøkelse\n✅ Holdningsanalyse (inkludert)\n✅ Påbegynnende behandling\n✅ Verktøy for selvhjelp\n\nBegrenset antall plasser på grunn av høy pågang, trykk på \"Finn ut mer\" for å sikre deg en time hos meg. 👇";
   var ONE_LINE = "Oslo!👋🏼 Frem til jul tilbyr jeg 30 nye pasienter en eksklusiv behandlingspakke for å lindre smerte og stivhet i kroppen.";
   var TITLES = ["Bli kvitt smerte og stivhet!", "Holdningsanalyse - 30 plasser"];
   var PAGE = "Jørgen Ask Familiekiropraktor";
   var IG = "jorgen.ask.kiropraktor";
-  var AV_FB = "assets/avatar-fb.jpg", AV_IG = "assets/avatar-ig.jpg";
+  var AV_FB = "assets/avatar-fb.jpg?v=2",AV_IG = "assets/avatar-ig.jpg";
 
   function esc(s) { return s.replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
   function svg(d, size) {
@@ -276,7 +276,7 @@
   function label(logo, name) { return '<div class="pl-label">' + logo + '<span>' + name + '</span></div>'; }
 
   function placements(id, t, alt) {
-    var sq = 'assets/' + id + '-1x1.jpg', tall = 'assets/' + id + '-9x16.jpg';
+    var sq = 'assets/' + id + '-1x1.jpg?v=2', tall = 'assets/' + id + '-9x16.jpg?v=2';
     var out = [];
     out.push(label(LOGO_FB, "Facebook-feed") +
       '<article class="card">' +
@@ -325,7 +325,7 @@
     { name: "1. Intro", btn: "Fortsett  →", pill: true, html:
       '<div class="lf-card center"><img class="lf-av" src="' + AV_FB + '" alt="">' +
       '<div class="lf-page">' + PAGE + '</div><h3>30 antall plasser!</h3>' +
-      '<p>Inkludert i pakken er:\n✅ Omfattende konsultasjon\n✅ Undersøkelse\n✅ Behandling\n✅ Tilpasset treningsplan\n✅ Selvstyringsråd\n✅ Gratis holdningsanalyse\n\nFor bare 590kr\n(Total verdi 1350kr)\n\nBegrenset antall plasser\nTrykk på "Neste" for å sikre deg plass.</p></div>' },
+      '<p>Inkludert i pakken er:\n✅ Grundig konsultasjon\n✅ Omfattende undersøkelse\n✅ Holdningsanalyse (inkludert)\n✅ Påbegynnende behandling\n✅ Verktøy for selvhjelp\n\nFor bare 590kr\n(Total verdi 1350kr)\n\nBegrenset antall plasser\nTrykk på "Neste" for å sikre deg plass.</p></div>' },
     { name: "2. Kontaktinformasjon", btn: "Fortsett", progress: true, html:
       '<div class="lf-card"><h3 style="margin-top:0">Kontaktinformasjon ⓘ</h3>' +
       '<p style="font-size:13px">Jeg vil bruke informasjonen for å kunne kontakte deg angående din reservasjon.</p>' +
@@ -339,7 +339,7 @@
     { name: "4. Takk", btn: "Book timen din nå!", last: true, html:
       '<div class="lf-card center"><img class="lf-av" src="' + AV_FB + '" alt="">' +
       '<div class="lf-page">' + PAGE + '</div><h3>Takk, da er alt klart.</h3>' +
-      '<p style="text-align:left">En veldig varm velkomst!\nDu finner meg i Bogstadveien 50, 0366 Oslo\n\nJeg vil ringe deg innen en virkedag for å avtale en avtale med deg. Du kan også velge et tidspunkt i kalenderen min nedenfor akkurat nå!</p>' +
+      '<p style="text-align:left">En varm velkomst!\nJeg gleder meg til å hjelpe deg.\n\nDu finner meg i Bogstadveien 50, 0366 Oslo\n\nJeg vil ringe deg innen en virkedag for å avtale en avtale med deg. Du kan også velge et tidspunkt i kalenderen min nedenfor akkurat nå!</p>' +
       '<div class="lf-sent">ⓘ Svarene dine er sendt inn.</div></div>' }
   ];
   function footHtml(st, interactive) {
